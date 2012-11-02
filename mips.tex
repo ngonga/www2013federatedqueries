@@ -1,0 +1,144 @@
+
+% PLEASE USE UTF-8 ENCODING WHEN EDITING THIS FILE!
+
+% WWW 2012 page limit: 10 pages
+
+%\documentclass{llncs}
+% \documentclass{acm_proc_article-sp}
+\documentclass{sig-alternate}  % tighter style --> less pages (use the other one if we have enough space)
+%\documentclass{www2012-accepted} 
+%\usepackage{amsmath, amssymb}
+%\usepackage{graphicx}
+\usepackage{hyperref}
+%\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage{moreverb}
+
+\newcommand{\todo}[1]{\textbf{ToDo: \textit{#1}}}
+%\newcommand{\comm}[1]{\textbf{Comment: \textit{#1}}}\stackrel{\leftrightarrow}{}
+
+\usepackage{enumitem}
+\usepackage[usenames,dvipsnames]{color}
+\newcommand{\sparqlwo}[2]{{\texttt{#1 \char '173} \\[1.5pt] \hspace*{.5cm}\parbox{6cm}{\tt #2} \\ \texttt{\char '175} }}
+\newcommand{\sparql}[3]{{\texttt{#1 \char '173} \\[1.5pt] \hspace*{.5cm}\parbox{6cm}{\tt #2} \\ \texttt{\char '175} \\ \texttt{#3} }}
+\newcommand{\slot}[3]{$\langle\texttt{#1},\text{#2},\text{\sf #3}\rangle$}
+\newcommand{\argmax}{\operatornamewithlimits{arg\,max}}
+\newcommand{\argmin}{\operatornamewithlimits{arg\,min}}
+
+\usepackage{qtree}
+\usepackage[usenames,dvipsnames,table]{xcolor}
+
+
+\newcommand{\Drs}[2]{%%%%%%%%%%%%%%%%%%%%%%%%%
+\(                   % begin maths mode
+ \begin{array}{|l|}  %
+ \hline              % top line
+   \begin{array}{l}  %
+    #1                % `Universe'
+    \end{array} \\   %  end the `universe' part
+ \hline              % line between Universe and Conditions
+    \begin{array}{l} %
+    #2                % the conditions
+    \end{array} \\   % end the conditions part
+ \hline              % bottom line
+\end{array}          %
+\)                   % end maths mode
+                     }%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\clubpenalty=10000 
+\widowpenalty = 10000
+
+%\conferenceinfo{WWW}{2012 Lyon, France}
+
+\title{Duplicate-Aware Federated Query Processing over the Data Web}
+
+\numberofauthors{2} 
+\author{
+% 1st. author
+\alignauthor
+Muhammad Saleem\\
+       \affaddr{DERI Galway}\\
+       \affaddr{??}\\ 
+       \email{??}
+% 2nd. author
+\alignauthor
+Axel-Cyrille Ngonga Ngomo\\
+       \affaddr{Universit\"at Leipzig, IFI/AKSW}\\
+       \affaddr{PO 100920, D-04009 Leipzig}\\
+       \email{ngonga@informatik.uni-leipzig.de}
+
+}
+
+%\date{30 July 1999}
+\maketitle
+
+%\title{SPARQL Template Based Question Answering}
+% \titlerunning{SPARQL Template Based Question Answering}  
+%\author{Christina Unger\inst{1} \and Lorenz B{\"u}hmann\inst{2} \and Jens Lehmann\inst{2} \and Philipp Cimiano\inst{1}}
+%\authorrunning{...} 
+%\institute{
+%Bielefeld University, CITEC, Semantic Computing Group\\
+%Universit\"atsstra{\ss}e 21--23, 33615 Bielefeld\\ 
+%\email{cunger|cimiano@cit-ec.uni-bielefeld.de}
+%\and 
+%University of Leipzig, Computer Science Institute, AKSW Group,
+%\\Johannisgasse 26, 04103 Leipzig\\
+%\email{buehmann|lehmann@informatik.uni-leipzig.de}
+%}
+\begin{abstract}
+
+\end{abstract}
+
+% A category with the (minimum) three required fields
+\category{H.2.4}{Database Management}{Systems}[Distributed databases]
+%A category including the fourth, optional field follows...
+% \category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
+
+\terms{Algorithms, Experimentation, Theory}
+
+\keywords{Federated queries, SPARQL, deduplication}
+
+\section{Introduction (AN+MS)}
+\section{Related Work (MS)}
+\subsection{Federated SPARQL queries}
+\subsection{Filters}
+Bloom
+MIPS
+etc.
+\section{Notation (AN)}
+Data source 
+Source Ranking function
+Result set estimation function
+\section{Approach (MS)}
+\subsection{Overview}
+\subsection{MIPS}
+Vector Construction
+Union, overlap
+\subsection{Index construction}
+Compression Ratio Setting
+\subsection{Source Selection}
+\subsection{Source Ranking}
+Result set estimation       
+\subsection{Subquery generation}
+\section{Experiments and Results (AN)}
+\subsection{Experimental Setup (AN)}
+\subsubsection{Datasets (3 datasets)}
+\subsubsection{Queries (6 types)}
+\subsubsection{Metrics (MSE)}
+\subsection{Results (AN)}
+\subsubsection{Ranking Error}
+\subsubsection{Result Set Estimation Error}
+\subsubsection{Execution Time}
+\subsubsection{Size of MIPS vectors (on largest dataset)}
+\section{Discussion (AN)}
+
+
+
+\bibliographystyle{plain}
+\bibliography{literature}
+
+
+\end{document}
