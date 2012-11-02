@@ -108,10 +108,15 @@ Axel-Cyrille Ngonga Ngomo\\
 Bloom
 MIPS
 etc.
-\section{Notation (AN)}
-Data source 
-Source Ranking function
-Result set estimation function
+\section{Notation}
+In this section, we present the core of the notation that will be used throughout this paper.
+We denote data sources with $S$ and the total number of data sources with $n$. 
+The set of all possible result sets is denoted $R$ while the set of all possible SPARQL queries is labeled with $Q$. 
+A data source ranking function $rank: S \times Q \rightarrow \{1 \ldots n\}$ is a function that assigns a ranking to each data source given a particular query $q \in Q$.
+Note that for any source ranking function $rank$, we assume that $\forall S, S' \forall q \in Q : S  \neq S' \Longleftrightarrow rank(S, q) \neq rank (S', q)$.
+A result set estimation function $est: S \times Q \rightarrow \mathbb{N}$ aims at approximating the size of the result set that will be returned by a given query.
+Note that this function plays a crucial role in the processing of federated queries as it is most commonly used to decide upon the ranking of data sources for a given query.
+The aim of a federated query system such as the one described in this work is thus to optimize its estimation function $est$ so as to ensure a ranking of the source close to the optimal ranking. %do we really need this sentence?
 \section{Approach (MS)}
 \subsection{Overview}
 \subsection{MIPS}
