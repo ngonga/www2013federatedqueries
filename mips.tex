@@ -102,6 +102,26 @@ Axel-Cyrille Ngonga Ngomo\\
 \keywords{Federated queries, SPARQL, deduplication}
 
 \section{Introduction (AN+MS)}
+Over the last years, the Linked Data Web has developed into a large compendium of interlinked data sets from diverse domains. 
+One of the central principles underlying the architecture of these data sets is the reuse of URIs and vocabularies as well as the linking of knowledge bases.
+One of the results of this architectural choice is that certain queries can only be answered by retrieving information from several knowledge bases.
+This type of querying, called \emph{federated querying}, is of central importance for manifold applications such as question answering, knowledge retrieval and data integration.
+In addition to the information necessary to answering queries being distributed, certain pieces of information (i.e., triples) can be found in several knowledge bases. 
+For example, the name of movie directors can be found both in DBpedia and LinkedMDB.
+Similarly, the authors of papers can be found in both the ACM and DBLP libraries.
+We call triples that can be found in several knowledge bases across the Web of Data \emph{duplicates}.
+
+While the importance of federated queries over the Web of Data has been stressed in previous work, the impact of duplicates has not received much attention.
+Yet (as we will show in the remainder of this paper), a duplicate-aware approach to query processing can lead to more time-efficient and effective algorithms for federated queries.
+In this paper, we address this drawback by presenting a duplicate-aware approach for query processing based on min-wise independent permutation (MIPS) vectors.
+Our approach is able to predict the amount of new information contained in a knowledge base with a higher accuracy than the state of the art, leading to a better performance with respect to source ranking and result set size optimization. 
+In the rest of this paper, we aim to show experimentally that our approach outperforms the state-of-the-art by running it against ?? methods on ?? queries. 
+We begin by giving a brief overview of the state of the art in federated query processing.
+In addition, we argue for the use of MIPS for the approximation of result size sets.
+Thereafter, we present our duplicate-aware federated query processing approach.
+After an overview of the datasets used in this paper, we present experimental results which corroborate the superior efficiency of our approach.
+We conclude the paper with a discussion of our findings and an overview of future work.
+
 \section{Related Work (MS)}
 \subsection{Federated SPARQL queries}
 \subsection{Filters}
