@@ -1,0 +1,24 @@
+\BOOKMARK [1][-]{section.1}{Introduction \(AN+MS\)}{}% 1
+\BOOKMARK [1][-]{section.2}{Related Work \(MS\)}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Federated SPARQL queries}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Filters}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Notation}{}% 5
+\BOOKMARK [1][-]{section.4}{Approach \(MS\)}{}% 6
+\BOOKMARK [2][-]{subsection.4.1}{Overview}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{MIPS}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.3}{Index construction}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.4}{Source Selection}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.5}{Source Ranking}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.6}{Subquery generation}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{Experiments and Results \(AN\)}{}% 13
+\BOOKMARK [2][-]{subsection.5.1}{Experimental Setup \(AN\)}{section.5}% 14
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Datasets \(3 datasets\)}{subsection.5.1}% 15
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Queries \(6 types\)}{subsection.5.1}% 16
+\BOOKMARK [3][-]{subsubsection.5.1.3}{Metrics \(MSE\)}{subsection.5.1}% 17
+\BOOKMARK [2][-]{subsection.5.2}{Results \(AN\)}{section.5}% 18
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Ranking Error}{subsection.5.2}% 19
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Result Set Estimation Error}{subsection.5.2}% 20
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Execution Time}{subsection.5.2}% 21
+\BOOKMARK [3][-]{subsubsection.5.2.4}{Size of MIPS vectors \(on largest dataset\)}{subsection.5.2}% 22
+\BOOKMARK [1][-]{section.6}{Discussion \(AN\)}{}% 23
+\BOOKMARK [1][-]{section.7}{References}{}% 24

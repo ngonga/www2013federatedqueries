@@ -14,6 +14,10 @@
 %\usepackage{listings}
 \usepackage[utf8]{inputenc}
 \usepackage{moreverb}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \newcommand{\todo}[1]{\textbf{ToDo: \textit{#1}}}
 %\newcommand{\comm}[1]{\textbf{Comment: \textit{#1}}}\stackrel{\leftrightarrow}{}
@@ -89,8 +93,14 @@ Axel-Cyrille Ngonga Ngomo\\
 %\email{buehmann|lehmann@informatik.uni-leipzig.de}
 %}
 \begin{abstract}
-
-\end{abstract}
+Over the last years, the Linked Data Web has developed into a large compendium of interlinked data sets from diverse domains.
+Due to this distributed character, several of these data sets contain either duplicate or complementary data. 
+So far, several federated querying approaches have been developed to retrieve information from these data sources.
+Still, only little attention has been paid to the effect of duplicates and fragmented data on the ranking of data sources during the processing of federated queries.
+This work presents a novel approach federated querying based on min-wise independent permutation vectors applied to RDF predicates.
+Our approach allows evaluating the ranking of data sources accurately while taking into account duplicate data.
+By these means, our approach achieves significantly smaller mean squared errors that the state of the art with respect to the approximation of result set sizes as well as in the ranking of data sources. 
+ \end{abstract}
 
 % A category with the (minimum) three required fields
 \category{H.2.4}{Database Management}{Systems}[Distributed databases]
@@ -231,8 +241,8 @@ an accurate distance approximation between different instances. SILK
 implements a multi-dimensional blocking approach for link discovery.
 The Levenshtein distance {[}34{]} is used for approximate for similarity
 estimation between different instances. EAGLE presents a novel active
-learning approach to learning link specications based on genetic programming.
-EAGLE generates highly accurate link specications while reducing the
+learning approach to learning link specifications based on genetic programming.
+EAGLE generates highly accurate link specifications while reducing the
 annotation burden for the user. 
 
 None of the above techniques used statistical information stored in
@@ -253,6 +263,7 @@ bandwidth consumption {[}9{]}.
 \section{Notation}
 In this section, we present the core of the notation that will be used throughout this paper.
 We denote data sources with $S$ and the total number of data sources with $n$. 
+The set of all data sets is dubbed $\mathfrak{S}$.
 The set of all possible result sets is denoted $R$ while the set of all possible SPARQL queries is labeled with $Q$. 
 A data source ranking function $rank: S \times Q \rightarrow \{1 \ldots n\}$ is a function that assigns a ranking to each data source given a particular query $q \in Q$.
 Note that for any source ranking function $rank$, we assume that $\forall S, S' \forall q \in Q : S  \neq S' \Longleftrightarrow rank(S, q) \neq rank (S', q)$.
@@ -264,7 +275,7 @@ The aim of a federated query system such as the one described in this work is th
  Overall, our approach works as follows: The user begins by issuing
 a SPARQL query using any input form. The query is then forwarded to
 the query engine. Upon receiving, it is parsed to get all triples.
-The parser rewrites the original query the original query in an execution-optimized
+The parser rewrites the original query in an execution-optimized
 form. The federator then makes use of the services descriptions directory/index
 to decompose single query into multiple sub-queries. The query optimizer
 takes all sub-queries to generate an optimize execution plan. At last,
@@ -398,12 +409,122 @@ in separate sub-queries.
 \caption{Sub-query Generating Algorithm}
 \end{figure}
 
-\section{Experiments and Results (AN)}
+\section{Experiments and Results}
+The goal of our experiments was to quantify how well our duplicate-aware solution approximates the result sets from each of the data source from which it can choose and how this approximation affects the way the data sources are ranked.
+For this purpose, we compared our approach with two other approaches: DARQ and the optimal duplicate-unaware solution to result set estimation and query ranking. 
+In the following, we describe our experimental setup in detail and contrast the results achieved by each of the approaches.
+All data used is either publicly available or can be found at the project webpage.\footnote{\url{http://???}}
 \subsection{Experimental Setup (AN)}
-\subsubsection{Datasets (3 datasets)}
-\subsubsection{Queries (6 types)}
-\subsubsection{Metrics (MSE)}
-\subsection{Results (AN)}
+\subsubsection{Datasets}
+Within our experiments, we used the four datasets described in Table \ref{tab:datasets}.
+We chose data sets of different data sizes to gain some insights on the scalability of our approach.
+The size of the MIPS vectors was set to achieve a compression ratio of approx. 95\% as used in previous work~\cite{QTREE}.
+In addition, we emulated the difference between the number of relevant triples across datasets by introducing the discrepancy constant $d$.
+Given $n$ data sources of sizes $|S_i|$
+\begin{equation}
+d = \max\limits_i S_i - \min\limits_i S_i.
+\end{equation}
+Note that the discrepancy accounted for between ca, 1.6\% and 2.8\% of the triples and was to increasingly higher values for increasingly larger data sets.
+The number of slices was set to 10 in all experiments.
+\begin{table*}
+\centering
+\begin{tabular}{llllllllll}
+\hline
+Dataset & Size  & Summary 	& CR   & Slices & Discrepancy & Duplicate  & Duplicate & Total 	& Sum. Gen. \\
+				& (MB) 	& Size (MB) & (\%) &	  		 &  					 & Slices 		& Datasets 	& Triples & Time (sec)\\
+\hline
+Diseasome 			& 18.6 	& 1 	& 95 & 10 & 1,500 		& 1 & 10 			& 91,122 & 9\\
+DBLP 						& 39	& 2.8 	& 93 & 10 & 2,500 		& 1 & 10 			& 234,405 & 16\\
+Geo Coordinates & 274.1 & 24.4 	& 92 & 10 & 50,000 	& 2 & 				& 1,900,006 & 2705\\
+LinkedMDB 			& 448.9 & 41.3 	& 91 & 10 & 100,000 	& 1 & 2 			& 3,579,616 & 3556\\
+\hline
+\end{tabular}
+\caption{Overview of datasets. CR stands for Compression Ratio.}
+\label{tab:datasets}
+\end{table*}
+
+\begin{table*}
+\centering
+\begin{tabular}{llllllll}
+\hline
+Dataset Name 		& $BGP$  & $S-1$ & $S-2$ & $P-1$ & $P-2$ & $P-3$ & Total \\\hline
+Diseasome 			& 5 & 5 & 5 & 4 & 5 & 2 & 26 \\
+Geo Coordinates & 5 & 5 & 5 & 0 & 0 & 0 & 15 \\
+LinkedMDB 			& 5 & 0 & 0 & 0 & 0 & 0 & 5 \\
+Publication 		& 5 & 5 & 5 & 7 & 7 & 4 & 33 \\\hline
+Total 					& 20 & 15 & 15 & 11 & 12 & 6 & 79\\
+\hline
+\end{tabular}
+\caption{Distribution of query types across datasets}
+\label{tab:queries}
+\end{table*}
+
+
+\subsubsection{Queries}
+We used three main types of queries. 
+Simple basic graph pattern (BGP) queries consisted of exactly one triple pattern in the query.
+Star-shaped and path-shaped queries were defined as in~\cite{QTREE}: star-shaped queries (denoted $S-k$) has one variable as subject and contained k triple patterns. 
+Path-shaped queries on the other hand were generated by using a random walk approach. 
+Note that previous work has shown that these query shapes are the most common shapes found in real-world RDF queries~\cite{DPSBM}.
+Overall, our benchmark data consisted of 79 queries as shown in Table~\ref{tab:queries}.
+Note that some query shapes could not be used on certain datasets due to the topology of the ontology underlying the datasets not being permissive for such queries. 
+For example, $S-2$ queries could not be sent to LinkedMDB because 
+
+\subsubsection{Metrics}
+We used two measures to compare our approach with the state of the art.
+First, we measured the mean squared error of each approach with respect to their result set evaluation as follows:
+For each query $q_i$, each source $S_i$ contained a number $R_i(q_i)$ of non-duplicate results.
+Each of the approaches generated an approach $\tilde{R}_i(q_i)$ of $R_i(q_i)$.
+The mean squared error with respect to the result set size (short $RSMSE$) was then computed as follows:
+\begin{equation}
+RSMSE = \frac{1}{|Q|}\sum\limits_{q_i \in Q}|R_i(q_i) - \tilde{R}_i(q_i)|^2.
+\end{equation}
+In addition to the MSERS, we also computed how well the approaches were able to rank the data sources with respect to the unseen triples they would return for a given query.
+Given the ideal ranking $rank(S_i, q_j)$ of each data source $S_i$ for each query $q_j$, we computed the mean squared ranking error (short $RankMSE$) of an approach characterized by the the ranking function $\tilde{r}(S_i, q_j)$ by using the following formula:
+\begin{equation}
+RankMSE (q_j) = \frac{1}{|\mathfrak{S}|}\sum\limits_{S_i}|rank(S_i, q_j) - \tilde{r}(S_i, q_j)|^2.
+\end{equation}
+\begin{equation}
+RankMSE  = \frac{1}{|Q|}\sum\limits_{q_j  \in Q}RankMSE(q_j).
+\end{equation}
+For both measures, higher values are obviously worse.
+
+
+\subsection{Results}
+The RSMSE results are shown in Figure~\ref{fig:rsmse}.
+
+\begin{figure*}
+\centering
+\begin{subfigure}[b]{0.45\textwidth}
+                \centering
+\includegraphics[width=\textwidth]{img/rsmse_query}
+                \caption{RSMSE for query-wise dataset selection (vertical log scale)}
+                \label{fig:rsmsequery}
+        \end{subfigure}
+~
+\begin{subfigure}[b]{0.45\textwidth}
+                \centering
+\includegraphics[width=\textwidth]{img/rankmse_query}
+                \caption{RankMSE for query-wise dataset selection}
+                \label{fig:rankmsequery}
+        \end{subfigure}
+
+\begin{subfigure}[b]{0.45\textwidth}
+                \centering
+\includegraphics[width=\textwidth]{img/rsmse_subquery}
+                \caption{RSMSE for subquery-wise dataset selection (vertical log scale)}
+                \label{fig:rsmse_subquery}
+        \end{subfigure}
+~				
+				\begin{subfigure}[b]{0.45\textwidth}
+                \centering
+\includegraphics[width=\textwidth]{img/rankmse_subquery}
+                \caption{RankMSE for subquery-wise dataset selection}
+                \label{fig:rankmse_subquery}
+        \end{subfigure}
+\caption{Mean squared errors with respect to result set evaluation and ranking}
+\end{figure*}
+
 \subsubsection{Ranking Error}
 \subsubsection{Result Set Estimation Error}
 \subsubsection{Execution Time}
@@ -543,7 +664,7 @@ between data points. Science, 315:972-976, 2007.
 deletions, insertions, and reversals. In Soviet Physics Doklady, volume
 10, 1966.
 
-\bibitem{key-38}M. Morsey, J. Lehmann, S. Auer, and A.-C. N. Ngomo.
+\bibitem{key-38}M. Morsey, J. Lehmann, S. Auer, and A.-C. {Ngonga Ngomo}.
 DBpedia SPARQL Bench- mark - Performance Assessment with Real Queries
 on Real Data. In 10th Interna- tional Semantic Web Conference (ISWC2011),
 2011\end{thebibliography}
