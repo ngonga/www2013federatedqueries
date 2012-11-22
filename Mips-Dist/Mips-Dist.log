@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.2)  21 NOV 2012 03:10
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.2)  23 NOV 2012 00:50
 entering extended mode
 **Mips-Dist.tex
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\Mips-Dist.tex
@@ -908,83 +908,74 @@ File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 LaTeX Warning: Citation `QTREE' on page \thepage  undefined on input line 421.
 
 
-LaTeX Warning: Citation `QTREE' on page \thepage  undefined on input line 466.
+LaTeX Warning: Citation `QTREE' on page \thepage  undefined on input line 481.
 
 
-LaTeX Warning: Citation `DPSBM' on page \thepage  undefined on input line 468.
+LaTeX Warning: Citation `DPSBM' on page \thepage  undefined on input line 483.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.473 \subsubsection{Metrics}
-                              [4 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/Algo1.pdf>]
+l.488 \subsubsection
+                    {Metrics} [4 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/Algo1.pdf>]
+<img/querywise_rse.pdf, id=168, 451.6875pt x 301.125pt>
+File: img/querywise_rse.pdf Graphic file (type pdf)
+ <use img/querywise_rse.pdf>
+Package pdftex.def Info: img/querywise_rse.pdf used on input line 518.
+(pdftex.def)             Requested size: 226.79846pt x 151.20079pt.
 
-LaTeX Warning: Reference `fig:rsmse' on page \thepage  undefined on input line 494.
+<img/subquerywise_rse.pdf, id=169, 451.6875pt x 301.125pt>
+File: img/subquerywise_rse.pdf Graphic file (type pdf)
+ <use img/subquerywise_rse.pdf>
+Package pdftex.def Info: img/subquerywise_rse.pdf used on input line 524.
+(pdftex.def)             Requested size: 226.79846pt x 151.20079pt.
 
-<img/rsmse_query.png, id=166, 569.12625pt x 255.95625pt>
-File: img/rsmse_query.png Graphic file (type png)
- <use img/rsmse_query.png>
-Package pdftex.def Info: img/rsmse_query.png used on input line 500.
-(pdftex.def)             Requested size: 226.79846pt x 102.00183pt.
+<img/querywise_ranking.pdf, id=170, 451.6875pt x 301.125pt>
+File: img/querywise_ranking.pdf Graphic file (type pdf)
+ <use img/querywise_ranking.pdf>
+Package pdftex.def Info: img/querywise_ranking.pdf used on input line 536.
+(pdftex.def)             Requested size: 226.79846pt x 151.20079pt.
 
-<img/rankmse_query.png, id=168, 569.12625pt x 256.70906pt>
-File: img/rankmse_query.png Graphic file (type png)
- <use img/rankmse_query.png>
-Package pdftex.def Info: img/rankmse_query.png used on input line 507.
-(pdftex.def)             Requested size: 226.79846pt x 102.30183pt.
-
-<img/rsmse_subquery.png, id=169, 569.12625pt x 255.95625pt>
-File: img/rsmse_subquery.png Graphic file (type png)
- <use img/rsmse_subquery.png>
-Package pdftex.def Info: img/rsmse_subquery.png used on input line 514.
-(pdftex.def)             Requested size: 226.79846pt x 102.00183pt.
-
-<img/rankmse_subquery.png, id=170, 569.12625pt x 257.46187pt>
-File: img/rankmse_subquery.png Graphic file (type png)
- <use img/rankmse_subquery.png>
-Package pdftex.def Info: img/rankmse_subquery.png used on input line 521.
-(pdftex.def)             Requested size: 226.79846pt x 102.60184pt.
-
+<img/subquerywise_ranking.pdf, id=171, 451.6875pt x 301.125pt>
+File: img/subquerywise_ranking.pdf Graphic file (type pdf)
+ <use img/subquerywise_ranking.pdf>
+Package pdftex.def Info: img/subquerywise_ranking.pdf used on input line 542.
+(pdftex.def)             Requested size: 226.79846pt x 151.20079pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.553 ...ize of MIPS vectors (on largest dataset)}
+                                                   [5 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/
+querywise_rse.pdf> <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/subquerywise_rse.pdf>]pdfTeX warnin
+g (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.613 
+       [6 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/querywise_ranking.pdf> <E:/Work/Papers/Eigen
+e/2013/www2013federatedqueries/Mips-Dist/img/subquerywise_ranking.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 694.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.591 
-       [5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 672.
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.672 \end{document}
-                     [6 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/rsmse_query.png> <E:/Work/Pape
-rs/Eigene/2013/www2013federatedqueries/Mips-Dist/img/rankmse_query.png> <E:/Work/Papers/Eigene/2013/www2013federatedquer
-ies/Mips-Dist/img/rsmse_subquery.png> <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/rankmse_subquery
-.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 672.
+l.694 \end{document}
+                     [7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 694.
  (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\Mips-Dist.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 672.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 672.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 694.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 694.
 Package rerunfilecheck Info: File `Mips-Dist.out' has not changed.
 (rerunfilecheck)             Checksum: 7BB847BEEC3E290924CD473B1A386F73;1562.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 10237 strings out of 494045
- 147347 string characters out of 3145967
- 266117 words of memory out of 3000000
- 13268 multiletter control sequences out of 15000+200000
+ 10241 strings out of 494045
+ 147463 string characters out of 3145967
+ 265338 words of memory out of 3000000
+ 13270 multiletter control sequences out of 15000+200000
  55940 words of font info for 80 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 41i,12n,38p,472b,481s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,12n,38p,472b,475s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><C:/Program Fi
 les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
@@ -998,9 +989,9 @@ am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program F
 etic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.
 9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Mips-Dist.pdf (6 pages, 674460 bytes).
+Output written on Mips-Dist.pdf (7 pages, 685024 bytes).
 PDF statistics:
- 301 PDF objects out of 1000 (max. 8388607)
- 77 named destinations out of 1000 (max. 500000)
+ 354 PDF objects out of 1000 (max. 8388607)
+ 79 named destinations out of 1000 (max. 500000)
  233 words of extra memory for PDF output out of 10000 (max. 10000000)
 
