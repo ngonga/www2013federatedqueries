@@ -491,6 +491,7 @@ For both measures, higher values are obviously worse.
 
 \subsection{Results}
 
+\subsubsection{Result set estimation and ranking}
 The RSMSE results are shown in Figures~\ref{fig:rsmse} while the ranking results are shown in Figure~\ref{fig:rank}.
 In each figure, we compared the results of the approaches w.r.t. both the whole input query and to each of the triples patterns contained in the input queries.
 Our results clearly show that we outperform the state of the art w.r.t to both result set estimation and ranking.
@@ -539,9 +540,33 @@ Small errors in the estimation of the size of the result size can thus lead to m
 \label{fig:rank}
 \end{figure}
 
-In addition, we measured the number of sub-query executions that could be escaped by our approach. 
+As stated before, we used a compression ratio of approx. 95\% across all experiments. 
+The main advantage of such a high compression ratio is the small size of the index. 
+Yet, the higher the compression ratio, the larger the error margin of the ranking function.
+When given a query whose sub-queries lead to very similar result set estimations,  this larger error margin can lead to substantial $RankMSE$ and $RSMSE$ rates.
+We thus studied the effect of decreasing the compression ratio on the $RSMSE$ and $RankMSE$ for such a query.
+Our results in Table~\ref{tab:compression} suggest that MIPS vectors can successfully detect even small differences in the sizes of the result sets when given a sufficiently small compression ratio.
+
+\begin{table}
+\centering
+\begin{tabular}{rrr}
+\hline
+Compression Ratio		& $RSMSE$	& $RankMSE$ \\\hline
+91\%	& $253.9 \times 10^6$	& 3.4 \\
+88\%	& $33.3 \times 10^6$	& 0.6 \\
+85\%	& 0					&	0 \\\hline
+\end{tabular}
+\caption{Effect of compression ratio}
+\label{tab:compression}
+\end{table}
+
+\subsubsection{Query Escaping}
+One of the main advantages of systems that process federated queries at sub-query-level is that refrain for sending sub-queries to all available data sources if these sources appear not to contain relevant information. 
+The advantage of this strategy obviously lies in superior runtimes and better resource management (less network traffic, smaller space requirements, etc.).
+We thus measured the number of sub-query executions that could be escaped by our approach without any loss in recall. 
 The results shown in Table~\ref{tab:escaped} clearly display that our approach can effectively reduce the total number of queries executed overall.
-In addition to the higher recall, the escaping of sub-query executions is one one of the main advantages of applying a subquery-wise execution of federated queries. 
+Especially, on BGP queries, we were able to escape up to 10 subqueries (\%?). 
+Our approach was most successful on star-shaped queries, where up to 21 subqueries could be escaped. 
 
 \begin{table}
 \centering
@@ -557,6 +582,7 @@ Total 					&23		&38	&49	&8	&20	&12	&150 \\\hline
 \caption{Distribution of query escaped by our approach}
 \label{tab:escaped}
 \end{table}
+
 
 
 
