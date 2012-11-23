@@ -67,13 +67,23 @@
 Muhammad Saleem\\
        \affaddr{Digital Enterprise Research Institute,}\\
        \affaddr{National University of Ireland, Galway}\\ 
-       \email{muhammad.saleem@deri.org}
+       \email{muhammad.saleem@deri.org}\\
 % 2nd. author
+\author
+\\Third Author Name\\
+       \affaddr{Affiliation}\\
+      \affaddr{Addrss}\\
+       \email{Email}
 \alignauthor
 Axel-Cyrille Ngonga Ngomo\\
        \affaddr{Universit\"at Leipzig, IFI/AKSW}\\
        \affaddr{PO 100920, D-04009 Leipzig}\\
-       \email{ngonga@informatik.uni-leipzig.de}
+       \email{ngonga@informatik.uni-leipzig.de}\\
+\author
+\\Fourth Author Name\\
+       \affaddr{Affiliation}\\
+      \affaddr{Addrss}\\
+       \email{Email}
 }
 
 %\date{30 July 1999}
@@ -113,7 +123,7 @@ By these means, our approach achieves significantly smaller mean squared errors 
 
 \section{Introduction (AN+MS)}
 Over the last years, the Linked Data Web has developed into a large compendium of interlinked data sets from diverse domains. 
-One of the central principles underlying the architecture of these data sets is the reuse of URIs and vocabularies as well as the linking of knowledge bases.
+One of the central principles underlying the architecture of these data sets is the reuse of URIs and vocabularies as well as the linking of knowledge bases\cite{key-20}.
 One of the results of this architectural choice is that certain queries can only be answered by retrieving information from several knowledge bases.
 This type of querying, called \emph{federated querying}, is of central importance for manifold applications such as question answering, knowledge retrieval and data integration.
 In addition to the information necessary to answering queries being distributed, certain pieces of information (i.e., triples) can be found in several knowledge bases. 
@@ -123,7 +133,7 @@ We call triples that can be found in several knowledge bases across the Web of D
 
 While the importance of federated queries over the Web of Data has been stressed in previous work, the impact of duplicates has not received much attention.
 Yet (as we will show in the remainder of this paper), a duplicate-aware approach to query processing can lead to more time-efficient and effective algorithms for federated queries.
-In this paper, we address this drawback by presenting a duplicate-aware approach for query processing based on min-wise independent permutation (MIPS) vectors.
+In this paper, we address this drawback by presenting a duplicate-aware approach for query processing based on min-wise independent permutation (MIPs) vectors.
 Our approach is able to predict the amount of new information contained in a knowledge base with a higher accuracy than the state of the art, leading to a better performance with respect to source ranking and result set size optimization. 
 In the rest of this paper, we aim to show experimentally that our approach outperforms the state-of-the-art by running it against ?? methods on ?? queries. 
 We begin by giving a brief overview of the state of the art in federated query processing.
@@ -150,116 +160,96 @@ however; the query response time is faster than index assisted approach.
 Both of the above approaches can further be divided into two categories
 (a) Query federation with complete result retrieval (b) Query federation
 with partial (sufficient) record retrieval. In our case, we are focusing
-on index-assisted, sufficient record retrieval.
+on index-assisted which can be used both for complete and partial record retrieval .
 
-Heiner et. al {[}1{]} describes how to extend the Sesame RDF
+Heiner et. al\cite{key-1} describes how to extend the Sesame RDF
 repository to support distributed SeRQL queries over multiple Sesame
 RDF repositories. They use a special index structure to determine
-the relevant sources for a query. Quilitz and Leser {[}2{]}
-uses the theoretical knowledge of {[}1{]} to develop the first federated
+the relevant sources for a query. Quilitz and Leser\cite{key-2}
+uses the theoretical knowledge of~\cite{key-1} to develop the first federated
 query engine (named DARQ) for remote RDF data sources. DARQ uses service
 descriptions for relevant data source selection. A service description
 describes the capabilities of a SPARQL endpoint. They used query rewriting
-mechanism based on {[}8{]} and a cost-based optimization algorithm
+mechanism based on\cite{key-8} and a cost-based optimization algorithm
 to reduce the query processing time with the minimum bandwidth usage.
 DARQ is compatible with any SPARQL endpoint that implements the SPARQL
 standard. Their experimental results show that the optimization algorithm
 can greatly reduce the query processing time.
 
-Andreas et al. {[}3{]} proposed a solution similar to DARQ using a
+Andreas et al.\cite{key-3} proposed a solution similar to DARQ using a
 mediator approach. All the SPARQL endpoints need to register first
 with the mediator using HTTP POST requests with an RDF document attached.
 The mediator continuously monitors the SPAQL endpoints for any dataset
 changes and updates the service descriptions automatically. Unlike
 DARQ, the service descriptions remain up-to-date all time. 
 
-Olaf et al. {[}4{]} present a new approach for federated query processing
+Olaf et al.\cite{key-4} present a new approach for federated query processing
 over the Web of Data. Their approach discovers data that might be
 relevant for answering a query during the query execution itself.
 The discovery of relevant data is accomplished by traversing RDF links.
 They used an iterator-based pipeline and a URI prefetching approach
-for efficient query execution. Both DARQ and {[}3{]} are not able
+for efficient query execution. Both DARQ and \cite{key-3} are not able
 to discover relevant data sources by the query itself.
 
 The previous techniques cannot answer all types of queries due to
-index or service description limitations. Umbrich et al. {[}5{]},
-{[}6{]} proposed a Qtree-based index structure which summarizes the
+index or service description limitations. Umbrich et al.\cite{key-5},
+\cite{key-6} proposed a Qtree-based index structure which summarizes the
 content of data source for query execution over the Web of Data. They
 concluded that this approach is able to handle more expressive queries
 and return more complete results than previous approaches. Schwarte
-et al. {[}7{]} proposed an index-free query federation for the Web
+et al.\cite{key-7} proposed an index-free query federation for the Web
 of Data. Their approach gives a reasonably fast data retrieval as
 compared to all the previous techniques. However, since they do not
 keep any statistics, it works only for limited data sources.
 
-Li and Heflin {[}15{]} build a tree structure which supports the integration
-of data from multiple heterogeneous sources. The tree is built in
-a bottom-up fashion; each triple pattern is rewritten according to
-the annotations on its corresponding datasets. Kaoudi et al. {[}16{]}
-propose a technique that runs on Atlas, a P2P system for processing
-RDF distributed data that are stored in hash tables. The purpose of
-this technique is to minimize the query execution time and the bandwidth
-consumed; this is done by reducing the cardinality of intermediate
-results. A dynamic programming algorithm was implemented that relies
-on message exchange among sources
+Li and Heflin\cite{key-15} build a tree structure which supports federated query processing over multiple heterogeneous sources. They make use of an OWL reasoner to answer queries
+over the selected sources and their corresponding ontologies. Kaoudi et al.\cite{key-16}
+propose a federated query technique on top of distributed hash tables(DHT). 
+ The overall goal of this technique is to minimize the query execution time and the bandwidth
+consumption by reducing the cardinality of intermediate results. The DHT-based optimizer make use of three greedy optimization algorithms for best plan selection.  
 
-The Tukwila integration system {[}17{]} executes queries through several
-autonomous and heterogeneous sources. Tukwila decomposes original
-queries into a number of sub-queries on each source, and uses adaptive
-techniques to hide delays. Ludwig and Tran {[}18{]} propose a mixed
-query engine; sources are selected using aggregated indexes that keep
-information about triple patterns and join cardinalities for available
-sources; these statistics are updated on-the-fly. The execution ends
-when all relevant sources have been processed or a stop condition
-given by the user is reached; additionally, the Symmetric Hash Join
-is implemented to incrementally produce answers; recently, this approach
-was extended to also process Linked Data locally stored {[}19{]}.
+Ludwig and Tran\cite{key-18} proposed a mixed
+query engine; that assumes some incomplete knowledge about the sources to select and discover new sources at run time. A Symmetric Hash Join
+is implemented to incrementally produce answers. This approach
+was extended to query both remote and local linked data\cite{key-19}.
 
-Maribel et al. {[}21{]} presented ANAPSID, an adaptive query engine
-for SPARQL endpoints that adapts query execution schedulers to data
+Maribel et al.\cite{key-21} presented ANAPSID, an adaptive query engine
+that adapts query execution schedulers to SPARQL endpoints data
 availability and run-time conditions. ANAPSID provides physical SPARQL
 operators that detect when a source becomes blocked or data traffic
-is bursty, and opportunistically, the operators produce results as
-quickly as data arrives from the sources. 
+is bursty. The operators produce results as
+quickly as data arrives from the sources. Amol et al.\cite{key-17} presents a survey of the adaptive query processing
+techniques, common issues, and the settings in which each piece of work is most appropriate. 
+Avalanche\cite{key-24} gathers endpoints dataset statistics and bandwidth availability on-the-fly before the query federation. The advantage of this technique is the live query execution over the Web of Data. However, on-the-fly statistics calculation can increase the overall query execution time. Olaf\cite{key-25} proposed a heuristics-based technique to minimize query intermediate
+results. 
 
-Avalanche {[}24{]} produces the first k results, and sources are interrogated
-to obtain statistics which are used to decompose queries into sub-queries
-that are executed based on their selectivity; sub-queries results
-are sent to the next most selective source until all sub-queries are
-executed; execution ends when a certain stop condition is reached.
-Also, heuristics-based techniques are proposed to minimize query intermediate
-results {[}25{]}. 
-
-Other noteable contributions LIMES {[}26{]}, SILK {[}27{]}, EAGLE
-{[}28{]} provides time-efficient approaches for Link Discovery using
+Other noteable contributions LIMES\cite{key-26}, SILK\cite{key-27}, EAGLE\cite{key-28} provides time-efficient approaches for Link Discovery using
 various distance measure techniques. LIMES framework utilize the mathematical
 characteristics of metric spaces to compute similarity estimates between
 instances. It makes use of the triangle inequality to partition the
 metric space into different portions. Each of these portions of the
-space is then represented by an exemplar {[}33{]} that allows to compute
+space is then represented by an exemplar\cite{key-33} that allows to compute
 an accurate distance approximation between different instances. SILK
 implements a multi-dimensional blocking approach for link discovery.
-The Levenshtein distance {[}34{]} is used for approximate for similarity
+The Levenshtein distance\cite{key-34} is used for approximate for similarity
 estimation between different instances. EAGLE presents a novel active
 learning approach to learning link specifications based on genetic programming.
 EAGLE generates highly accurate link specifications while reducing the
 annotation burden for the user. 
 
-None of the above techniques used statistical information stored in
-the index or service description for pre-processing dataset overlap
-estimation. In the initial stage, like DARQ engine, we use service
+None (to the best of our knowledge) of the above techniques has taken into account the possibility of mutual overlap between different RDF datasets before query execution. Like DARQ engine, we use service
 descriptions for query federation. In addition, we store MIPs vector
 statistics for each of the indexed data source. Query federator makes
 use of this special statistic information to estimate the possible
 overlap between the results of different sub-queries.
 
-\subsection{Filters}
-The overlap between two datasets can be estimated using min-wise independent
-permutations {[}9{]}, bloom filters {[}10{]}, or compressed bloom
-filters {[}11{]}. Bender et al. {[}12{]} also proposed a technique
+\subsection{Dataset Overlap Estimation}
+Avoiding the retrieval of duplicate records is a crucial issue in large scale distributed datasets. The overlap between two datasets can be estimated using min-wise independent
+permutations\cite{key-9}, bloom filters\cite{key-10}, or compressed bloom
+filters\cite{key-11}. Bender et al.\cite{key-12} also proposed a technique
 for predicting the query-specific mutual overlap between peers. However,
 MIPs have proved to be the more accurate overlap estimation with small
-bandwidth consumption {[}9{]}.
+bandwidth consumption\cite{key-9}.
 \section{Notation}
 In this section, we present the core of the notation that will be used throughout this paper.
 We denote data sources with $S$ and the total number of data sources with $n$. 
@@ -285,30 +275,67 @@ back to the user. This architecture for distributed query processing
 is shown in figure 1.
 
  While this architecture is the same
-for all federated query systems, the federator and optimizer of our
-system differ significantly from those of other approaches as they
-make use of the MIPs statistical information to generate a precise
+for all federated query systems, the federator of our
+system differ significantly from those of other approaches as it
+make use of the MIPs statistical information to generate duplicate-free
 query execution plan. The generation of MIPs statistical information
 is explained in the next section.
 \begin{figure}
 \begin{centering}
-\includegraphics[scale=0.11]{Fig1} 
+\includegraphics[scale=0.11]{img/Fig1} 
 \par\end{centering}
 
 \centering{}\caption{Federated SPARQL query processing architecture}
 \end{figure}
-\subsection{MIPS}
+
+\subsection{Service Description Directory}
+To find the set of relevant servers and generate 
+multiple sub-queries, the query engine needs information about the
+different data sets available at different servers. We call this catalog
+the \emph{service description directory}. Each service description
+provides a declarative description of the data available from a server
+along with statistical information. 
+
+Our \emph{service description directory} stores \textit{server url, graph name}, and for
+each distinct predicate \emph{p} we record \textit{predicate name,
+MIPs vector, subject selectivity, object selectivity} and \textit{total number of triples} having predicate
+\emph{p}. The MIPs vectors are used to estimate the dataset overlap
+among the capable datasets before the sub-query distribution. The \emph{subject} and \emph{object selectivity} are used for sub-query result set estimation when \emph{subject, object} are bound respectively. A sample service description is given in the listing 1.
+
+It is very crucial to keep the index size enough to minimize pre-query federation time. However, it must contain sufficient information to enable sub-query generation, optimization and pre-processing dataset overlap estimation. Our index size is mostly depended upon the size of the MIPs vectors which can be adjusted to any length. The generation of the MIPs vectors is explained in the next section. 
+\begin{lstlisting}[caption = {A Service Description Example},basicstyle={\tiny},float,frame={single},stringstyle={\ttfamily}]
+[] a sd:Service ;
+     sd:url   <http://localhost:8890/sparql> ;
+     sd:graph ``diseasome/DS1'';
+     sd:capability
+     [
+      sd:predicate  diseasome:name ;
+      sd:MIPv  ``-6908232 -7090543 -6892373 -7064247 ...'';           
+      sd:subjectSelectivity  ``0.0068'' ;
+      sd:objectSelectivity  ``0.0069'' ;
+      sd:triples    147  ;
+      ] ;
+     sd:capability
+     [
+      sd:predicate  diseasome:chromosomalLocation ;
+      sd:MIPv  ``-7056448 -7056410 -6845713 -6966021 ...'';
+      sd:subjectSelectivity  ``0.0062'' ;
+      sd:objectSelectivity  ``0.0072'' ;
+      sd:triples    160  ;
+      ] ;
+\end{lstlisting}
+\subsection{MIPs Operation}
 Min-Wise Independent Permutations (MIPs) assumes that the set elements can
-be ordered (which is trivial for integer keys) and computes N random
+be ordered and computes N random
 permutations of the elements. Each permutation uses a linear hash
-function of the form  hi(x) : = ai{*} x + i mod U 
-where U is a big prime number and ai,
-bi are fixed random numbers. By ordering the resulting
-hash values, we obtain a random permutation. For each of the N permutations,
+function of the form  \emph{$h_i$(x) : = $a_i$*x + $b_i$ mod U} 
+where \emph{U} is a big prime number and $a_i$,
+$b_i$ are fixed random numbers. By ordering the resulting
+hash values, we obtain a random permutation. For each of the \emph{N} permutations,
 the MIPs technique determines the minimum hash value, and stores it
 in an N-dimensional vector, thus capturing the minimum set element
 under each of these random permutations. The technique is illustrated
-with an example in figure 3 taken from {[}13{]}. Its fundamental rationale
+with an example in figure 2. Its fundamental rationale
 is that each element has the same probability of becoming the minimum
 element under a random permutation. By using sufficiently many different
 permutations, we can approximate the set cardinality.
@@ -316,108 +343,80 @@ permutations, we can approximate the set cardinality.
 An unbiased estimate of the pair-wise resemblance of sets using their
 N-dimensional MIPs vectors is obtained by counting the number of positions
 in which the two vectors have the same number and dividing this by
-the number of permutations N. Essentially, this holds as the matched
+the number of permutations \emph{N}. Essentially, this holds as the matched
 numbers are guaranteed to belong to the intersection of the sets.
 
-For a predicate p$\in$ D, the set elements are all triples T $\in$
-D with predicate p and computes N random permutations. The resulting
-MIP vector is stored against each capability of the service description.
-MIP vector statistics is used during source selection and sub-query
-generating algorithm for efficient, duplicate free query execution
-plan.
+For a predicate \emph{p $\in$ S}, the set elements are all triples \emph{T $\in$
+S} having predicate \emph{p}. We concatenate the \emph{subject}  and \emph{object} of each triple in \emph{T} and apply a hash function to get the \emph{ID set}. Finally, we computes \emph{N} random permutations of the \emph{ID set}. The resulting
+MIP vector is stored against each capability of the service description. Note that we are not applying hash function to the complete triple because the \emph{predicate} is already stored with each service capability and source selection is bound by query \emph{predicate}.
 
 \begin{figure}
 \begin{centering}
-\includegraphics[scale=0.6]{6} 
+\includegraphics[scale=0.5]{img/mips} 
 \par\end{centering}
+\centering Resemblance($S_A,S_B) = \dfrac{|S_A \cap S_B|}{|S_A \cup S_B|}$\\
 
-\centering{}\includegraphics[scale=0.4]{equ}\caption{Min-Wise independent permutations (image taken from {[}13{]} with
-permission)}
+\caption{Min-Wise independent permutations}
 \end{figure}
 
-
-\subsection{Index construction}
-To find the set of relevant servers and decompose the user query into
-multiple sub-queries, the query engine needs information about the
-different data sets available at different servers. We call this catalog
-the \textbf{service description directory}. Each service description
-provides a declarative description of the data available from a server
-along with statistical information. The statistical information are
-used for query optimization. However, the directory size should be
-small enough and must contain sufficient information to enable sub-query
-generation, optimization and pre-processing dataset overlap estimation.
-Moreover, the directory should be dynamically updated for up to date
-data retrieval and accurate overlap detection.
-
-In the initial stage, we only store the\textit{ server url}, and for
-each distinct predicate \textbf{p} we record \textit{predicate name,
-MIPs Vector,} and \textit{total number of triples} having predicate
-\textbf{p}. The MIPs vectors are used to estimate the dataset overlap
-before query execution. The other statistical information is used
-during sub-query generation and optimization. During this work, we
-are planning to use other statistical information such as subject/object
-selectivity, histograms, links across the knowledge bases and ontology
-matching data. In addition, we will use a mediator to constantly update
-the service description directory. A sample service description for
-Galway geo data is given in the listing 1.
-
-
-
 \subsection{Source Selection}
-A SPARQL query contains one or more filtered basic graph patterns
-of which each contains the actual triple patterns. The query planning
-step is performed separately for each filtered basic graph pattern.
-The algorithm used in DARQ for finding the relevant data sources for
+A SPARQL query contains one or more basic graph patterns. The query planning
+step is performed separately for each basic graph pattern.
+The source selection algorithm used in DARQ for
 a query simply matches all triple patterns against the capabilities
 of the data sources. The matching compares the predicate in a triple
-pattern with the predicate defined for a capability and evaluates
-the constraint for subject and object. Let BGP be a set of triple
+pattern with the predicate defined for a capability. Let BGP be a set of triple
 patterns in a filtered basic graph pattern. The result of the source
-selection is a set of data sources Dj for each triple
-pattern.
+selection is a set of data sources $S_j$ for each triple
+pattern
 
-* need to include the source selection
+\begin{center}
+$t_j = (s_j, p_j, o_j)$ $\in$\ BGP with 
+\par\end{center}
 
-We extended the DARQ source selection algorithm by comparing different
-MIP vectors for similarity. For a triple pattern, we compare the MIP
+\begin{center}
+$S_j$ = \{s|(s,C) $\in$ \ R $\wedge$ \ $\exists$
+\ $(p_j, r)$ $\in$ \ C : $r(s_j, o_j)$ = true\}, 
+\par\end{center}
+\begin{flushleft}
+Where $r(s_j, o_j)$ represents any constraint
+on subject or object of a triple with predicate $p_j$.
+\par\end{flushleft}
+
+We extend the DARQ source selection algorithm by comparing MIP Vectors
+ for similarity. For a triple pattern, we compare the MIP
 vectors of all the relevant data sources for possible similarity.
-A specific source D is only added to the set of capable sources j,
-if D is able to produce new results above a specific threshold value
-defined for similarity. For a triple T in dataset D, if the resemblance
-value is less than the threshold, D is ignored from set Dj.
-
+A specific source \emph{S} is only added to the set of capable sources $t_j$,
+if \emph{S} is able to produce new results above a specific threshold value
+defined for similarity. For a triple \emph{T} in dataset \emph{S}, if the new record add-up
+is less than the threshold, \emph{S} is ignored from set $S_j$. For complete records retrieval the threshold value should be 1. This is explained in the next section.
 
 \subsection{Source Ranking}
 Result set estimation       
-\subsection{Sub-Query generation}
-We need an efficient algorithm for sub-query generation using the
-service description directory. In the initial stage we are using the
-sub-query generating algorithm of DARQ given in figure 2. We represent
-a sub-query as triple (T,C, d), where T is a set of triple patterns,
-C is a set of value constraints and d is the data source that can
+\subsection{Subquery generation}
+ The sub-query generating algorithm is given in figure 2. We represent
+a sub-query as triple \emph{(T,C, s)}, where \emph{T} is a set of triple patterns,
+\emph{C} is a set of value constraints and \emph{s} is the data source that can
 answer the sub-query. Algorithm 1 shows how the sub-queries are generated.
-If a triple pattern matches exactly one data source (Di
-= \{d\}) the triple will be added to the set of a sub-query for this
+If a triple pattern matches exactly one data source ($S_i$
+= \{s\}) the triple will be added to the set of a sub-query for this
 data source. All triples in this set can later be sent to the data
 source in one sub-query. If a triple matches multiple data sources
 the triple must be sent individually to all matching data sources
 in separate sub-queries.
 \begin{figure}
 \begin{centering}
-\includegraphics[scale=0.7]{Algo1} 
+\includegraphics[scale=0.7]{img/Algo1} 
 \par\end{centering}
-\caption{Sub-Query Generating Algorithm}
+\caption{Sub-query Generating Algorithm}
 \end{figure}
 
 \section{Experiments and Results}
 The goal of our experiments was to quantify how well our duplicate-aware solution approximates the result sets from each of the data source from which it can choose and how this approximation affects the way the data sources are ranked.
-For this purpose, we compared our approach with two other approaches: DARQ and the optimal duplicate-unaware solution (DU) to result set estimation and query ranking.
-Note that DU subsumes the best possible results that  can be achieved by approaches do not take the duplicates contained in the datasets into consideration, e.g., QTREE~\cite{QTREE}. 
+For this purpose, we compared our approach with two other approaches: DARQ and the optimal duplicate-unaware solution to result set estimation and query ranking. 
 In the following, we describe our experimental setup in detail and contrast the results achieved by each of the approaches.
 All data used is either publicly available or can be found at the project webpage.\footnote{\url{http://???}}
-
 \subsection{Experimental Setup (AN)}
-
 \subsubsection{Datasets}
 Within our experiments, we used the four datasets described in Table \ref{tab:datasets}.
 We chose data sets of different data sizes to gain some insights on the scalability of our approach.
@@ -470,7 +469,7 @@ Path-shaped queries, denoted P-k on the other hand were generated by using a ran
 Note that previous work has shown that these query shapes are the most common shapes found in real-world RDF queries~\cite{DPSBM}.
 Overall, our benchmark data consisted of 79 queries as shown in Table~\ref{tab:queries}.
 Note that some query shapes could not be used on certain datasets due to the topology of the ontology underlying the datasets not being permissive for such queries. 
-For example, S-2 queries could not be sent to LinkedMDB because ???.
+For example, S-2 queries could not be sent to LinkedMDB because 
 
 \subsubsection{Metrics}
 We used two measures to compare our approach with the state of the art.
@@ -595,6 +594,7 @@ Total 					&23		&38	&49	&8	&20	&12	&150 \\\hline
 
 
 
+
 %\bibliographystyle{plain}
 %\bibliography{literature}
 \begin{thebibliography}{10}
@@ -687,48 +687,49 @@ pages 1-15, 2011.
 and D. Reynolds. SPARQL Basic Graph Pattern Optimizatin Using Selectivity
 Estimation. In WWW, 2008.
 
-\bibitem{key-27}C. Basca and A. Bernstein. Avalanche: Putting the
+\bibitem{key-24}C. Basca and A. Bernstein. Avalanche: Putting the
 Spirit of the Web back into Semantic Web Querying. In The 6th International
 Workshop on SSWS at ISWC, 2010.
 
-\bibitem{key-28}O. Hartig. Zero-knowledge query planning for an iterator
+\bibitem{key-25}O. Hartig. Zero-knowledge query planning for an iterator
 implementation of link traversal based query execution. In ESWC, pages
 154-169, 2011.
 
-\bibitem{key-29}Axel-Cyrille Ngonga Ngomo and Soren Auer. LIMES -
+\bibitem{key-26}Axel-Cyrille Ngonga Ngomo and Soren Auer. LIMES -
 A Time-Ecient Approach for Large-Scale Link Discovery on the Web of
 Data. In Proceedings of IJCAI, 2011.
 
-\bibitem{key-30} R. Isele, A. Jentzsch, and C. Bizer. Ecient Multidimensional
+\bibitem{key-27} R. Isele, A. Jentzsch, and C. Bizer. Ecient Multidimensional
 Blocking for Link Discovery without losing Recall. In WebDB, 2011.
 
-\bibitem{key-31}Axel-Cyrille Ngonga Ngomo and Klaus Lyko. EAGLE:
+\bibitem{key-28}Axel-Cyrille Ngonga Ngomo and Klaus Lyko. EAGLE:
 Ecient Active Learning of Link Specications using Genetic Programming.
 In: ESWC(2012).
 
-\bibitem{key-32}Unger, C.; Buhmann, L.; Lehmann, J.; Ngonga Ngomo,
+\bibitem{key-29}Unger, C.; Buhmann, L.; Lehmann, J.; Ngonga Ngomo,
 A.-C.; Gerber, D.; and Cimiano, P. Templatebased question answering
 over RDF data. In WWW (2012).
 
-\bibitem{key-33}G.Koutrika, and Y.Ioannidis, Personalized Queries
+\bibitem{key-30}G.Koutrika, and Y.Ioannidis, Personalized Queries
 under a Generalized Preference Model, In ICDE 2005.
 
-\bibitem{key-34}G.Koutrika, and Y.Ioannidis, Personalization of Queries
+\bibitem{key-31}G.Koutrika, and Y.Ioannidis, Personalization of Queries
 in Database Systems, In ICDE 2004.
 
-\bibitem{key-35}S.Magliacane, A. Bozzon.E.D. Valle. Efficient Execution
+\bibitem{key-32}S.Magliacane, A. Bozzon.E.D. Valle. Efficient Execution
 of Top-k SPARQL Queries. In: ISWC(2012), USA. 
 
-\bibitem{key-36}B. J. Frey and D. Dueck. Clustering by passing messages
+\bibitem{key-33}B. J. Frey and D. Dueck. Clustering by passing messages
 between data points. Science, 315:972-976, 2007.
 
-\bibitem{key-37}{]} V. Levenshtein. Binary codes capable of correcting
+\bibitem{key-34} V. Levenshtein. Binary codes capable of correcting
 deletions, insertions, and reversals. In Soviet Physics Doklady, volume
 10, 1966.
 
-\bibitem{key-38}M. Morsey, J. Lehmann, S. Auer, and A.-C. {Ngonga Ngomo}.
+\bibitem{key-35}M. Morsey, J. Lehmann, S. Auer, and A.-C. {Ngonga Ngomo}.
 DBpedia SPARQL Bench- mark - Performance Assessment with Real Queries
 on Real Data. In 10th Interna- tional Semantic Web Conference (ISWC2011),
-2011\end{thebibliography}
+2011.
+\end{thebibliography}
 
 \end{document}
