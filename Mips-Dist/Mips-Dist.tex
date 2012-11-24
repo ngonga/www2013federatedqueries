@@ -75,10 +75,14 @@ Muhammad Saleem\\
       \affaddr{Addrss}\\
        \email{Email}
 \alignauthor
+%Second Author Name\\
+ %    \affaddr{Affiliation}\\
+  %   \affaddr{Address}\\
+   %    \email{Email}\\
 Axel-Cyrille Ngonga Ngomo\\
        \affaddr{Universit\"at Leipzig, IFI/AKSW}\\
        \affaddr{PO 100920, D-04009 Leipzig}\\
-       \email{ngonga@informatik.uni-leipzig.de}\\
+      \email{ngonga@informatik.uni-leipzig.de}\\
 \author
 \\Fourth Author Name\\
        \affaddr{Affiliation}\\
@@ -435,10 +439,10 @@ The number of slices was set to 10 in all experiments.
 Dataset & Size  & Summary 	& CR   & Slices & Discrepancy & Duplicate  & Duplicate & Total 	& Sum. Gen. \\
 				& (MB) 	& Size (MB) & (\%) &	  		 &  					 & Slices 		& Datasets 	& Triples & Time (sec)\\
 \hline
-Diseasome 			& 18.6 	& 1.0 	& 95 & 10 & 1,500 		& 1 & 10 			& 91,122 & 9\\
-DBLP 						& 39.0	& 2.8 	& 93 & 10 & 2,500 		& 1 & 10 			& 234,405 & 16\\
-Geo Coordinates & 274.1 & 24.4 	& 92 & 10 & 50,000 	& 2 & 				& 1,900,006 & 2705\\
-LinkedMDB 			& 448.9 & 41.3 	& 91 & 10 & 100,000 	& 1 & 2 			& 3,579,616 & 3556\\
+Diseasome 			& 18.6 	& 0.64 	& 96 & 10 & 1,500 		& 1 & 10 			& 91,122 & 9\\
+Publication 						& 39.0	& 1.15 	& 97 & 10 & 2,500 		& 1 & 10 			& 234,405 & 16\\
+Geo Coordinates & 274.1 & 4.66 	& 98 & 10 & 50,000 	& 2 & 5,8				& 1,900,006 & 1302\\
+LinkedMDB 			& 448.9 & 7.9 	& 97 & 10 & 100,000 	& 1 & 2 			& 3,579,616 & 1837\\
 \hline
 \end{tabular}
 \caption{Overview of datasets. CR stands for Compression Ratio.}
@@ -542,7 +546,7 @@ Small errors in the estimation of the size of the result size can thus lead to m
 \label{fig:rank}
 \end{figure}
 
-As stated before, we used a compression ratio of approx. 95\% across all experiments. 
+As stated before, we used a compression ratio of approx. 98\% across all experiments. 
 The main advantage of such a high compression ratio is the small size of the index. 
 Yet, the higher the compression ratio, the larger the error margin of the ranking function.
 When given a query whose sub-queries lead to very similar result set estimations,  this larger error margin can lead to substantial $RankMSE$ and $RSMSE$ rates.
@@ -554,9 +558,9 @@ Our results in Table~\ref{tab:compression} suggest that MIPS vectors can success
 \begin{tabular}{rrr}
 \hline
 Compression Ratio		& $RSMSE$	& $RankMSE$ \\\hline
-91\%	& $253.9 \times 10^6$	& 3.4 \\
-88\%	& $33.3 \times 10^6$	& 0.6 \\
-85\%	& 0					&	0 \\\hline
+97\%	& $253.9 \times 10^6$	& 3.4 \\
+94\%	& $33.3 \times 10^6$	& 0.6 \\
+91\%	& 0					&	0 \\\hline
 \end{tabular}
 \caption{Effect of compression ratio}
 \label{tab:compression}
