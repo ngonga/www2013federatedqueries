@@ -19,7 +19,8 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
-
+\usepackage{algorithm}
+\usepackage{algorithmic}
 \newcommand{\todo}[1]{\textbf{ToDo: \textit{#1}}}
 %\newcommand{\comm}[1]{\textbf{Comment: \textit{#1}}}\stackrel{\leftrightarrow}{}
 
@@ -76,10 +77,10 @@ Muhammad Saleem\\
       \affaddr{Addrss}\\
        \email{Email}
 \alignauthor
-%Second Author Name\\
- %    \affaddr{Affiliation}\\
-  %   \affaddr{Address}\\
-   %    \email{Email}\\
+Second Author Name\\
+  %   \affaddr{Affiliation}\\
+   %  \affaddr{Address}\\
+    %   \email{Email}\\
 Axel-Cyrille Ngonga Ngomo\\
        \affaddr{Universit\"at Leipzig, IFI/AKSW}\\
        \affaddr{PO 100920, D-04009 Leipzig}\\
@@ -127,13 +128,13 @@ By these means, our approach achieves significantly smaller mean squared errors 
 \keywords{Federated queries, SPARQL, deduplication}
 
 \section{Introduction (AN+MS)}
-Over the last years, the Linked Data Web has developed into a large compendium of interlinked data sets from diverse domains. 
+Over the last years, the Linked Data Web has developed into a large compendium of interlinked data sets from diverse domains\cite{key-14}. 
 One of the central principles underlying the architecture of these data sets is the reuse of URIs and vocabularies as well as the linking of knowledge bases\cite{key-20}.
 One of the results of this architectural choice is that certain queries can only be answered by retrieving information from several knowledge bases.
 This type of querying, called \emph{federated querying}, is of central importance for manifold applications such as question answering, knowledge retrieval and data integration.
 In addition to the information necessary to answering queries being distributed, certain pieces of information (i.e., triples) can be found in several knowledge bases. 
 For example, the name of movie directors can be found both in DBpedia and LinkedMDB.
-Similarly, the authors of papers can be found in both the ACM and DBLP libraries.
+ The authors of papers can be found in both the ACM and DBLP libraries. Similarly, we have noticed that \emph{DrugBank}\footnote{\url{http://datahub.io/dataset/fu-berlin-drugbank}},\emph{Neurocommons}\footnote{\url{http://neurocommons.org/page/RDF_distribution}} datasets are duplicated at \emph{DERI health Care and Life Sciences Knowledge Base}\footnote{\url{http://hcls.deri.org:8080/openrdf-sesame/repositories/hclskb}}. In our further analysis of linked data cloud, it is noticed that duplicates are more common in life sciences domain. The possibility of the duplicates records between different life sciences dataset is shown in figure 1. 
 We call triples that can be found in several knowledge bases across the Web of Data \emph{duplicates}.
 
 While the importance of federated queries over the Web of Data has been stressed in previous work, the impact of duplicates has not received much attention.
@@ -146,6 +147,13 @@ In addition, we argue for the use of MIPS for the approximation of result size s
 Thereafter, we present our duplicate-aware federated query processing approach.
 After an overview of the datasets used in this paper, we present experimental results which corroborate the superior efficiency of our approach.
 We conclude the paper with a discussion of our findings and an overview of future work.
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.70]{img/possibleDuplicates} 
+\par\end{centering}
+
+\centering{}\caption{Possible duplicates in life sciences domain}
+\end{figure}
 
 \section{Related Work (MS)}
 \subsection{Federated SPARQL queries}
@@ -171,7 +179,7 @@ Heiner et. al\cite{key-1} describes how to extend the Sesame RDF
 repository to support distributed SeRQL queries over multiple Sesame
 RDF repositories. They use a special index structure to determine
 the relevant sources for a query. Quilitz and Leser\cite{key-2}
-uses the theoretical knowledge of~\cite{key-1} to develop the first federated
+uses the theoretical knowledge of\cite{key-1} to develop the first federated
 query engine (named DARQ) for remote RDF data sources. DARQ uses service
 descriptions for relevant data source selection. A service description
 describes the capabilities of a SPARQL endpoint. They used query rewriting
@@ -249,7 +257,7 @@ use of this special statistic information to estimate the possible
 overlap between the results of different sub-queries.
 
 \subsection{Dataset Overlap Estimation}
-Avoiding the retrieval of duplicate records is a crucial issue in large scale distributed datasets. The overlap between two datasets can be estimated using min-wise independent
+Avoiding the retrieval of duplicate records is a crucial issue in large scale distributed datasets. As the SPARQL endpoints are autonomous, there is always the possibility of high mutual overlap between different datasets residing in different endpoints. It is thus likely that an optimized query execution plan contains a sub-query that retrieves records which are already retrieved by another sub-query from a different SPARQL endpoint. In this case it is useless to execute the former sub-query, as it would not only result in duplicate records being retrieved but also increase the total processing time. The overlap between two datasets can be estimated using min-wise independent
 permutations\cite{key-9}, bloom filters\cite{key-10}, or compressed bloom
 filters\cite{key-11}. Bender et al.\cite{key-12} also proposed a technique
 for predicting the query-specific mutual overlap between peers. However,
@@ -277,7 +285,7 @@ takes all sub-queries to generate an optimize execution plan. At last,
 all the optimized sub-queries are forwarded to the relevant SPARQL
 endpoints. The results of each sub-query execution are integrated and finally sent
 back to the user. This architecture for distributed query processing
-is shown in figure 1.
+is shown in figure 2.
 
  While this architecture is the same
 for all federated query systems, the federator of our
@@ -340,7 +348,7 @@ hash values, we obtain a random permutation. For each of the \emph{N} permutatio
 the MIPs technique determines the minimum hash value, and stores it
 in an N-dimensional vector, thus capturing the minimum set element
 under each of these random permutations. The technique is illustrated
-with an example in figure 2. Its fundamental rationale
+with an example in figure 3. Its fundamental rationale
 is that each element has the same probability of becoming the minimum
 element under a random permutation. By using sufficiently many different
 permutations, we can approximate the set cardinality.
@@ -370,53 +378,110 @@ step is performed separately for each basic graph pattern.
 The source selection algorithm used in DARQ for
 a query simply matches all triple patterns against the capabilities
 of the data sources. The matching compares the predicate in a triple
-pattern with the predicate defined for a capability. Let BGP be a set of triple
+pattern with the predicate defined for a capability. Let \emph{S =$\{(s_1,C_1),...,(s_n,C_n)\}$ } be a set of all indexed data sources \emph{$s_1..s_n$} and their capabilities \emph{$C_1..C_n$,} where \emph{$C_i = \{(p_i,mipsv_i,sbjsel_i,objsel_i,totTrpl_i)\}$}.
+
+Let \emph{BGP} be a set of triple
 patterns in a filtered basic graph pattern. The result of the source
-selection is a set of data sources $S_j$ for each triple
-pattern
+selection is a set of data sources $D_j$ for each triple
+pattern $t_j = (s_j, p_j, o_j)$ $\in$\ \emph{BGP} with 
 
 \begin{center}
-$t_j = (s_j, p_j, o_j)$ $\in$\ BGP with 
+$D_j$ = \{s|(s,C) $\in$ \ S $\wedge$ \ $\exists$
+\ $p_j$ $\in$ \ C \}
 \par\end{center}
-
-\begin{center}
-$S_j$ = \{s|(s,C) $\in$ \ R $\wedge$ \ $\exists$
-\ $(p_j, r)$ $\in$ \ C : $r(s_j, o_j)$ = true\}, 
-\par\end{center}
-\begin{flushleft}
-Where $r(s_j, o_j)$ represents any constraint
-on subject or object of a triple with predicate $p_j$.
-\par\end{flushleft}
 
 We extend the DARQ source selection algorithm by comparing MIP Vectors
  for similarity. For a triple pattern, we compare the MIP
 vectors of all the relevant data sources for possible similarity.
-A specific source \emph{S} is only added to the set of capable sources $t_j$,
-if \emph{S} is able to produce new results above a specific threshold value
-defined for similarity. For a triple \emph{T} in dataset \emph{S}, if the new record add-up
-is less than the threshold, \emph{S} is ignored from set $S_j$. For complete records retrieval the threshold value should be 1. This is explained in the next section.
+A specific source \emph{s} is only added to the set of capable sources $D_j$,
+if it is able to produce new results above a specific threshold value
+defined for similarity. For a triple \emph{t $\in$\ BGP} and dataset \emph{s $\in$\ S}, if the value of the new record generated
+is less than the threshold, \emph{s} is ignored from set $D_j$. For 100\%\ recall the threshold value should be 1. For sufficient (not complete) record retrieval the threshold can be fixed to any number greater than 1. For all of the 79 queries in this work, our threshold value is 1. 
 
-\subsection{Source Ranking}
-Result set estimation       
-\subsection{Subquery generation}
- The sub-query generating algorithm is given in figure 2. We represent
-a sub-query as triple \emph{(T,C, s)}, where \emph{T} is a set of triple patterns,
-\emph{C} is a set of value constraints and \emph{s} is the data source that can
-answer the sub-query. Algorithm 1 shows how the sub-queries are generated.
-If a triple pattern matches exactly one data source ($S_i$
-= \{s\}) the triple will be added to the set of a sub-query for this
-data source. All triples in this set can later be sent to the data
-source in one sub-query. If a triple matches multiple data sources
-the triple must be sent individually to all matching data sources
+\subsection{Source Ranking} 
+\subsubsection{Triple Pattern Source Ranking}
+Algorithm 1 shows the single triple pattern source ranking. For a triple \emph{t(s,p,o) $\in$ T } the set of capable data sources \emph{D} is obtained using the source selection algorithm explain in previous section. A source \emph{d $\in$ D} which has the highest \emph{totTrpl} value in the matched capability \emph{C(p,mipsv,sbjsel,objsel,totTrpl)} is selected as first rank. The union and intersection of \emph{MIPs Vectors} is explained in section 4.3. In order to get the accurate result set estimate, we multiply \emph{sbjsel, objsel $\in C$} to the \emph{orignal size} of the \emph{MIPs Vectors} if \emph{subject} or \emph{object} of the triple pattern is bound respectively. The same is true for rank 1 dataset selection. However, the multiplication is performed with \emph{totTrpl} of mached capability instead of \emph{orignal size}. 
+
+It is important to note that the number of elements in  the \emph{MIPs Vector} may be different from its \emph{orignal size}. The \emph{orignal size} is the number of elements in the \emph{ID set} over which we applied \emph{N} random permutations to get the \emph{MIPs Vector} as explained in \emph{MIPs} operation. In line 24 we set the threshold value of 1 is chosen to get 100\% recall. For each triple pattern $t_j = (s_j, p_j, o_j)$ in query \emph{q} $\in$ \emph{Q}, we apply the algorithm 1 to get a set of selected capable data sources \emph{$D_{s_j}$} which is used in sub-query generating algorithm explained in the section 4.6.
+
+\begin{algorithm}[float,tiny]
+\caption{triple pattern source ranking}
+\begin{algorithmic} [1]
+\REQUIRE  t(s,p,o) $\in$ T  //triple pattern 
+\STATE D = getCapableSources(t) //all sources capable of answering triple \emph{t}
+\STATE $rank_1Source$ = getMaxSizeSource(D,t)
+\STATE rnkNo = 1
+\STATE unionMipv = $rank_1Source$.getMIPv(t) 
+\STATE $D_{s}$[rnkNo] = selectedSource
+\STATE D = D - \{selectedSource\}
+\STATE rnkNo = rnkNo+1
+\WHILE{$D \neq \emptyset$}
+\STATE selectedSource = null
+\STATE maxDistinctRecords =0
+\FOR {each $d_i$ $\in$ D }
+\STATE mipv = $d_i$.getMipv(t)
+\IF  {\emph{s} is bound in \emph{t}} 
+\STATE mipv.orignalSize =mipv.orignalSize*$d_i$.getSbjSel(t)
+\ELSIF {{\emph{o} is bound in \emph{t}} }
+\STATE mipv.orignalSize =mipv.orignalSize*$d_i$.getObjSel(t)
+\ENDIF
+
+\STATE overlap = unionMipv.intersectionSize(mipv)
+\STATE distinctRecords = mipv.getOrignalSize()-overlap
+\IF{distinctRecords > maxDistinctRecords}
+\STATE selectedSource = $d_i$
+\STATE maxDistinctRecords = distinctRecords
+\ENDIF
+\ENDFOR
+\IF{maxDistinctRecords $\geqslant$ 1}
+\STATE $D_{s}$[rnkNo] = selectedSource
+\STATE selectedMipv = selectedSource.getMipv(t)
+\STATE  unionMipv =  unionMipv.union(selectedMipv)
+\STATE rnkNo = rnkNo+1
+\ENDIF
+\STATE D = D - \{selectedSource\}
+\ENDWHILE
+\RETURN $D_{s}$  //rank wise selected sources
+\end{algorithmic}
+\end{algorithm}
+\subsubsection{Join Source Ranking (this section is not well written)}
+Same like DARQ, we perform individual triple based sub-query federation. Consequently,triple pattern source ranking is most important for sub-query escaping. The advantage of this approach is that if a data source is not capable of answering the complete query, it may produce enough results for a specific sub-set of query triples. Just for the comparison we proposed complete query source ranking which works as follow; for a star shaped queries the over all result set is bound by the triple with lowest number of estimated records. Therefore, we perform source ranking for that triple (using algorithm 1) and use this as complete query ranking. The lowest records query triple can be estimated using the rank 1 source selection explained in previous section. However, this time we are looking for a source which has the lowest estimated value of all. For path shaped queries the total records are bound by the triple which has \emph{subject} variable equal to \emph{object} of the previous query triple. For example the result set in the query given in listing 2, is bound by the second triple in which the \emph{object} variable in the first triple is used as \emph{subject} in the second triple. Therefore, we perform the triple pattern ranking for second triple and use this as ranking for complete query.
+\begin{lstlisting}[caption = {A P-1 query example},frame = {single},stringstyle={\ttfamily}]
+ SELECT ?s 
+   WHERE
+    {
+        ?s  <p1> ?o .
+        ?o  <p2> ?o1
+    }
+\end{lstlisting}
+
+\subsection{Sub-query generation}
+ The sub-query generation algorithm is same as DARQ. However, instead of using all capable sources, we use selected data sources (obtained from algorithm 1) for sub-query generation. Let \emph{(T,s)} is a sub-query where \emph{T} is a set of triple patterns, and \emph{s} is the data source that can answer this sub-query. The sub-query generation is shown in algorithm 2. If a triple pattern \emph{$t_j$} matches exactly one data source \emph{($D_{s_j}$ = \{s\})}he the triple will be added to the set of a sub-query for this data source. All triples in this set will be sent to the data
+source in one sub-query. If a triple matches multiple more than one data sources then the triple will be sent individually to all matching data sources
 in separate sub-queries.
-
-\begin{figure}
-\begin{centering}
-\includegraphics[scale=0.7]{img/Algo1} 
-\par\end{centering}
-\caption{Sub-query Generating Algorithm}
-\end{figure}
-
+\begin{algorithm}[float,tiny]
+\caption{sub-query generation}
+\begin{algorithmic} [1]
+\REQUIRE T = \{ $t_1,..,t_n$\} \\
+ S = \{$D_{s_1}$,..,$D_{s_n}$\} // sets of data sources obtained from algorithm 1  
+\STATE \emph{sub-queries} = $\emptyset$, \emph{seperateSub-queries} = $\emptyset$
+\FOR  {each $t_i$ $\in$ T} 
+\IF {$D_{s_j}$ = \{s\}}
+\STATE q = \emph{queries.getQuery(s)}
+\IF   {q not null }
+\STATE q.T = q.T + $t_i$
+\ELSE 
+\STATE \emph{sub-queries} = \emph{sub-queries} + (\{$t_i$\},s)
+\ENDIF
+\ELSE 
+\FOR {each $s_j$ $\in$ $D_{s_j}$}
+\STATE \emph{seperateSub-queries} = \emph{seperateSub-queries} + (\{$t_i$\},s)
+\ENDFOR
+\ENDIF
+\ENDFOR
+\RETURN \emph{sub-queries} $\cup$ \emph{seperateSub-queries} //Return all sub-queries
+\end{algorithmic}
+\end{algorithm}
 \section{Experiments and Results}
 The goal of our experiments was to quantify how well our duplicate-aware solution approximates the result sets from each of the data source from which it can choose and how this approximation affects the way the data sources are ranked.
 For this purpose, we compared our approach with two other approaches: DARQ and the optimal duplicate-unaware solution to result set estimation and query ranking. 
@@ -426,7 +491,7 @@ All data used is either publicly available or can be found at the project webpag
 \subsubsection{Datasets}
 Within our experiments, we used the four datasets described in Table \ref{tab:datasets}.
 We chose data sets of different data sizes to gain some insights on the scalability of our approach.
-The size of the MIPS vectors was set to achieve a compression ratio of approx. 95\% as used in previous work~\cite{key-6}.
+The size of the MIPS vectors was set to achieve a compression ratio of approx. 98\% greater than the previous work~\cite{key-5}.
 In addition, we emulated the difference between the number of relevant triples across datasets by introducing the discrepancy constant $d$.
 Given $n$ data sources of sizes $|S_i|$
 \begin{equation}
@@ -470,7 +535,7 @@ Total 					& 20 & 15 & 15 & 11 & 12 & 6 & 79\\
 \subsubsection{Queries}
 We used three main types of queries. 
 Simple basic graph pattern (BGP) queries consisted of exactly one triple pattern in the query.
-Star-shaped and path-shaped queries were defined as in~\cite{key-6}: star-shaped queries (denoted S-k) have one variable as subject and contained k triple patterns. 
+Star-shaped and path-shaped queries were defined as in~\cite{key-5}: star-shaped queries (denoted S-k) have one variable as subject and contained k triple patterns. 
 Path-shaped queries, denoted P-k on the other hand were generated by using a random walk approach to generate a path of length $k$. 
 Note that previous work has shown that these query shapes are the most common shapes found in real-world RDF queries~\cite{key-35}.
 Overall, our benchmark data consisted of 79 queries as shown in Table~\ref{tab:queries}.
@@ -548,7 +613,7 @@ Small errors in the estimation of the size of the result size can thus lead to m
 \label{fig:rank}
 \end{figure}
 
-As stated before, we used a compression ratio of approx. 97\% across all experiments. 
+As stated before, we used a compression ratio of approx. 98\% across all experiments. 
 The main advantage of such a high compression ratio is the small size of the index. 
 Yet, the higher the compression ratio, the larger the error margin of the ranking function.
 When given a query whose sub-queries lead to very similar result set estimations,  this larger error margin can lead to substantial $RankMSE$ and $RSMSE$ rates.
@@ -624,7 +689,7 @@ LinkedMDB				&5		&0	&0	&0	&0	&0	&5\\
 Publication			&1		&2	&5	&0	&0	&0	&8\\\hline
 Total 					&23		&38	&49	&8	&20	&12	&150 \\\hline
 \end{tabular}
-\caption{Distribution of query escaped by our approach}
+\caption{Distribution of sub-query escaped by our approach}
 \label{tab:escaped}
 \end{table}
 
