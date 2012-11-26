@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=Mips-Dist.tex
 
 [Frame0_View0,0]
-TopLine=71
-Cursor=0
+TopLine=53
+Cursor=4839
 
 [Frame1]
 Flags=0
