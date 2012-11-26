@@ -77,7 +77,6 @@ Muhammad Saleem\\
       \affaddr{Addrss}\\
        \email{Email}
 \alignauthor
-Second Author Name\\
   %   \affaddr{Affiliation}\\
    %  \affaddr{Address}\\
     %   \email{Email}\\
@@ -109,15 +108,19 @@ Axel-Cyrille Ngonga Ngomo\\
 %\email{buehmann|lehmann@informatik.uni-leipzig.de}
 %}
 \begin{abstract}
-Over the last years, the Linked Data Web has developed into a large compendium of interlinked data sets from diverse domains.
-Due to this distributed character, several of these data sets contain either duplicate or complementary data. 
-So far, several federated querying approaches have been developed to retrieve information from these data sources.
-Still, only little attention has been paid to the effect of duplicates and fragmented data on the ranking of data sources during the processing of federated queries.
-This work presents a novel approach federated querying based on min-wise independent permutation vectors applied to RDF predicates.
-Our approach allows evaluating the ranking of data sources accurately while taking into account duplicate data.
+Over the last years, the Web of Data has developed into a large compendium of interlinked data sets from multiple domains.
+Due to this lack of coordination, several of these data sets contain duplicate or complementary data. 
+Several federated querying approaches have been proposed to retrieve information from these data sources.
+Still, only little attention has been paid to the effect of duplicated and fragmented data on the ranking of data sources during the processing of federated queries.
+This work presents a novel approach for federated querying based on min-wise independent permutation vectors applied to RDF predicates.
+Our approach begins by splitting input queries into sub-queries.
+Then, it processes each of the sub-queries independently.
+Moreover, our approach allows ranking of data sources with respect to the amount of unique relevant triples they contain while taking into account the overlap among these data sources.
+Thus, it can achieve sup
+and can therewith account for the fragmented character of the Data Web
 We evaluate our approach on four datasets of different sizes by using 79 queries of various shapes. 
 Our evaluation shows that our approach achieves significantly smaller mean squared errors that the state of the art with respect to the approximation of result set sizes as well as in the ranking of data sources. 
-Moreover, it requires less queries to achieve the same recall as the state of the art and is addition more time-efficient.
+Moreover, it requires less queries to achieve the same recall as existing approaches, thus improving both execution time and network traffic.
 
 \end{abstract}
 
@@ -128,34 +131,37 @@ Moreover, it requires less queries to achieve the same recall as the state of th
 
 \terms{Algorithms, Experimentation, Theory}
 
-\keywords{Federated queries, SPARQL, deduplication}
+\keywords{Federated queries, SPARQL, Min-wise independent permutations}
 
-\section{Introduction (AN+MS)}
-Over the last years, the Linked Data Web has developed into a large compendium of interlinked data sets from diverse domains\cite{key-14}. 
-One of the central principles underlying the architecture of these data sets is the reuse of URIs and vocabularies as well as the linking of knowledge bases\cite{key-20}.
+\section{Introduction}
+Over the last years, the Data Web has developed into a large compendium of interlinked data sets from multiple domains~\cite{key-14}. 
+One of the central principles underlying the architecture of these data sets is the reuse of URIs and vocabularies as well as the linking of knowledge bases~\cite{key-20}.
 One of the results of this architectural choice is that certain queries can only be answered by retrieving information from several knowledge bases.
-This type of querying, called \emph{federated querying}, is of central importance for manifold applications such as question answering, knowledge retrieval and data integration.
-In addition to the information necessary to answering queries being distributed, certain pieces of information (i.e., triples) can be found in several knowledge bases. 
+This type of queries, called \emph{federated queries}, is of central importance for manifold applications such as question answering~\cite{UNG+12}, knowledge retrieval~\cite{SHE+11} and data integration.
+Due to the reuse of URIs and the independence of the data sources, certain pieces of information (i.e., triples) can be found in several knowledge bases. 
 For example, the name of movie directors can be found both in DBpedia and LinkedMDB.
- The authors of papers can be found in both the ACM and DBLP libraries. Similarly, we have noticed that \emph{DrugBank}\footnote{\url{http://datahub.io/dataset/fu-berlin-drugbank}},\emph{Neurocommons}\footnote{\url{http://neurocommons.org/page/RDF_distribution}} datasets are duplicated at \emph{DERI health Care and Life Sciences Knowledge Base}\footnote{\url{http://hcls.deri.org:8080/openrdf-sesame/repositories/hclskb}}. In our further analysis of linked data cloud, it is noticed that duplicates are more common in life sciences domain. The possibility of the duplicates records between different life sciences dataset is shown in figure 1. 
+Authors of papers can be found in both the ACM and DBLP libraries. 
+Similarly, we have noticed that the \emph{DrugBank}\footnote{\url{http://datahub.io/dataset/fu-berlin-drugbank}} and \emph{Neurocommons}\footnote{\url{http://neurocommons.org/page/RDF_distribution}} datasets are duplicated at \emph{DERI health Care and Life Sciences Knowledge Base}\footnote{\url{http://hcls.deri.org:8080/openrdf-sesame/repositories/hclskb}}. 
+An analysis of Linked Open Data Cloud shows that duplicates are most common in life sciences domain. 
+Examples of data sets which might contain the same triples across the life science domain is shown in Figure~\ref{fig:datasets}. 
 We call triples that can be found in several knowledge bases across the Web of Data \emph{duplicates}.
 
 While the importance of federated queries over the Web of Data has been stressed in previous work, the impact of duplicates has not received much attention.
-Yet (as we will show in the remainder of this paper), a duplicate-aware approach to query processing can lead to more time-efficient and effective algorithms for federated queries.
-In this paper, we address this drawback by presenting a duplicate-aware approach for query processing based on min-wise independent permutation (MIPs) vectors.
-Our approach is able to predict the amount of new information contained in a knowledge base with a higher accuracy than the state of the art, leading to a better performance with respect to source ranking and result set size optimization. 
-In the rest of this paper, we aim to show experimentally that our approach outperforms the state-of-the-art by running it against two other approaches on a benchmark of 79 queries. 
+Yet, as we will show in the remainder of this paper, a duplicate-aware approach to query processing can lead to more time-efficient and effective algorithms for federated queries.
+In this paper, we address this drawback by presenting a duplicate-aware approach for query processing based on min-wise independent permutations (MIPs).
+By creating small summaries of the data found in the available knowledge bases, our approach is able to estimate the amount of new information contained in a knowledge base with a high accuracy, leading to a better performance with respect to source ranking, estimation of result set sizes, execution time and network traffic. 
+An experimental evaluation on 79 queries shows that our approach outperforms the state-of-the-art by retrieving the same data with less queries. 
+The rest of this paper is organized as follows: 
 We begin by giving a brief overview of the state of the art in federated query processing.
-In addition, we argue for the use of MIPS for the approximation of result size sets.
+In addition, we argue for the use of MIPs for the approximation of result size sets.
 Thereafter, we present our duplicate-aware federated query processing approach.
 After an overview of the datasets used in this paper, we present experimental results which corroborate the superior efficiency of our approach.
 We conclude the paper with a discussion of our findings and an overview of future work.
 \begin{figure}
-\begin{centering}
+\centering
 \includegraphics[scale=0.70]{img/possibleDuplicates} 
-\par\end{centering}
-
-\centering{}\caption{Possible duplicates in life sciences domain}
+\caption{Possible duplicates in life sciences domain}
+\label{fig:datasets}
 \end{figure}
 
 \section{Related Work (MS)}
@@ -368,7 +374,7 @@ MIP vector is stored against each capability of the service description. Note th
 
 \begin{figure}
 \begin{centering}
-\includegraphics[scale=0.5]{img/mips} 
+\includegraphics[scale=0.5]{img/MIPs} 
 \par\end{centering}
 \centering Resemblance($S_A,S_B) = \dfrac{|S_A \cap S_B|}{|S_A \cup S_B|}$\\
 
@@ -381,7 +387,7 @@ step is performed separately for each basic graph pattern.
 The source selection algorithm used in DARQ for
 a query simply matches all triple patterns against the capabilities
 of the data sources. The matching compares the predicate in a triple
-pattern with the predicate defined for a capability. Let \emph{S =$\{(s_1,C_1),...,(s_n,C_n)\}$ } be a set of all indexed data sources \emph{$s_1..s_n$} and their capabilities \emph{$C_1..C_n$,} where \emph{$C_i = \{(p_i,mipsv_i,sbjsel_i,objsel_i,totTrpl_i)\}$}.
+pattern with the predicate defined for a capability. Let \emph{S =$\{(s_1,C_1),...,(s_n,C_n)\}$ } be a set of all indexed data sources \emph{$s_1..s_n$} and their capabilities \emph{$C_1..C_n$,} where \emph{$C_i = \{(p_i,MIPsv_i,sbjsel_i,objsel_i,totTrpl_i)\}$}.
 
 Let \emph{BGP} be a set of triple
 patterns in a filtered basic graph pattern. The result of the source
@@ -403,7 +409,7 @@ is less than the threshold, \emph{s} is ignored from set $D_j$. For 100\%\ recal
 
 \subsection{Source Ranking} 
 \subsubsection{Triple Pattern Source Ranking}
-Algorithm 1 shows the single triple pattern source ranking. For a triple \emph{t(s,p,o) $\in$ T } the set of capable data sources \emph{D} is obtained using the source selection algorithm explain in previous section. A source \emph{d $\in$ D} which has the highest \emph{totTrpl} value in the matched capability \emph{C(p,mipsv,sbjsel,objsel,totTrpl)} is selected as first rank. The union and intersection of \emph{MIPs Vectors} is explained in section 4.3. In order to get the accurate result set estimate, we multiply \emph{sbjsel, objsel $\in C$} to the \emph{orignal size} of the \emph{MIPs Vectors} if \emph{subject} or \emph{object} of the triple pattern is bound respectively. The same is true for rank 1 dataset selection. However, the multiplication is performed with \emph{totTrpl} of mached capability instead of \emph{orignal size}. 
+Algorithm 1 shows the single triple pattern source ranking. For a triple \emph{t(s,p,o) $\in$ T } the set of capable data sources \emph{D} is obtained using the source selection algorithm explain in previous section. A source \emph{d $\in$ D} which has the highest \emph{totTrpl} value in the matched capability \emph{C(p,MIPsv,sbjsel,objsel,totTrpl)} is selected as first rank. The union and intersection of \emph{MIPs Vectors} is explained in section 4.3. In order to get the accurate result set estimate, we multiply \emph{sbjsel, objsel $\in C$} to the \emph{orignal size} of the \emph{MIPs Vectors} if \emph{subject} or \emph{object} of the triple pattern is bound respectively. The same is true for rank 1 dataset selection. However, the multiplication is performed with \emph{totTrpl} of mached capability instead of \emph{orignal size}. 
 
 It is important to note that the number of elements in  the \emph{MIPs Vector} may be different from its \emph{orignal size}. The \emph{orignal size} is the number of elements in the \emph{ID set} over which we applied \emph{N} random permutations to get the \emph{MIPs Vector} as explained in \emph{MIPs} operation. In line 24 we set the threshold value of 1 is chosen to get 100\% recall. For each triple pattern $t_j = (s_j, p_j, o_j)$ in query \emph{q} $\in$ \emph{Q}, we apply the algorithm 1 to get a set of selected capable data sources \emph{$D_{s_j}$} which is used in sub-query generating algorithm explained in the section 4.6.
 
@@ -494,7 +500,7 @@ All data used is either publicly available or can be found at the project webpag
 \subsubsection{Datasets}
 Within our experiments, we used the four datasets described in Table \ref{tab:datasets}.
 We chose data sets of different data sizes to gain some insights on the scalability of our approach.
-The size of the MIPS vectors was set to achieve a compression ratio of approx. 98\% greater than the previous work~\cite{key-5}.
+The size of the MIPs vectors was set to achieve a compression ratio of approx. 98\% greater than the previous work~\cite{key-5}.
 In addition, we emulated the difference between the number of relevant triples across datasets by introducing the discrepancy constant $d$.
 Given $n$ data sources of sizes $|S_i|$
 \begin{equation}
@@ -621,7 +627,7 @@ The main advantage of such a high compression ratio is the small size of the ind
 Yet, the higher the compression ratio, the larger the error margin of the ranking function.
 When given a query whose sub-queries lead to very similar result set estimations,  this larger error margin can lead to substantial $RankMSE$ and $RSMSE$ rates.
 We thus studied the effect of decreasing the compression ratio on the $RSMSE$ and $RankMSE$ for such a query.
-Our results in Table~\ref{tab:compression} suggest that MIPS vectors can successfully detect even small differences in the sizes of the result sets when given a sufficiently small compression ratio.
+Our results in Table~\ref{tab:compression} suggest that MIPs vectors can successfully detect even small differences in the sizes of the result sets when given a sufficiently small compression ratio.
 
 \begin{table}
 \centering
@@ -638,7 +644,7 @@ Compression Ratio		& $RSMSE$	& $RankMSE$ \\\hline
 
 \subsubsection{Recall and Runtime}
 
-Table~\ref{tab:recall} shows the recall achieved by MIPS and DARQ in relation to the number of slices taken into consideration. 
+Table~\ref{tab:recall} shows the recall achieved by MIPs and DARQ in relation to the number of slices taken into consideration. 
 Our results display the superiority of our ranking function, which is always able to achieve a recall of 1 by querying 9 from 10 data sources. 
 In contrast, DARQ always has to visit all data sources to achieve a comparable recall. 
 %One of the main advantages of systems that process federated queries at sub-query-level is that refrain for sending sub-queries to all available data sources if these sources appear not to contain relevant information. 
@@ -655,7 +661,7 @@ In average, our approach requires solely between 79.85\% (S-2 queries) and 93.46
 \begin{tabular}{rrrrrrrrrrrrr}
 \hline
 Rank		 & \multicolumn{2}{c}{BGP}	& \multicolumn{2}{c}{S1}	&\multicolumn{2}{c}{S2}	&\multicolumn{2}{c}{P1}	& \multicolumn{2}{c}{P2}	& \multicolumn{2}{c}{P3} \\
-	& MIPS & DARQ & MIPS & DARQ & MIPS & DARQ & MIPS & DARQ & MIPS & DARQ & MIPS & DARQ \\\hline
+	& MIPs & DARQ & MIPs & DARQ & MIPs & DARQ & MIPs & DARQ & MIPs & DARQ & MIPs & DARQ \\\hline
 1 & 29,22 & 19,22 & 26,53 & 24,42 & 30,69 & 30,69 & 18,12 & 15,67 & 24,60 & 21,99 & 31,60 & 29,30 \\
 2 & 49,61 & 39,50 & 46,20 & 39,67 & 52,15 & 49,70 & 34,04 & 31,49 & 38,84 & 38,56 & 43,78 & 45,02 \\
 3 & 67,48 & 61,78 & 60,90 & 54,78 & 66,48 & 59,96 & 50,28 & 49,23 & 55,74 & 53,16 & 61,86 & 56,76 \\
@@ -701,7 +707,7 @@ Total 					&23		&38	&49	&8	&20	&12	&150 \\\hline
 
 
 %\subsubsection{Execution Time}
-%\subsubsection{Size of MIPS vectors (on largest dataset)}
+%\subsubsection{Size of MIPs vectors (on largest dataset)}
 \section{Discussion (AN)}
 
 
