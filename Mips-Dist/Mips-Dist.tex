@@ -108,15 +108,16 @@ Manfred Hauswirth\\
 Over the last years, the Web of Data has developed into a large compendium of interlinked data sets from multiple domains.
 Due to this lack of coordination, several of these data sets contain duplicate or complementary data. 
 Several federated querying approaches have been proposed to retrieve information from these data sources.
-Still, only little attention has been paid to the effect of duplicated and fragmented data on the ranking of data sources during the processing of federated queries.
-This work presents a novel approach for federated querying based on min-wise independent permutation vectors applied to RDF predicates.
-Our approach begins by splitting input queries into sub-queries.
-Then, it processes each of the sub-queries independently.
-Moreover, our approach allows ranking of data sources with respect to the amount of unique relevant triples they contain while taking into account the overlap among these data sources.
-Thus, it can achieve sup
-and can therewith account for the fragmented character of the Data Web. 
+Still, only little attention has been paid to the effect of duplicated and fragmented data on the processing of federated queries.
+This work presents a novel duplicate-aware approach to federated SPARQL querying based on min-wise independent permutations (MIPs) applied to RDF predicates.
+Our approach begins by parsing each input query for triple patterns.
+Then, for each of these triple patterns, it uses MIPs to approximate the amount of non-duplicate triples contained in each of the available data sources. 
+This approximation is used to select and rank relevant data sources. 
+Finally, the selected data sources are queried by means of the sub-queries contained in the user input.
+The ranking function implemented by our approach allows taking into account the overlap among the available data sources and can thus account for duplicates across the data sets.
+Moreover, our approach queries the data sources by using single triple patterns and can thus also retrieve results whose fragments are distributed across the Web of Data.
 We evaluate our approach on four datasets of different sizes by using 79 queries of various shapes. 
-Our evaluation shows that our approach achieves significantly smaller mean squared errors that the state of the art with respect to the approximation of result set sizes as well as in the ranking of data sources. 
+Our evaluation shows that our approach achieves significantly smaller mean squared errors than the state of the art with respect to the approximation of result set sizes as well as in the ranking of data sources. 
 Moreover, it requires less queries to achieve the same recall as existing approaches, thus improving both execution time and network traffic.
 
 \end{abstract}
