@@ -135,7 +135,7 @@ Moreover, it requires less queries to achieve the same recall as existing approa
 Over the last years, the Data Web has developed into a large compendium of interlinked data sets from multiple domains~\cite{key-14}. 
 One of the central principles underlying the architecture of these data sets is the reuse of URIs and vocabularies as well as the linking of knowledge bases~\cite{key-20}.
 One of the results of this architectural choice is that certain queries can only be answered by retrieving information from several knowledge bases.
-This type of queries, called \emph{federated queries}, is of central importance for manifold applications such as question answering~\cite{UNG+12}, knowledge retrieval~\cite{SHE+11} and data integration.
+This type of queries, called \emph{federated queries}, is of central importance for manifold applications such as question answering~\cite{UNG+12} and knowledge retrieval~\cite{SHE+11}.
 Due to the reuse of URIs and the independence of the data sources, certain pieces of information (i.e., triples) can be found in several knowledge bases. 
 For example, the name of movie directors can be found both in DBpedia and LinkedMDB.
 Authors of papers can be found in both the ACM and DBLP libraries. 
@@ -147,14 +147,26 @@ We call triples that can be found in several knowledge bases across the Web of D
 While the importance of federated queries over the Web of Data has been stressed in previous work, the impact of duplicates has not received much attention.
 Yet, as we will show in the remainder of this paper, a duplicate-aware approach to query processing can lead to more time-efficient and effective algorithms for federated queries.
 In this paper, we address this drawback by presenting a duplicate-aware approach for query processing based on min-wise independent permutations (MIPs).
+\todo{Add main contribution}
+% combination with other statistic information
+%
+%
 By creating small summaries of the data found in the available knowledge bases, our approach is able to estimate the amount of new information contained in a knowledge base with a high accuracy, leading to a better performance with respect to source ranking, estimation of result set sizes, execution time and network traffic. 
-An experimental evaluation on 79 queries shows that our approach outperforms the state-of-the-art by retrieving the same data with less queries. 
+
+The main contributions of this paper are as follows:
+\begin{enumerate}
+\item We propose the (to the best of our knowledge) first duplicate-aware approach for federated SPARQL querying.
+\item We combine subject and object selectivity with MIPs to achieve a better approximation of duplicate-free result set sizes.
+\item We evaluate our approach against the state of the art on 79 queries and four datasets and show that we achieve better estimations of result set sizes and therewith a better ranking of data sources, lower execution times and consequently less network traffic.
+\end{enumerate}
+%
+%An experimental evaluation on 79 queries shows that our approach outperforms the state-of-the-art by retrieving the same data with less queries. 
 The rest of this paper is organized as follows: 
 We begin by giving a brief overview of the state of the art in federated query processing.
-In addition, we argue for the use of MIPs for the approximation of result size sets.
-Thereafter, we present our duplicate-aware federated query processing approach.
-After an overview of the datasets used in this paper, we present experimental results which corroborate the superior efficiency of our approach.
-We conclude the paper with a discussion of our findings and an overview of future work.
+In addition, we present different statistical synopsis approaches that can be used for the approximation of duplicate-free result set sizes. 
+Thereafter, we elaborate on our novel duplicate-aware federated query processing approach and present the components of our approach in detail.
+Subsequently, we present a thorough evaluation of our approach against state of the art approaches.
+We finally conclude the paper with a discussion of our findings and an overview of future work.
 \begin{figure}
 \centering
 \includegraphics[scale=0.70]{img/possibleDuplicates} 
@@ -480,21 +492,33 @@ in separate sub-queries. After the sub-queries are generated, the federator send
 \end{algorithmic}
 \end{algorithm}
 \section{Experiments and Results}
-The goal of our experiments was to quantify how well our duplicate-aware solution approximates the result sets from each of the data source from which it can choose and how this approximation affects the way the data sources are ranked.
-For this purpose, we compared our approach with two other approaches: DARQ and the optimal duplicate-unaware solution to result set estimation and query ranking. 
+The goal of our experiments was to assess how well our duplicate-aware solution performs in terms of result set recall, ranking of data sources and runtime.
+We compared out approach with DARQ, a well-known and widely used federated query execution engine.
+We also compared our approach with a simulation of the optimal duplicate-unaware (DU) approach, where (1) the result set estimation of carried is carried out regardless of the overlap between data source and each source containing at one relevant triple is queried.
 In the following, we describe our experimental setup in detail and contrast the results achieved by each of the approaches.
-All data used is either publicly available or can be found at the project webpage.\footnote{\url{http://???}}
+All data used in this evaluation is either publicly available or can be found at the project webpage.\footnote{\url{http://???}}
 \subsection{Experimental Setup}
+
 \subsubsection{Datasets}
 Within our experiments, we used the four datasets described in Table \ref{tab:datasets}.
-We chose data sets of different data sizes to gain some insights on the scalability of our approach.
-The size of the MIPS vectors was set to achieve a compression ratio of approx. 98\% greater than the previous work~\cite{key-5}.
-In addition, we emulated the difference between the number of relevant triples across datasets by introducing the discrepancy constant $d$.
-Given $n$ data sources of sizes $|S_i|$
+The first data set, Diseasome, contains diseases and disease genes linked by disease-gene associations.
+The Publication data set was extracted from ???? and contains information on publications, venues and authors of publications.
+The Geo data set resulted from retrieving all ??? from DBpedia.
+Finally, LinkedMDB is the RDF version of IMDB and contains amongst others a large number of actors, movies and directors.
+We chose data sets of different data sizes to assess the scalability of our approach.
+The size of the MIPS vectors was set to achieve a compression ratio of 98\%, which is greater than that used in the previous work~\cite{key-5}.
+
+Given that we wanted to emulate fragmented data sets distributed across several sources, we began by partitioning each of the data sets $D$ across $n=10$ data sources (which we also call ``slices''):
+We set the parameter $d$, which we dubbed \emph{discrepancy factor}.
+$d$ controls the maximal size difference across the data source, ergo
 \begin{equation}
 d = \max\limits_{1 \leq i \leq n} |S_i| - \min\limits_{1 \leq j \leq n} |S_j|.
 \end{equation}
-Note that the discrepancy accounted for between ca, 1.6\% and 2.8\% of the triples and was to increasingly higher values for increasingly larger data sets.
+Then, we computed the sizes of the slices by assigning them random sizes such that $\sum\limits_{i} |S_i| = D$ and $\forall i \forall j\,i \neq j \rightarrow ||S_i| - |S_j|| \leq d$ 
+We then picked one of the $n$ data sources randomly and redistributed its content across all 9 remaining data sources.
+We set $d$ to values between ca 1.6\% and 2.8\% of the triples.
+Note that the value of $d$ was increased with increasingly larger data sets.
+
 The number of slices was set to 10 in all experiments.
 \begin{table*}
 \centering
@@ -505,7 +529,7 @@ Dataset & Size  & Summary 	& CR   & Slices & Discrepancy & Duplicate  & Duplicat
 \hline
 Diseasome 			& 18.6 	& 0.64 	& 96 & 10 & 1,500 		& 1 & 10 			& 91,122 & 9\\
 Publication 						& 39.0	& 1.15 	& 97 & 10 & 2,500 		& 1 & 10 			& 234,405 & 16\\
-Geo Coordinates & 274.1 & 4.66 	& 98 & 10 & 50,000 	& 2 & 5,8				& 1,900,006 & 1302\\
+Geo 						& 274.1 & 4.66 	& 98 & 10 & 50,000 	& 2 & 5,8				& 1,900,006 & 1302\\
 LinkedMDB 			& 448.9 & 7.9 	& 97 & 10 & 100,000 	& 1 & 2 			& 3,579,616 & 1837\\
 \hline
 \end{tabular}
