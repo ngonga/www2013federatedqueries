@@ -1,4 +1,3 @@
-
 % PLEASE USE UTF-8 ENCODING WHEN EDITING THIS FILE!
 
 % WWW 2012 page limit: 10 pages
@@ -407,7 +406,8 @@ is less than the threshold, \emph{s} is ignored from set $D_j$. For 100\%\ recal
 To show the importance of the duplicate-aware data source ranking (based on the amount of duplicate-free records retrieved), suppose we have a triple pattern query\emph{q} shown in Listing 2  and \emph{$ ds_1, ds_2, ds_3 $} are the data sources capable of answering that query. If we apply DARQ source selection algorithm we will get all 4 dataset as the list of capable sources. Let $ds_1$ has a total of 50 triples satisfying \emph{q}, $ds_2$ and $ds_3$ each has 40 triples satisfying the query. Further suppose that 25 of the $ds_3$ triples are duplicated at $ds_1$ while remaining 15 are duplicated at $ds_2$. The DARQ sub-query generator will forward the query to all of the datasets and will be surprised with a complete duplicates from $ds_3$. In this case the time consumed by the $ds_3$ to process the query \emph{q} is extra added to the overall query execution time. Moreover, integration time is also increased as the $ds_3$ records need to be considered during the final result set compilation. Now if we apply duplicate-aware source ranking approach, which will select $ds_1$ as first, $ds_2$ as second in the rank and $ds_3$ will become out of the rank competition. Which means we only need two sub-queries and can skip querying $ds_3$. 
 
 Similar to DARQ, our system make use of the triple-by-triple sub-query federation, therefore it is important to have a duplicate-aware triple pattern source ranking algorithm for sub-query escaping. We present this triple pattern source ranking algorithm in the next section. 
-\begin{lstlisting}[caption = {A single triple pattern query},basicstyle={\tiny},frame = {single},stringstyle={\ttfamily}]
+
+\begin{lstlisting}[caption = {A single triple pattern query},frame = {single},stringstyle={\ttfamily}]
  SELECT ?o
    WHERE
     {
@@ -469,9 +469,8 @@ It is important to note that the number of elements in the MIPs vector may be di
 %=======
 \subsubsection{Join Source Ranking}
  As mentioned earlier, we perform individual triple based sub-query federation. Consequently, triple pattern source ranking is most important for sub-query escaping. The advantage of this approach is that if a data source is not capable of answering the complete query, it may produce enough results for a specific sub-set of query triples. For the comparison purpose we propose a complete query source ranking which works as follow: For a star shaped queries(described in ~\cite{key-5}), the overall result set is bound by the triple with lowest number of estimated records. Therefore, we perform the source ranking for that triple (using Algorithm 1) and use this as complete query ranking. The lowest records query triple can be estimated using the rank 1 source selection explained in previous section. However, this time we are looking for a source which has the lowest estimated value of all. For path shaped queries the total records are bound by the triple which has \emph{subject} variable equal to the \emph{object} of the previous query triple. For example the result set in the query given in Listing 3, is bound by the second triple in which the \emph{object} variable in the first triple is used as \emph{subject} in the second triple. Therefore, we perform the triple pattern ranking for second triple and use this as ranking for complete query.
-\begin{lstlisting}[caption = {A P-1 query example},basicstyle={\tiny},frame = {single},language=SPARQL,stringstyle={\ttfamily}]
+\begin{lstlisting}[caption = {A P-1 query example},frame = {single},language=SPARQL,stringstyle={\ttfamily}]
  SELECT ?o1 
-%>>>>>>> 91effb51600ae4854ccf832a3a02eea52626b505
    WHERE
     {
         ?s  <p1> ?o .
@@ -613,31 +612,31 @@ For both measures, the higher values the worse the performance of the federated 
 \subsubsection{Result Set Estimation and Ranking}
 The RSMSE results are shown in Figures~\ref{fig:rsmse} while the ranking results are shown in Figure~\ref{fig:rank}.
 In each figure, we compared the results of the approaches w.r.t. both the whole input query and to each of the triples patterns contained in the input queries.
-Our results clearly show that we outperform the state of the art w.r.t to both result set estimation and ranking.
-Especially, our estimation of the result set sizes is approximately 4 orders of magnitude better than DARQ's or even DU's. 
+Our results clearly show that we outperform the state of the art w.r.t. both result set estimation and ranking.
+In particular, our estimation of the result set sizes is approximately 4 orders of magnitude better than DARQ's and DU's. 
 This is due to our approach being able to capture the existence of duplicates in the data sets and thus to better approximate the number of new results that can be expected from  an endpoint.
-As expected, the ranking error for datasets decreases when carrying the ranking of data sources at triple pattern level instead of query level (see Figures~\ref{fig:rsmseSubquery} and~\ref{fig:rsmseQuery}).
+As expected, the ranking error for datasets decreases when carrying the ranking of data sources at triple pattern level instead of query level (see Figures~\ref{fig:rsmse}).
 This is simply due to the overall error increasing when combining the several triple patterns to a query.
-The same overall behavior is also displayed when considering the result set estimation error (see Figures~\ref{fig:rankSubquery} and~\ref{fig:rankQuery}). 
-Interestingly, the approximation of our approach is slightly poorer on star-shaped queries (approx. 0.2 on S-2 queries).
-This is a result of our approach to generating the estimations for whole query, which is carried out by using the lower bound of the estimation of single query patterns in the query. 
-Small errors in the estimation of the size of the result size can thus lead to minor absolute errors.
+The same overall behavior is also displayed when considering the result set estimation error (see Figures~\ref{fig:rank}). 
+%Interestingly, the approximation of our approach is slightly poorer on star-shaped queries (approx. 0.2 on S-2 queries).
+%This is a result of our approach to generating the estimations for whole query, which is carried out by using the lower bound of the estimation of single query patterns in the query. 
+%Small errors in the estimation of the size of the result size can thus lead to minor absolute errors.
 
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.45\textwidth}
                 \centering
 \includegraphics[width=\textwidth]{img/querywise_rse}
-                \caption{RSMSE for query-wise selection (vertical log scale)}
+                \caption{RSMSE for query-wise selection}
                 \label{fig:rsmseQuery}
         \end{subfigure}
 \begin{subfigure}[b]{0.45\textwidth}
                 \centering
 \includegraphics[width=\textwidth]{img/subquerywise_rse}
-                \caption{RSMSE for subquery-wise selection (vertical log scale)}
+                \caption{RSMSE for subquery-wise selection}
                 \label{fig:rsmseSubquery}
         \end{subfigure}
-\caption{Mean squared errors with respect to result set evaluation}
+\caption{Mean squared errors with respect to result set evaluation across six query types}
 \label{fig:rsmse}
 \end{figure}
 
@@ -655,15 +654,16 @@ Small errors in the estimation of the size of the result size can thus lead to m
                 \caption{RankMSE for subquery-wise selection}
                 \label{fig:rankSubquery}
         \end{subfigure}
-\caption{Mean squared errors with respect to ranking}
+\caption{Mean squared errors with respect to ranking across six query types}
 \label{fig:rank}
 \end{figure}
 
-As stated before, we used a compression ratio of approx. 98\% across all experiments. 
-The main advantage of such a high compression ratio is the small size of the index. 
-Yet, the higher the compression ratio, the larger the error margin of the ranking function.
-When given a query whose sub-queries lead to very similar result set estimations,  this larger error margin can lead to substantial $RankMSE$ and $RSMSE$ rates.
-We thus studied the effect of decreasing the compression ratio on the $RSMSE$ and $RankMSE$ for such a query.
+As stated before, we used a compression ratios between 96\% and 98\% across all experiments. 
+The main advantage of such a high compression ratio is the small size of the index generated by our approach. 
+Yet, higher compression ratios also lead to cruder approximations and thus to larger error margins of the number of duplicate-free triples in each data source.
+Consequently, the $RSMSE$ and $RankMSE$ of our approach can be high for queries whose sub-queries lead to result sets of similar magnitude.
+We wanted to know whether a decrease of the reduction ratio leads to our approach being able to capture even small differences across the sizes of the sub-query result sets.
+We thus studied the effect of decreasing the compression ratio on the $RSMSE$ and $RankMSE$ for such a query (which one)?.
 Our results in Table~\ref{tab:compression} suggest that MIPS vectors can successfully detect even small differences in the sizes of the result sets when given a sufficiently small compression ratio.
 
 \begin{table}
@@ -682,16 +682,16 @@ Compression Ratio		& $RSMSE$	& $RankMSE$ \\\hline
 \subsubsection{Recall and Runtime}
 
 Table~\ref{tab:recall} shows the recall achieved by MIPS and DARQ in relation to the number of slices taken into consideration. 
-Our results display the superiority of our ranking function, which is always able to achieve a recall of 1 by querying 9 from 10 data sources. 
+Our results display the superiority of our ranking function, which is always able to achieve full recall of 1 by querying 9 from the 10 available data sources. 
 In contrast, DARQ always has to visit all data sources to achieve a comparable recall. 
 %One of the main advantages of systems that process federated queries at sub-query-level is that refrain for sending sub-queries to all available data sources if these sources appear not to contain relevant information. 
 %The advantage of this strategy obviously lies in superior runtimes and better resource management (less network traffic, smaller space requirements, etc.).
 We measured the number of sub-query executions that could be escaped by our approach without any loss in recall. 
-The results shown in Table~\ref{tab:escaped} clearly display that our approach can effectively reduce the total number of queries executed overall.
-Especially, on BGP queries, we were able to escape up to 10 subqueries. 
-Our approach was most successful on star-shaped queries, where up to 21 subqueries could be escaped. 
+The results shown in Table~\ref{tab:escaped} clearly demonstrate that our approach can effectively reduce the total number of queries executed overall.
+Especially, on BGP queries, we were able to escape up to 10 sub-queries. 
+Our approach was most successful on star-shaped queries, where up to 21 sub-queries could be escaped. 
 The better ranking function also leads to a superior overall runtime as shown in Figure~\ref{fig:runtime_recall}.
-In average, our approach requires solely between 79.85\% (S-2 queries) and 93.46\% (P-1 queries) of the runtime of DARQ to retrieve the complete results to each query.
+In average, our approach requires solely between 79.85\% (S-2 queries) and 93.46\% (P-1 queries) of the runtime of DARQ to retrieve the complete result set to each query.
 
 \begin{table*}
 \centering
@@ -739,10 +739,17 @@ Total 					&23		&38	&49	&8	&20	&12	&150 \\\hline
 \end{table}
 %\subsubsection{Execution Time}
 %\subsubsection{Size of MIPS vectors (on largest dataset)}
-\section{Discussion}
-%\bibliographystyle{plain}
-%\bibliography{literature}
-
+\section{Conclusion and Future Work}
+In this paper, we presented an approach for duplicate-aware federated SPARQL querying.
+Our approach combines object and subject selectivity with MIPs to estimate the number of duplicate-free result subsets.
+Based on this estimation, it can select relevant data sources for a given query, rank these data sources according to the magnitude of relevant triples they contain and finally query them so as to maximize its recall.
+We compared our approach with DARQ and a simulation of an perfect duplicate-unaware SPARQL federated query engine and showed that we achieve lower mean squared errors with respect to both the estimation of the result set sizes and the ranking of data sources.
+Our results suggest that our approach can be easily adapted to scenarios where accurate approximations of result set sizes are required.
+Moreover, the execution time of our approach was shown to be superior to that of the state of art's.
+Our approach is also able to generate less network traffic by escaping sub-queries that would not lead to non-duplicate result sets.
+In future work, we will extend our approach by combining it with on-the-fly duplicate detection systems. 
+By these means, we will enable our engine to merge facts which are expressed in different vocabularies or by using different URIs for the same real-world entity.
+ 
 \begin{thebibliography}{10}
 \bibitem{key-1}Stuckenschmidt, H., Vdovjak, R., Houben, G.J., Broekstra,
 J.: Index structures and algorithms for querying distributed rdf repositories.
