@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.2)  27 NOV 2012 10:32
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.2)  27 NOV 2012 11:04
 entering extended mode
 **Mips-Dist.tex
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\Mips-Dist.tex
@@ -13,25 +12,6 @@ lovenian, spanish, swedish, swissgerman, tamil, telugu, turkish, turkmen, ukengl
 ax, welsh, loaded.
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\sig-alternate.cls
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
-=======
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.11.5)  27 NOV 2012 09:17
-entering extended mode
-**Mips-Dist.tex
-("C:\Users\muhsal\Documents\New folder\Mips-Dist\Mips-Dist.tex"
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
-vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
-an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
-romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
-sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
-senglishmax, welsh, loaded.
-("C:\Users\muhsal\Documents\New folder\Mips-Dist\sig-alternate.cls"
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
@@ -546,11 +526,7 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \tab@size=\count119
 \listing@line=\count120
 )
-<<<<<<< HEAD
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\listings.sty
-=======
-("C:\Users\muhsal\Documents\New folder\Mips-Dist\listings.sty"
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
 \lst@mode=\count121
 \lst@gtempboxa=\box30
 \lst@token=\toks40
@@ -566,21 +542,13 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \belowcaptionskip=\skip46
 \lst@maxwidth=\dimen129
 
-<<<<<<< HEAD
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\lstmisc.sty
-=======
-("C:\Users\muhsal\Documents\New folder\Mips-Dist\lstmisc.sty"
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 \c@lstnumber=\count127
 \lst@skipnumbers=\count128
 \lst@framebox=\box31
 )
-<<<<<<< HEAD
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\listings.cfg
-=======
-("C:\Users\muhsal\Documents\New folder\Mips-Dist\listings.cfg"
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
 File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
 Package: listings 2007/02/22 1.4 (Carsten Heinz)
@@ -614,11 +582,7 @@ Package: subcaption 2012/01/12 v1.1d Sub-captions (AR)
 \c@subfigure=\count130
 \c@subtable=\count131
 )
-<<<<<<< HEAD
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\algorithm.sty
-=======
-("C:\Users\muhsal\Documents\New folder\Mips-Dist\algorithm.sty"
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
 Package: algorithm 
 
 Document Style `algorithm' - floating environment
@@ -636,11 +600,7 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 \@float@every@algorithm=\toks43
 \c@algorithm=\count133
 )
-<<<<<<< HEAD
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\algorithmic.sty
-=======
-("C:\Users\muhsal\Documents\New folder\Mips-Dist\algorithmic.sty"
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
 Package: algorithmic 2005/07/05
 
 Document Style `algorithmic' - environment
@@ -815,11 +775,7 @@ File: p2e-pdftex.def 2011/04/05 v0.1t Driver-dependant file (RN,HjG,JT)
 \qroofy=\count146
 \@qrscratchbox=\box57
 )
-<<<<<<< HEAD
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\xcolor.sty
-=======
-("C:\Users\muhsal\Documents\New folder\Mips-Dist\xcolor.sty"
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
@@ -857,11 +813,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvipsnam.def"
 File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
-<<<<<<< HEAD
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\Mips-Dist.aux)
-=======
-("C:\Users\muhsal\Documents\New folder\Mips-Dist\Mips-Dist.aux")
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
@@ -910,13 +862,8 @@ LaTeX Info: Redefining \ref on input line 53.
 LaTeX Info: Redefining \pageref on input line 53.
 LaTeX Info: Redefining \nameref on input line 53.
 
-<<<<<<< HEAD
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\Mips-Dist.out)
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\Mips-Dist.out)
-=======
-("C:\Users\muhsal\Documents\New folder\Mips-Dist\Mips-Dist.out")
-("C:\Users\muhsal\Documents\New folder\Mips-Dist\Mips-Dist.out")
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
 \@outlinefile=\write3
 \c@lstlisting=\count155
 Package caption Info: Begin \AtBeginDocument code.
@@ -950,22 +897,6 @@ Overfull \hbox (26.5313pt too wide) in paragraph at lines 123--126
 ses 
  []
 
-
-Package natbib Warning: Citation `key-14' on page \thepage  undefined on input 
-line 132.
-
-
-Package natbib Warning: Citation `key-20' on page \thepage  undefined on input 
-line 133.
-
-
-Package natbib Warning: Citation `UNG+12' on page \thepage  undefined on input 
-line 135.
-
-
-Package natbib Warning: Citation `SHE+11' on page \thepage  undefined on input 
-line 135.
-
 LaTeX Font Info:    Try loading font information for T1+aett on input line 139.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
@@ -983,264 +914,115 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--139
 
 
 ]
-Overfull \hbox (3.74182pt too wide) in paragraph at lines 152--153
+Overfull \hbox (3.74182pt too wide) in paragraph at lines 155--156
 \T1/aer/m/n/9 duplicate-aware ap-proach for fed-er-ated SPARQL query-
  []
 
-<img/possibleDuplicates.pdf, id=129, 344.28625pt x 265.99374pt>
+<img/possibleDuplicates.pdf, id=141, 344.28625pt x 265.99374pt>
 File: img/possibleDuplicates.pdf Graphic file (type pdf)
  <use img/possibleDuplicates.pdf>
-Package pdftex.def Info: img/possibleDuplicates.pdf used on input line 166.
+Package pdftex.def Info: img/possibleDuplicates.pdf used on input line 169.
 (pdftex.def)             Requested size: 240.99872pt x 186.19434pt.
 
-Overfull \hbox (0.99872pt too wide) in paragraph at lines 166--167
+Overfull \hbox (0.99872pt too wide) in paragraph at lines 169--170
  [][] 
  []
 
 
-Package natbib Warning: Citation `key-1' on page \thepage  undefined on input l
-ine 190.
-
-
-Package natbib Warning: Citation `key-2' on page \thepage  undefined on input l
-ine 193.
-
-
-Package natbib Warning: Citation `key-1' on page \thepage  undefined on input l
-ine 194.
-
-
-Package natbib Warning: Citation `key-8' on page \thepage  undefined on input l
-ine 198.
-
-
-Overfull \hbox (6.36989pt too wide) in paragraph at lines 190--203
+Overfull \hbox (6.36989pt too wide) in paragraph at lines 193--206
 \T1/aer/m/n/9 struc-ture to de-ter-mine the rel-e-vant sources for a query. Quilitz
  []
 
-<<<<<<< HEAD
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.210 
+l.206 
        [2 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/possibleDuplicates.pdf>]
-Overfull \hbox (11.42773pt too wide) in paragraph at lines 227--232
+Overfull \hbox (11.42773pt too wide) in paragraph at lines 230--235
 \T1/aer/m/n/9 fed-er-ated query pro-cess-ing over mul-ti-ple het-ero-ge-neous sources.
  []
-=======
-
-Package natbib Warning: Citation `key-3' on page \thepage  undefined on input l
-ine 204.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.210 
-       [2 <C:/Users/muhsal/Documents/New folder/Mips-Dist/img/possibleDuplicate
-s.pdf>]
-
-Package natbib Warning: Citation `key-4' on page \thepage  undefined on input l
-ine 211.
 
 
-Package natbib Warning: Citation `key-3' on page \thepage  undefined on input l
-ine 216.
-
-
-Package natbib Warning: Citation `key-5' on page \thepage  undefined on input l
-ine 220.
-
-
-Package natbib Warning: Citation `key-6' on page \thepage  undefined on input l
-ine 220.
-
-
-Package natbib Warning: Citation `key-7' on page \thepage  undefined on input l
-ine 222.
-
-
-Package natbib Warning: Citation `key-15' on page \thepage  undefined on input 
-line 227.
-
-
-Package natbib Warning: Citation `key-16' on page \thepage  undefined on input 
-line 228.
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
-
-
-Overfull \hbox (10.96837pt too wide) in paragraph at lines 227--232
+Overfull \hbox (10.96837pt too wide) in paragraph at lines 230--235
 \T1/aer/m/n/9 the se-lected sources and their cor-re-spond-ing on-tolo-gies. Kaoudi
  []
-
-
-Package natbib Warning: Citation `key-18' on page \thepage  undefined on input 
-line 233.
-
-
-Package natbib Warning: Citation `key-19' on page \thepage  undefined on input 
-line 236.
-
-
-Package natbib Warning: Citation `key-21' on page \thepage  undefined on input 
-line 238.
-
-
-Package natbib Warning: Citation `key-17' on page \thepage  undefined on input 
-line 243.
-
-
-Package natbib Warning: Citation `key-24' on page \thepage  undefined on input 
-line 245.
-
-
-Package natbib Warning: Citation `key-25' on page \thepage  undefined on input 
-line 245.
-
-
-Package natbib Warning: Citation `key-22' on page \thepage  undefined on input 
-line 262.
-
-
-Package natbib Warning: Citation `key-23' on page \thepage  undefined on input 
-line 262.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-<<<<<<< HEAD
-Overfull \hbox (1.72102pt too wide) in paragraph at lines 271--272
+Overfull \hbox (1.72102pt too wide) in paragraph at lines 274--275
 \T1/aer/m/n/9 tions [[]], bloom fil-ters [[]], hash sketches [[]], XS-KETCH [[]],
  []
-=======
 
-Package natbib Warning: Citation `key-9' on page \thepage  undefined on input l
-ine 271.
-
-
-Package natbib Warning: Citation `key-10' on page \thepage  undefined on input 
-line 271.
-
-
-Package natbib Warning: Citation `key-36' on page \thepage  undefined on input 
-line 271.
-
-
-Package natbib Warning: Citation `key-37' on page \thepage  undefined on input 
-line 271.
-
-
-Package natbib Warning: Citation `key-38' on page \thepage  undefined on input 
-line 271.
-
-
-Package natbib Warning: Citation `key-11' on page \thepage  undefined on input 
-line 271.
-
-
-Package natbib Warning: Citation `key-12' on page \thepage  undefined on input 
-line 271.
-
-
-Package natbib Warning: Citation `key-9' on page \thepage  undefined on input l
-ine 271.
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
-
-LaTeX Font Info:    Try loading font information for U+euf on input line 276.
+LaTeX Font Info:    Try loading font information for U+euf on input line 279.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
 File: ueuf.fd 2009/06/22 v3.00 Euler Fraktur
 )
-Overfull \hbox (17.73311pt too wide) in paragraph at lines 283--283
+Overfull \hbox (17.73311pt too wide) in paragraph at lines 286--286
 []\secfnt DUPLICATE-AWARE FED-ER-ATED QUERY
  []
 
-<img/Fig1.pdf, id=140, 291.0875pt x 218.8175pt>
-File: img/Fig1.pdf Graphic file (type pdf)
- <use img/Fig1.pdf>
-Package pdftex.def Info: img/Fig1.pdf used on input line 289.
-(pdftex.def)             Requested size: 203.75984pt x 153.17119pt.
+
+Underfull \vbox (badness 3977) has occurred while \output is active []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.298 \subsection
-                 {Service Description Directory} [3]
-Overfull \hbox (5.7672pt too wide) in paragraph at lines 299--305
+l.286 ...licate-aware Federated Query Processing }
+                                                   [3] <img/Fig1.pdf, id=214, 291.0875pt x 218.8175pt>
+File: img/Fig1.pdf Graphic file (type pdf)
+
+<use img/Fig1.pdf>
+Package pdftex.def Info: img/Fig1.pdf used on input line 292.
+(pdftex.def)             Requested size: 203.75984pt x 153.17119pt.
+
+Overfull \hbox (5.7672pt too wide) in paragraph at lines 302--308
 \T1/aer/m/it/9 scrip-tion di-rec-tory\T1/aer/m/n/9 . Each ser-vice de-scrip-tion pro-vides a declar-
  []
 
-<<<<<<< HEAD
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 313.
-=======
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 316.
 
-Package natbib Warning: Citation `key-13' on page \thepage  undefined on input 
-line 312.
-
-
-Package natbib Warning: Citation `key-39' on page \thepage  undefined on input 
-line 312.
-
-
-Package natbib Warning: Citation `key-40' on page \thepage  undefined on input 
-line 312.
-
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 313.
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
-
-Overfull \hbox (0.89566pt too wide) in paragraph at lines 320--321
+Overfull \hbox (0.89566pt too wide) in paragraph at lines 323--324
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (0.89566pt too wide) in paragraph at lines 328--329
+Overfull \hbox (0.89566pt too wide) in paragraph at lines 331--332
 [][][][][][][][][][][][][][][][][][][] 
  []
 
-
-Package natbib Warning: Citation `key-13' on page \thepage  undefined on input 
-line 340.
-
-<img/mips.pdf, id=148, 460.72125pt x 249.93375pt>
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.372 
+       [4 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/Fig1.pdf>]
+<img/mips.pdf, id=266, 460.72125pt x 249.93375pt>
 File: img/mips.pdf Graphic file (type pdf)
  <use img/mips.pdf>
-Package pdftex.def Info: img/mips.pdf used on input line 372.
+Package pdftex.def Info: img/mips.pdf used on input line 375.
 (pdftex.def)             Requested size: 244.18109pt x 132.46425pt.
 
-Overfull \hbox (4.18109pt too wide) in paragraph at lines 372--373
+Overfull \hbox (4.18109pt too wide) in paragraph at lines 375--376
  [][] 
  []
 
 
-Overfull \hbox (2.56271pt too wide) in paragraph at lines 380--386
+Overfull \hbox (2.56271pt too wide) in paragraph at lines 383--389
 \T1/aer/m/n/9 se-lec-tion al-go-rithm used in DARQ for a query sim-ply matches
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-<<<<<<< HEAD
-l.386 
-       [4 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/Fig1.pdf>]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 425.
-=======
-l.387 L
-       et \emph{S =$\{(s_1,C_1),..,(s_n,C_n)\}$ } be a set of all indexed da...
-[4 <C:/Users/muhsal/Documents/New folder/Mips-Dist/img/Fig1.pdf>]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 425.
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 428.
 
-Overfull \hbox (9.4992pt too wide) in paragraph at lines 441--442
+Overfull \hbox (9.4992pt too wide) in paragraph at lines 444--445
 [] []\T1/aer/m/n/9 mipv.orignalSize =mipv.orignalSize*$\OML/cmm/m/it/9 d[]$\T1/aer/m/n/9 .getSbjSel(t) 
  []
 
 
-Overfull \hbox (11.56026pt too wide) in paragraph at lines 443--444
+Overfull \hbox (11.56026pt too wide) in paragraph at lines 446--447
 [] []\T1/aer/m/n/9 mipv.orignalSize =mipv.orignalSize*$\OML/cmm/m/it/9 d[]$\T1/aer/m/n/9 .getObjSel(t) 
  []
 
-<<<<<<< HEAD
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
@@ -1248,543 +1030,468 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 File: lstlang2.sty 2004/09/05 1.3 listings language file
 )
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\lstlang3.sty
-=======
-("C:\Users\muhsal\Documents\New folder\Mips-Dist\lstlang1.sty"
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-)
-("C:\Users\muhsal\Documents\New folder\Mips-Dist\lstlang3.sty"
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
 File: lstlang3.sty 2004/09/05 1.3 listings language file
 )pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-<<<<<<< HEAD
-l.473 ...,language=SPARQL,stringstyle={\ttfamily}]
+l.476 ...,language=SPARQL,stringstyle={\ttfamily}]
                                                    [5 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/
 mips.pdf>]
-Underfull \hbox (badness 3492) in paragraph at lines 501--502
+Underfull \hbox (badness 3492) in paragraph at lines 504--505
 [] []\T1/aer/m/it/9 seperateSub-queries \T1/aer/m/n/9 = \T1/aer/m/it/9 seperateSub-queries \T1/aer/m/n/9 +
-=======
-l.476     {
-            [5 <C:/Users/muhsal/Documents/New folder/Mips-Dist/img/mips.pdf>]
-Underfull \hbox (badness 3492) in paragraph at lines 501--502
-[] []\T1/aer/m/it/9 seperateSub-queries \T1/aer/m/n/9 = \T1/aer/m/it/9 seperate
-Sub-queries \T1/aer/m/n/9 +
  []
 
 
-Underfull \vbox (badness 2529) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 513--513
-[][][][]$\T1/aett/m/n/9 https : / / sites . google . com / site /$
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 518--518
+Underfull \hbox (badness 10000) in paragraph at lines 521--521
 [][][][]$\T1/aett/m/n/9 http : / / www4 . wiwiss . fu-[]berlin . de / diseasome /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 520--520
+Underfull \hbox (badness 10000) in paragraph at lines 523--523
 [][][][]$\T1/aett/m/n/9 http : / / wiki . dbpedia . org / Downloads38 #
  []
 
-<<<<<<< HEAD
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
-=======
-
-Package natbib Warning: Citation `key-5' on page \thepage  undefined on input l
-ine 523.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
 <to be read again> 
                    \relax 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros... [6pdfTeX warning (ext4): destination wit
-h the same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+       [6pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate 
+ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@line.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.1}) has been already used, duplicate ig
+nored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@line.2}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.2}) has been already used, duplicate ig
+nored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@line.3}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.3}) has been already used, duplicate ig
+nored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@line.4}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.4}) has been already used, duplicate ig
+nored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@line.5}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.5}) has been already used, duplicate ig
+nored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@line.6}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.6}) has been already used, duplicate ig
+nored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@line.7}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.7}) has been already used, duplicate ig
+nored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@line.8}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.8}) has been already used, duplicate ig
+nored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@line.9}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.9}) has been already used, duplicate ig
+nored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@line.10}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.10}) has been already used, duplicate i
+gnored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@line.11}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.11}) has been already used, duplicate i
+gnored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@line.12}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.12}) has been already used, duplicate i
+gnored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@line.13}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.13}) has been already used, duplicate i
+gnored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@line.14}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.14}) has been already used, duplicate i
+gnored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@line.15}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.15}) has been already used, duplicate i
+gnored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@line.16}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.16}) has been already used, duplicate i
+gnored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-       iven that we wanted to emulate fragmented data sets distributed acros...pdfTeX warning (ext4): destination with t
-he same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+l.527 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 G
-<<<<<<< HEAD
-       iven that we wanted to emulate fragmented data sets distributed acros...]
-=======
-       iven that we wanted to emulate fragmented data sets distributed acros...
-]
-
-Package natbib Warning: Citation `key-5' on page \thepage  undefined on input l
-ine 559.
-
-
-Package natbib Warning: Citation `key-35' on page \thepage  undefined on input 
-line 570.
-
-
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
-Overfull \hbox (4.81517pt too wide) in paragraph at lines 577--587
+l.527 
+      ]
+Overfull \hbox (4.81517pt too wide) in paragraph at lines 580--590
  [][] 
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-<<<<<<< HEAD
-l.636 \subsubsection
-                    {Recall and Runtime} [7] <img/querywise_rse.pdf, id=388, 451.6747pt x 301.1223pt>
-=======
-l.649 
-       [7] <img/querywise_rse.pdf, id=317, 451.6747pt x 301.1223pt>
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
+l.637 
+       [7] <img/querywise_rse.pdf, id=393, 451.6747pt x 301.1223pt>
 File: img/querywise_rse.pdf Graphic file (type pdf)
-
-<use img/querywise_rse.pdf>
-Package pdftex.def Info: img/querywise_rse.pdf used on input line 654.
+ <use img/querywise_rse.pdf>
+Package pdftex.def Info: img/querywise_rse.pdf used on input line 657.
 (pdftex.def)             Requested size: 226.79846pt x 151.19945pt.
-<<<<<<< HEAD
- <img/subquerywise_rse.pdf, id=389, 451.69804pt x 301.11974pt>
-=======
 
-<img/subquerywise_rse.pdf, id=318, 451.69804pt x 301.11974pt>
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
+<img/subquerywise_rse.pdf, id=394, 451.69804pt x 301.11974pt>
 File: img/subquerywise_rse.pdf Graphic file (type pdf)
-
-<use img/subquerywise_rse.pdf>
-Package pdftex.def Info: img/subquerywise_rse.pdf used on input line 660.
+ <use img/subquerywise_rse.pdf>
+Package pdftex.def Info: img/subquerywise_rse.pdf used on input line 663.
 (pdftex.def)             Requested size: 226.79846pt x 151.19356pt.
-<<<<<<< HEAD
- <img/querywise_ranking.pdf, id=390, 451.69954pt x 301.11974pt>
-=======
 
-<img/querywise_ranking.pdf, id=319, 451.69954pt x 301.11974pt>
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
+<img/querywise_ranking.pdf, id=395, 451.69954pt x 301.11974pt>
 File: img/querywise_ranking.pdf Graphic file (type pdf)
-
-<use img/querywise_ranking.pdf>
-Package pdftex.def Info: img/querywise_ranking.pdf used on input line 672.
+ <use img/querywise_ranking.pdf>
+Package pdftex.def Info: img/querywise_ranking.pdf used on input line 675.
 (pdftex.def)             Requested size: 226.79846pt x 151.19356pt.
-<<<<<<< HEAD
- <img/subquerywise_ranking.pdf, id=391, 451.69804pt x 301.11974pt>
-=======
 
-<img/subquerywise_ranking.pdf, id=320, 451.69804pt x 301.11974pt>
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
+<img/subquerywise_ranking.pdf, id=396, 451.69804pt x 301.11974pt>
 File: img/subquerywise_ranking.pdf Graphic file (type pdf)
-
-<use img/subquerywise_ranking.pdf>
-Package pdftex.def Info: img/subquerywise_ranking.pdf used on input line 678.
+ <use img/subquerywise_ranking.pdf>
+Package pdftex.def Info: img/subquerywise_ranking.pdf used on input line 681.
 (pdftex.def)             Requested size: 226.79846pt x 151.19356pt.
 
-Overfull \hbox (4.81517pt too wide) in paragraph at lines 703--712
+Overfull \hbox (4.81517pt too wide) in paragraph at lines 706--715
  [][] 
  []
 
-<<<<<<< HEAD
-<img/runtime_recall.pdf, id=392, 678.28406pt x 257.46187pt>
-=======
-
-Package natbib Warning: Citation `key-26' on page \thepage  undefined on input 
-line 727.
-
-<img/runtime_recall.pdf, id=321, 678.28406pt x 257.46187pt>
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
+<img/runtime_recall.pdf, id=398, 678.28406pt x 257.46187pt>
 File: img/runtime_recall.pdf Graphic file (type pdf)
  <use img/runtime_recall.pdf>
-Package pdftex.def Info: img/runtime_recall.pdf used on input line 753.
+Package pdftex.def Info: img/runtime_recall.pdf used on input line 756.
 (pdftex.def)             Requested size: 453.59692pt x 172.17247pt.
 
-<<<<<<< HEAD
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\Mips-Dist.bblpdfTeX warning (ext4): destination with the s
 ame identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.54 
+l.41 
       [8]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.54 
+l.41 
       [9 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/querywise_rse.pdf> <E:/Work/Papers/Eigene/201
 3/www2013federatedqueries/Mips-Dist/img/subquerywise_rse.pdf> <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-D
 ist/img/querywise_ranking.pdf> <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/subquerywise_ranking.pd
@@ -1798,17 +1505,26 @@ Underfull \hbox (badness 1701) in paragraph at lines 126--129
 \T1/aer/m/it/9 IEEE/ACM Trans. Netw.\T1/aer/m/n/9 , 10(5):604--612, Oc-to-ber
  []
 
-=======
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
 
-Package natbib Warning: There were undefined citations.
+Underfull \hbox (badness 2237) in paragraph at lines 144--148
+[]\T1/aer/m/n/9 Nikos Ntar-mos, Pe-ter Tri-antafil-lou, and Ger-hard
+ []
 
-<<<<<<< HEAD
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.160 
+l.148 
        [10 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/runtime_recall.pdf>]
+! Misplaced alignment tab character &.
+l.153 \newblock {\em Information Processing &
+                                             amp; Management}, 43(3):643 -- ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
 
 ! Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
@@ -1817,64 +1533,40 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.171 \newblock In {\em The Semantic Web –
+l.177 \newblock In {\em The Semantic Web –
                                            ISWC 2011}, volume 7031 of {\em L...
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-Underfull \hbox (badness 2285) in paragraph at lines 203--207
+Underfull \hbox (badness 2285) in paragraph at lines 209--213
 \T1/aer/m/n/9 Axel-Cyrille Ngonga Ngomo, Daniel Ger-ber, and
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 892.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 895.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
-=======
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 892.
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.892 \end{document}
-                     [8]pdfTeX warning (ext4): destination with the same identi
-fier (name{page.}) has been already used, duplicate ignored
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
-<to be read again> 
-                   \relax 
-l.892 \end{document}
-                     [9 <C:/Users/muhsal/Documents/New folder/Mips-Dist/img/que
-rywise_rse.pdf> <C:/Users/muhsal/Documents/New folder/Mips-Dist/img/subquerywis
-e_rse.pdf> <C:/Users/muhsal/Documents/New folder/Mips-Dist/img/querywise_rankin
-g.pdf> <C:/Users/muhsal/Documents/New folder/Mips-Dist/img/subquerywise_ranking
-.pdf>]pdfTeX warning (ext4): destination with the same identifier (name{page.})
- has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.892 \end{document}
-                     [10 <C:/Users/muhsal/Documents/New folder/Mips-Dist/img/ru
-ntime_recall.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 892.
-<<<<<<< HEAD
- (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\Mips-Dist.aux)
-=======
+l.895 \end{document}
+                     [11
 
-("C:\Users\muhsal\Documents\New folder\Mips-Dist\Mips-Dist.aux")
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 892.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 892.
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 895.
+ (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\Mips-Dist.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 895.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 895.
 Package rerunfilecheck Info: File `Mips-Dist.out' has not changed.
 (rerunfilecheck)             Checksum: 3DCEDEAA9F3F9567A91D1858384FEB4F;1590.
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 11454 strings out of 494045
- 162379 string characters out of 3145967
- 318103 words of memory out of 3000000
- 14351 multiletter control sequences out of 15000+200000
+ 11460 strings out of 494045
+ 162456 string characters out of 3145967
+ 318754 words of memory out of 3000000
+ 14354 multiletter control sequences out of 15000+200000
  61231 words of font info for 89 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 41i,12n,43p,1396b,1169s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,12n,43p,1395b,1169s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmbx5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
@@ -1891,43 +1583,9 @@ ls/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a
 fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on Mips-Dist.pdf (11 pages, 865818 bytes).
+Output written on Mips-Dist.pdf (11 pages, 868521 bytes).
 PDF statistics:
- 624 PDF objects out of 1000 (max. 8388607)
- 169 named destinations out of 1000 (max. 500000)
-=======
- 11369 strings out of 494045
- 159728 string characters out of 3148384
- 319207 words of memory out of 3000000
- 14306 multiletter control sequences out of 15000+200000
- 61231 words of font info for 89 fonts, out of 3000000 for 9000
- 715 hyphenation exceptions out of 8191
- 41i,12n,43p,1395b,1889s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cmextra/cmex9.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmti9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-tt9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
-es/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Mips-Dist.pdf (10 pages, 836456 bytes).
-PDF statistics:
- 542 PDF objects out of 1000 (max. 8388607)
- 135 named destinations out of 1000 (max. 500000)
->>>>>>> d9979d69f9abb4c0a46e63792ca00d98439ba17b
+ 632 PDF objects out of 1000 (max. 8388607)
+ 172 named destinations out of 1000 (max. 500000)
  225 words of extra memory for PDF output out of 10000 (max. 10000000)
 
