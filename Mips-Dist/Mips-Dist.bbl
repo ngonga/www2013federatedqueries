@@ -134,12 +134,6 @@ Mohamed Morsey, Jens Lehmann, S\"{o}ren Auer, and Axel-Cyrille~Ngonga Ngomo.
 \newblock In {\em Proceedings of the 10th international conference on The
   semantic web - Volume Part I}, ISWC'11, pages 454--469, 2011.
 
-\bibitem{key-26}
-Axel-Cyrille {Ngonga Ngomo} and S{\"o}ren Auer.
-\newblock {LIMES A Time-Efficient Approach for Large-Scale Link Discovery on
-  the Web of Data}.
-\newblock In {\em IJCAI}, pages 2312--2317. IJCAI/AAAI, 2011.
-
 \bibitem{key-36}
 Nikos Ntarmos, Peter Triantafillou, and Gerhard Weikum.
 \newblock Distributed hash sketches: Scalable, efficient, and accurate
