@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.2)  27 NOV 2012 11:28
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.2)  27 NOV 2012 11:32
 entering extended mode
 **Mips-Dist.tex
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\Mips-Dist.tex
@@ -1486,37 +1486,36 @@ Package pdftex.def Info: img/runtime_recall.pdf used on input line 757.
 ame identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.41 
-      [8]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate igno
-red
+l.39 \bibitem{key-9}
+                     [8]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used,
+ duplicate ignored
 <to be read again> 
                    \relax 
-l.41 
-      [9 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/querywise_rse.pdf> <E:/Work/Papers/Eigene/201
-3/www2013federatedqueries/Mips-Dist/img/subquerywise_rse.pdf> <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-D
-ist/img/querywise_ranking.pdf> <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/subquerywise_ranking.pd
-f>]
-Underfull \hbox (badness 1194) in paragraph at lines 113--118
+l.39 \bibitem{key-9}
+                     [9 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/querywise_rse.pdf> <E:/Work/Pa
+pers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/subquerywise_rse.pdf> <E:/Work/Papers/Eigene/2013/www2013federate
+dqueries/Mips-Dist/img/querywise_ranking.pdf> <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/subquery
+wise_ranking.pdf>]
+Underfull \hbox (badness 1194) in paragraph at lines 115--120
 \T1/aer/m/n/9 to op-ti-mize queries over dis-tributed het-ero-ge-neous
  []
 
 
-Underfull \hbox (badness 1701) in paragraph at lines 126--129
+Underfull \hbox (badness 1701) in paragraph at lines 128--131
 \T1/aer/m/it/9 IEEE/ACM Trans. Netw.\T1/aer/m/n/9 , 10(5):604--612, Oc-to-ber
- []
-
-
-Underfull \hbox (badness 2237) in paragraph at lines 144--148
-[]\T1/aer/m/n/9 Nikos Ntar-mos, Pe-ter Tri-antafil-lou, and Ger-hard
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.148 
+l.144 
        [10 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/runtime_recall.pdf>]
+Underfull \hbox (badness 2237) in paragraph at lines 146--150
+[]\T1/aer/m/n/9 Nikos Ntar-mos, Pe-ter Tri-antafil-lou, and Ger-hard
+ []
+
 ! Misplaced alignment tab character &.
-l.153 \newblock {\em Information Processing &
+l.155 \newblock {\em Information Processing &
                                              amp; Management}, 43(3):643 -- ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1533,13 +1532,13 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.177 \newblock In {\em The Semantic Web –
+l.179 \newblock In {\em The Semantic Web –
                                            ISWC 2011}, volume 7031 of {\em L...
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-Underfull \hbox (badness 2285) in paragraph at lines 209--213
+Underfull \hbox (badness 2285) in paragraph at lines 211--215
 \T1/aer/m/n/9 Axel-Cyrille Ngonga Ngomo, Daniel Ger-ber, and
  []
 
@@ -1583,7 +1582,7 @@ ls/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a
 fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on Mips-Dist.pdf (11 pages, 868513 bytes).
+Output written on Mips-Dist.pdf (11 pages, 868525 bytes).
 PDF statistics:
  632 PDF objects out of 1000 (max. 8388607)
  172 named destinations out of 1000 (max. 500000)
