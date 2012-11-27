@@ -511,7 +511,7 @@ in separate sub-queries. After the sub-queries are generated, the federator send
 \end{algorithm}
 \section{Experiments and Results}
 The goal of our experiments was to assess how well our duplicate-aware solution performs in terms of result set recall, ranking of data sources and runtime.
-We compared out approach with DARQ, a well-known and widely used federated query execution engine.
+We compared our approach with DARQ, a well-known, publicly available and widely used federated query execution engine.\footnote{We refrained from comparing with the approach presented in~\cite{key-5} because it connot deal with the partly fragmented data which is generated in our experiments.}
 We also compared our approach with a simulation of the optimal duplicate-unaware (DU) approach, where (1) the result set estimation of carried is carried out regardless of the overlap between data source and each source containing at one relevant triple is queried.
 In the following, we describe our experimental setup in detail and contrast the results achieved by each of the approaches.
 All data used in this evaluation is either publicly available or can be found at the project webpage.\footnote{\url{https://sites.google.com/site/dupawarefedqueries/}}
@@ -524,7 +524,7 @@ The Publication data set is the Semantic Web Dog Food data set\footnote{\url{htt
 The Geo data set resulted from retrieving the portion of triples from DBpedia that maps resources to their geo-coordinates\footnote{\url{http://wiki.dbpedia.org/Downloads38\#geographic-coordinates}.}.
 Finally, LinkedMDB~\footnote{\url{http://queens.db.toronto.edu/~oktie/linkedmdb}} is the RDF version of IMDB and contains amongst others a large number of actors, movies and directors.
 We chose data sets of different data sizes to assess the scalability of our approach.
-The size of the MIPS vectors was set to achieve a compression ratio between 96\% and 98\%, which is similar to that used in the previous work~\cite{key-5}.
+The size of the MIPS vectors was set to achieve a compression ratio between 96\% and 98\%, which is similar to that used in previous work~\cite{key-5}.
 
 Given that we wanted to emulate fragmented data sets distributed across several sources, we distributed each of the data sets $D$ across $n=10$ data sources (which we also call ``slices'').
 The first step of this process consisted of deciding on the size of the slices.
