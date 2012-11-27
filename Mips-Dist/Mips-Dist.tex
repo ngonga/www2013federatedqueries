@@ -456,7 +456,8 @@ It is important to note that the number of elements in the MIPs vector may be di
 \end{algorithm}
 \subsubsection{Join Source Ranking (this section is not well written)}
 Similar to DARQ, we perform individual triple based sub-query federation. Consequently, triple pattern source ranking is most important for sub-query escaping. The advantage of this approach is that if a data source is not capable of answering the complete query, it may produce enough results for a specific sub-set of query triples. For the comparison purpose we propose a complete query source ranking which works as follow: For a star shaped queries, the overall result set is bound by the triple with lowest number of estimated records. Therefore, we perform the source ranking for that triple (using Algorithm 1) and use this as complete query ranking. The lowest records query triple can be estimated using the rank 1 source selection explained in previous section. However, this time we are looking for a source which has the lowest estimated value of all. For path shaped queries the total records are bound by the triple which has \emph{subject} variable equal to the \emph{object} of the previous query triple. For example the result set in the query given in Listing 2, is bound by the second triple in which the \emph{object} variable in the first triple is used as \emph{subject} in the second triple. Therefore, we perform the triple pattern ranking for second triple and use this as ranking for complete query.
-\begin{lstlisting}[caption = {A P-1 query example},frame = {single},stringstyle={\ttfamily}]
+%\lstinputlisting[caption=.,label=ex:q1, language=SPARQL]
+\begin{lstlisting}[caption = {A P-1 query example},frame = single,language=SPARQL]
  SELECT ?s 
    WHERE
     {
@@ -501,25 +502,26 @@ All data used in this evaluation is either publicly available or can be found at
 
 \subsubsection{Datasets}
 Within our experiments, we used the four datasets described in Table \ref{tab:datasets}.
-The first data set, Diseasome, contains diseases and disease genes linked by disease-gene associations.
-The Publication data set was extracted from ???? and contains information on publications, venues and authors of publications.
-The Geo data set resulted from retrieving all ??? from DBpedia.
-Finally, LinkedMDB is the RDF version of IMDB and contains amongst others a large number of actors, movies and directors.
+The first data set, Diseasome,\footnote{\url{http://www4.wiwiss.fu-berlin.de/diseasome/diseasome_dump.nt.bz2}} contains diseases and disease genes linked by disease-gene associations.
+The Publication data set is the Semantic Web Dog Food data set\footnote{\url{http://data.semanticweb.org/}} and contains information on publications, venues and authors of publications.
+The Geo data set resulted from retrieving the portion of triples from DBpedia that maps resources to their geo-coordinates\footnote{\url{http://wiki.dbpedia.org/Downloads38\#geographic-coordinates}.}.
+Finally, LinkedMDB~\footnote{\url{http://queens.db.toronto.edu/~oktie/linkedmdb}} is the RDF version of IMDB and contains amongst others a large number of actors, movies and directors.
 We chose data sets of different data sizes to assess the scalability of our approach.
-The size of the MIPS vectors was set to achieve a compression ratio of 98\%, which is greater than that used in the previous work~\cite{key-5}.
+The size of the MIPS vectors was set to achieve a compression ratio between 96\% and 98\%, which is similar to that used in the previous work~\cite{key-5}.
 
-Given that we wanted to emulate fragmented data sets distributed across several sources, we began by partitioning each of the data sets $D$ across $n=10$ data sources (which we also call ``slices''):
-We set the parameter $d$, which we dubbed \emph{discrepancy factor}.
-$d$ controls the maximal size difference across the data source, ergo
+Given that we wanted to emulate fragmented data sets distributed across several sources, we distributed each of the data sets $D$ across $n=10$ data sources (which we also call ``slices'').
+The first step of this process consisted of deciding on the size of the slices.
+We controlled the maximal size difference between the different slices by setting the \emph{discrepancy factor} $d$, which is given by
 \begin{equation}
-d = \max\limits_{1 \leq i \leq n} |S_i| - \min\limits_{1 \leq j \leq n} |S_j|.
+d = \max\limits_{1 \leq i \leq n} |S_i| - \min\limits_{1 \leq j \leq n} |S_j|,
 \end{equation}
-Then, we computed the sizes of the slices by assigning them random sizes such that $\sum\limits_{i} |S_i| = D$ and $\forall i \forall j\,i \neq j \rightarrow ||S_i| - |S_j|| \leq d$ 
-We then picked one of the $n$ data sources randomly and redistributed its content across all 9 remaining data sources.
+where $S_i$ stands for the i$^{th}$ slice. 
+Given a value of $d$, we computed the sizes of the slices by assigning them random sizes such that $\sum\limits_{i} |S_i| = D$ and $\forall i \forall j\,i \neq j \rightarrow ||S_i| - |S_j|| \leq d$.
+The data was then distributed across the different data sources by partition the  
+We then picked $m$ out of the $n$ data sources randomly ($m < n$) and redistributed its content across all 9 remaining data sources .
 We set $d$ to values between ca 1.6\% and 2.8\% of the triples.
 Note that the value of $d$ was increased with increasingly larger data sets.
 
-The number of slices was set to 10 in all experiments.
 \begin{table*}
 \centering
 \begin{tabular}{lrrrrrrrrr}
@@ -533,9 +535,29 @@ Geo 						& 274.1 & 4.66 	& 98 & 10 & 50,000 	& 2 & 5,8				& 1,900,006 & 1302\\
 LinkedMDB 			& 448.9 & 7.9 	& 97 & 10 & 100,000 	& 1 & 2 			& 3,579,616 & 1837\\
 \hline
 \end{tabular}
-\caption{Overview of datasets. CR stands for Compression Ratio.}
+\caption{Overview of datasets. Size gives the magnitude of the data sets in MB. Summary size is the size of the correspoding MIPS. Slices is the number of data sources used during the experiments. Discrepancy gives the absolute value of the discrepancy used for the given experiment. CR stands for Compression Ratio.}
 \label{tab:datasets}
 \end{table*}
+
+
+\subsubsection{Queries}
+We used three main types of queries in our experiments: basic graph patterns (BGP), star-shaped and path-shaped queries.
+\emph{Basic graph pattern} (BGP) queries consist of exactly one triple pattern in the query.
+Star-shaped and path-shaped queries are defined as in~\cite{key-5}: \emph{star-shaped queries} (denoted by S-k) have one variable as subject and contained k joins, i.e., (k+1) triple patterns.
+An example of a S-1 star-shaped query is given in the listing below.
+\begin{lstlisting}[caption = {A P-1 query example},frame = single,language=SPARQL]
+ SELECT ?s 
+   WHERE
+    {
+        ?s  <p1> ?o1 .
+        ?s  <p2> ?o2
+    }
+\end{lstlisting}
+Path-shaped queries (denoted by P-k) were generated by using a random walk approach to generate a path of length $k$ (see Listing 2 for an example of a P-1 query). 
+Note that previous work has shown that these query shapes are the most common shapes found in real-world RDF queries~\cite{key-35}.
+Overall, our benchmark data consisted of 79 queries as shown in Table~\ref{tab:queries}.
+Some query shapes could not be used on certain datasets due to the topology of the ontology underlying the datasets not being permissive for such queries. 
+For example, P-1 queries could not be sent to the Geo datasets because it only contained object properties.
 
 \begin{table}
 \centering
@@ -553,39 +575,29 @@ Total 					& 20 & 15 & 15 & 11 & 12 & 6 & 79\\
 \label{tab:queries}
 \end{table}
 
-\subsubsection{Queries}
-We used three main types of queries. 
-Simple basic graph pattern (BGP) queries consisted of exactly one triple pattern in the query.
-Star-shaped and path-shaped queries were defined as in~\cite{key-5}: star-shaped queries (denoted S-k) have one variable as subject and contained k triple patterns. 
-Path-shaped queries, denoted P-k on the other hand were generated by using a random walk approach to generate a path of length $k$. 
-Note that previous work has shown that these query shapes are the most common shapes found in real-world RDF queries~\cite{key-35}.
-Overall, our benchmark data consisted of 79 queries as shown in Table~\ref{tab:queries}.
-Note that some query shapes could not be used on certain datasets due to the topology of the ontology underlying the datasets not being permissive for such queries. 
-For example, S-2 queries could not be sent to LinkedMDB because 
-
 \subsubsection{Metrics}
-We used two measures to compare our approach with the state of the art.
-First, we measured the mean squared error of each approach with respect to their result set evaluation as follows:
+We used two metrics to compare our approach with the state of the art.
+First, we measured the mean squared error of each approach tested with respect to their result set evaluation as follows:
 For each query $q_i$, each source $S_i$ contained a number $R_i(q_i)$ of non-duplicate results.
-Each of the approaches generated an approach $\tilde{R}_i(q_i)$ of $R_i(q_i)$.
+Each of the approaches generated an approximation $\tilde{R}_i(q_i)$ of $R_i(q_i)$.
 The mean squared error with respect to the result set size (short $RSMSE$) was then computed as follows:
 \begin{equation}
 RSMSE = \frac{1}{|Q|}\sum\limits_{q_i \in Q}|R_i(q_i) - \tilde{R}_i(q_i)|^2.
 \end{equation}
-In addition to the MSERS, we also computed how well the approaches were able to rank the data sources with respect to the unseen triples they would return for a given query.
-Given the ideal ranking $rank(S_i, q_j)$ of each data source $S_i$ for each query $q_j$, we computed the mean squared ranking error (short $RankMSE$) of an approach characterized by the the ranking function $\tilde{r}(S_i, q_j)$ by using the following formula:
+In addition to the RSMSE, we also computed how well the approaches were able to rank the data sources with respect to the unseen triples they would return for a given query.
+Given the ideal ranking $rank(S_i, q_j)$ of each data source $S_i$ for each query $q_j$ and the ranking $\tilde{r}(S_i, q_j)$ achieved by a given approach, we computed the mean squared ranking error (short $RankMSE$) as follows:
 \begin{equation}
 RankMSE (q_j) = \frac{1}{|\mathfrak{S}|}\sum\limits_{S_i}|rank(S_i, q_j) - \tilde{r}(S_i, q_j)|^2.
 \end{equation}
 \begin{equation}
 RankMSE  = \frac{1}{|Q|}\sum\limits_{q_j  \in Q}RankMSE(q_j).
 \end{equation}
-For both measures, higher values are obviously worse.
+For both measures, the higher values the worse the performance of the federated query approach.
 
 
 \subsection{Results}
 
-\subsubsection{Result set estimation and ranking}
+\subsubsection{Result Set Estimation and Ranking}
 The RSMSE results are shown in Figures~\ref{fig:rsmse} while the ranking results are shown in Figure~\ref{fig:rank}.
 In each figure, we compared the results of the approaches w.r.t. both the whole input query and to each of the triples patterns contained in the input queries.
 Our results clearly show that we outperform the state of the art w.r.t to both result set estimation and ranking.
@@ -721,8 +733,8 @@ Total 					&23		&38	&49	&8	&20	&12	&150 \\\hline
 
 %\bibliographystyle{plain}
 %\bibliography{literature}
-\flush
-\newpage
+%\flushpage
+%\newpage
 
 \begin{thebibliography}{10}
 \bibitem{key-1}Stuckenschmidt, H., Vdovjak, R., Houben, G.J., Broekstra,
