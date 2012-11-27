@@ -1,4 +1,6 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: Mips-Dist.aux
-I found no \bibdata command---while reading file Mips-Dist.aux
-I found no \bibstyle command---while reading file Mips-Dist.aux
-(There were 2 error messages)
+The style file: plain.bst
+Database file #1: qa.bib
+Warning--to sort, need author or key in key-14
+Warning--empty publisher in key-7
+(There were 2 warnings)

@@ -245,19 +245,19 @@ techniques, common issues, and the settings in which each piece of work is most 
 Avalanche~\cite{key-24} gathers endpoints dataset statistics and bandwidth availability on-the-fly before the query federation. The advantage of this technique is the live query execution over the Web of Data. However, on-the-fly statistics calculation can increase the overall query execution time. Olaf~\cite{key-25} propose a heuristics-based technique to minimize query intermediate
 results. 
 
-Other noteable contributions such as LIMES~\cite{key-26}, SILK~\cite{key-27}, EAGLE~\cite{key-28} provides time-efficient approaches for link discovery using
-various distance measure techniques. The LIMES framework utilize the mathematical
-characteristics of metric spaces to compute similarity estimates between
-instances. It makes use of the triangle inequality to partition the
-metric space into different portions. Each of these portions of the
-space is then represented by an exemplar~\cite{key-33} that allows to compute
-an accurate distance approximation between different instances. SILK
-implements a multi-dimensional blocking approach for link discovery.
-The Levenshtein distance~\cite{key-34} is used for approximate for similarity
-estimation between different instances. EAGLE presents a novel active
-learning approach to learning link specifications based on genetic programming.
-EAGLE generates highly accurate link specifications while reducing the
-annotation burden for the user. 
+%Other noteable contributions such as LIMES~\cite{key-26}, SILK~\cite{key-27}, EAGLE~\cite{key-28} provides time-efficient approaches for link discovery using
+%various distance measure techniques. The LIMES framework utilize the mathematical
+%characteristics of metric spaces to compute similarity estimates between
+%instances. It makes use of the triangle inequality to partition the
+%metric space into different portions. Each of these portions of the
+%space is then represented by an exemplar~\cite{key-33} that allows to compute
+%an accurate distance approximation between different instances. SILK
+%implements a multi-dimensional blocking approach for link discovery.
+%The Levenshtein distance~\cite{key-34} is used for approximate for similarity
+%estimation between different instances. EAGLE presents a novel active
+%learning approach to learning link specifications based on genetic programming.
+%EAGLE generates highly accurate link specifications while reducing the
+%annotation burden for the user. 
 
 Few other contributions address the problem of SPARQL query federation~\cite{key-22},~\cite{key-23} but none, to the best of our knowledge has taken into account the possibility of mutual overlap between different RDF datasets before query execution. Similar to DARQ engine, we use service
 descriptions for query federation. In addition, we store MIPs vector
@@ -750,137 +750,138 @@ Moreover, the execution time of our approach was shown to be superior to that of
 Our approach is also able to generate less network traffic by escaping sub-queries that would not lead to non-duplicate result sets.
 In future work, we will extend our approach by combining it with on-the-fly duplicate detection systems. 
 By these means, we will enable our engine to merge facts which are expressed in different vocabularies or by using different URIs for the same real-world entity.
+
 \bibliographystyle{plain}
-
 \bibliography{qa}
-\begin{thebibliography}{10}
-\bibitem{key-1}Stuckenschmidt, H., Vdovjak, R., Houben, G.J., Broekstra,
-J.: Index structures and algorithms for querying distributed rdf repositories.
-In: WWW'04. (2004).
 
-\bibitem{key-2}Quilitz, B., Leser, U.: Querying distributed RDF data
-sources with SPARQL. In: European semantic web conference on the semantic
-web: research and applications (ESWC 2008). LNCS, vol. 5021, pp. 524-
-538. Springer, Heidelberg (2008).
+%\begin{thebibliography}{10}
+%\bibitem{key-1}Stuckenschmidt, H., Vdovjak, R., Houben, G.J., Broekstra,
+%J.: Index structures and algorithms for querying distributed rdf repositories.
+%In: WWW'04. (2004).
+%
+%\bibitem{key-2}Quilitz, B., Leser, U.: Querying distributed RDF data
+%sources with SPARQL. In: European semantic web conference on the semantic
+%web: research and applications (ESWC 2008). LNCS, vol. 5021, pp. 524-
+%538. Springer, Heidelberg (2008).
+%
+%\bibitem{key-3}Langegger, A., Waoay, W., Blaochl, M.: A semantic web
+%middleware for virtual data integration on the Web. In: European semantic
+%web conference on the semantic web: research and applications (ESWC
+%2008). LNCS, vol. 5021, pp. 493-507. Springer, Heidelberg (2008).
+%
+%\bibitem{key-4}Hartig, C. O, Bizer, J.-C. Freytag. Executing SPARQL
+%queries over the web of linked data. 8th International Semantic Web
+%Conference (ISWC 2009).
+%
+%\bibitem{key-5}Harth, A., Hose, K., Karnstedt, M., Polleres, A.,
+%Sattler, K.U. Umbrich, J.: Data summaries for on- demand queries over
+%linked data. In: (WWW 2010), USA.
+%
+%\bibitem{key-6}Umbrich, J., Hose, K., Karnstedt, M., Harth, A., Polleres.:
+%Comparing data summaries for processing live queries over Linked Data.
+%In:(WWWJ 2011), special issue querying the data web. 
+%
+%\bibitem{key-7}Schwarte, .A, Haase, .P, Hose, .K, Schenkel, R, Schmidt,
+%M.: FedX: Optimization Techniques for Federated Query Processing on
+%Linked Data. In: 10th International semantic web conference (ISWC
+%2011).
+%
+%\bibitem{key-8}Perez, J., Arenas, M., Gutierrez, C.: Semantics and
+%Complexity of SPARQL. In: 4th International SemanticWeb Conference
+%(ISWC), Athens, GA, USA (November 2006).
+%
+%\bibitem{key-9}Broder, A. Z., Charikar, M., Frieze, A. M., \& Mitzenmacher,
+%M. (2000). Min-wise independent permutations. Journal of Computer
+%and System Sciences, 60(3), 630-659.
+%
+%\bibitem{key-10}Bloom, B. H. (1970). Space/time trade-offs in hash
+%coding with allowable errors. Communications of ACM, 13(7), 422-426.
+%
+%\bibitem{key-11}Mitzenmacher, M. (2002). Compressed bloom filters.
+%In IEEE/ACM Transactions on Networking, 10(5), 604-612.
+%
+%\bibitem{key-12}Bender, M., Michel, S., Weikum, G., \& Zimmer, C.
+%(2005). Minerva: Collaborative p2p search. In Proceedings of the (VLDB)
+%conference (Demonstration).
+%
+%\bibitem{key-13}Parreira, J.X, Michel, S., Weikum, G.: p2pDating:
+%Real life inspired semantic overlay networks for Web search. In: Journal
+%of Information Processing and Management 43 (2007) 643-664.
+%
+%\bibitem{key-14} http://www4.wiwiss.fu-berlin.de/lodcloud/state/
+%
+%\bibitem{key-15}Y. Li and J. Hefl{}in. Using reformulation trees
+%to optimize queries over distributed heterogeneous sources. In ISWC,
+%pages 502-517, 2010.
+%
+%\bibitem{key-16}Z. Kaoudi, K. Kyzirakos, and M. Koubarakis. Sparql
+%query optimization on top of dhts. In ISWC, pages 418-435, 2010.
+%
+%\bibitem{key-17}A. Deshpande, Z. G. Ives, and V. Raman. Adaptive
+%query processing. Foundations and Trends in Databases, 1(1):1-140,
+%2007.
+%
+%\bibitem{key-18} G. Ladwig and T. Tran. Linked data query processing
+%strategies. In ISWC, pages 453-469, 2010.
+%
+%\bibitem{key-19}G. Ladwig and T. Tran. Sihjoin: Querying remote and
+%local linked data. In ESWC (1), pages 139-153, 2011.
+%
+%\bibitem{key-20}Auer.S, Lehmann. J, Ngonga, A.C.: Introduction to
+%Linked Data and Its Lifecycle on the Web. In: Reasoning Web. Semantic
+%Technologies for the Web of Data, Pages 1-75, 2011.
+%
+%\bibitem{key-21}M. Acosta, M.-E. Vidal, T. Lampo, J. Castillo, and
+%E. Ruckhaus. Anapsid: An adaptive query processing engine for sparql
+%endpoints. In Proc. of International Semantic Web Conference (ISWC),
+%2011.
+%
+%\bibitem{key-22}C. Buil-Aranda, M. Arenas, and O. Corcho. Semantics
+%and optimization of the sparql 1.1 federation extension. In ESWC (2),
+%pages 1-15, 2011.
+%
+%\bibitem{key-23}. M. Stoker, A. Seaborne, A. Bernstein, C. Keifer,
+%and D. Reynolds. SPARQL Basic Graph Pattern Optimizatin Using Selectivity
+%Estimation. In WWW, 2008.
+%
+%\bibitem{key-24}C. Basca and A. Bernstein. Avalanche: Putting the
+%Spirit of the Web back into Semantic Web Querying. In The 6th International
+%Workshop on SSWS at ISWC, 2010.
+%
+%\bibitem{key-25}O. Hartig. Zero-knowledge query planning for an iterator
+%implementation of link traversal based query execution. In ESWC, pages
+%154-169, 2011.
+%
+%\bibitem{key-26}Axel-Cyrille Ngonga Ngomo and Soren Auer. LIMES -
+%A Time-Ecient Approach for Large-Scale Link Discovery on the Web of
+%Data. In Proceedings of IJCAI, 2011.
+%
+%\bibitem{key-27} R. Isele, A. Jentzsch, and C. Bizer. Ecient Multidimensional
+%Blocking for Link Discovery without losing Recall. In WebDB, 2011.
+%
+%\bibitem{key-28}Axel-Cyrille Ngonga Ngomo and Klaus Lyko. EAGLE:
+%Ecient Active Learning of Link Specications using Genetic Programming.
+%In: ESWC(2012).
+%
+%\bibitem{key-35}M. Morsey, J. Lehmann, S. Auer, and A.-C. {Ngonga Ngomo}.
+%DBpedia SPARQL Benchmark - Performance Assessment with Real Queries
+%on Real Data. In 10th Interna- tional Semantic Web Conference (ISWC2011),
+%2011.
+%
+%\bibitem{key-36}Ntarmos, N. and Triantafillou, P. and Weikum, G.
+%Distributed hash sketches: Scalable, efficient, and accurate cardinality estimation for distributed multisets. ACM Trans. Comput. Syst.
+%January 2009,2:1--2:53.
+%
+%\bibitem{key-37}Polyzotis, Neoklis and Garofalakis, Minos. Statistical synopses for graph-structured XML databases. Proceedings of the 2002 ACM SIGMOD international conference on Management of data. 2002,358--369. 
+%
+%\bibitem{key-38}Natasha Drukh and Neoklis Polyzotis and Yossi Matias. Fractional XSKETCH synopses for XML databases. In Second International XML Database Symposium, XSym 2004, 189--203.
+%
+%\bibitem{key-39}Sebastian Michel, Matthias Bender, Peter Triantafillou,Gerhard Weikum. IQN Routing: Integrating Quality and Novelty in P2P Querying and Ranking. In Advances in Database Technology - EDBT 2006, 149-166.
+%
+%\bibitem{key-40}Moses S. Charikar.Similarity Estimation Techniques from Rounding
+%Algorithms. Proceedings of the thiry-fourth annual ACM symposium on Theory of computing, 380--388.
+%
 
-\bibitem{key-3}Langegger, A., Waoay, W., Blaochl, M.: A semantic web
-middleware for virtual data integration on the Web. In: European semantic
-web conference on the semantic web: research and applications (ESWC
-2008). LNCS, vol. 5021, pp. 493-507. Springer, Heidelberg (2008).
-
-\bibitem{key-4}Hartig, C. O, Bizer, J.-C. Freytag. Executing SPARQL
-queries over the web of linked data. 8th International Semantic Web
-Conference (ISWC 2009).
-
-\bibitem{key-5}Harth, A., Hose, K., Karnstedt, M., Polleres, A.,
-Sattler, K.U. Umbrich, J.: Data summaries for on- demand queries over
-linked data. In: (WWW 2010), USA.
-
-\bibitem{key-6}Umbrich, J., Hose, K., Karnstedt, M., Harth, A., Polleres.:
-Comparing data summaries for processing live queries over Linked Data.
-In:(WWWJ 2011), special issue querying the data web. 
-
-\bibitem{key-7}Schwarte, .A, Haase, .P, Hose, .K, Schenkel, R, Schmidt,
-M.: FedX: Optimization Techniques for Federated Query Processing on
-Linked Data. In: 10th International semantic web conference (ISWC
-2011).
-
-\bibitem{key-8}Perez, J., Arenas, M., Gutierrez, C.: Semantics and
-Complexity of SPARQL. In: 4th International SemanticWeb Conference
-(ISWC), Athens, GA, USA (November 2006).
-
-\bibitem{key-9}Broder, A. Z., Charikar, M., Frieze, A. M., \& Mitzenmacher,
-M. (2000). Min-wise independent permutations. Journal of Computer
-and System Sciences, 60(3), 630-659.
-
-\bibitem{key-10}Bloom, B. H. (1970). Space/time trade-offs in hash
-coding with allowable errors. Communications of ACM, 13(7), 422-426.
-
-\bibitem{key-11}Mitzenmacher, M. (2002). Compressed bloom filters.
-In IEEE/ACM Transactions on Networking, 10(5), 604-612.
-
-\bibitem{key-12}Bender, M., Michel, S., Weikum, G., \& Zimmer, C.
-(2005). Minerva: Collaborative p2p search. In Proceedings of the (VLDB)
-conference (Demonstration).
-
-\bibitem{key-13}Parreira, J.X, Michel, S., Weikum, G.: p2pDating:
-Real life inspired semantic overlay networks for Web search. In: Journal
-of Information Processing and Management 43 (2007) 643-664.
-
-\bibitem{key-14} http://www4.wiwiss.fu-berlin.de/lodcloud/state/
-
-\bibitem{key-15}Y. Li and J. Hefl{}in. Using reformulation trees
-to optimize queries over distributed heterogeneous sources. In ISWC,
-pages 502-517, 2010.
-
-\bibitem{key-16}Z. Kaoudi, K. Kyzirakos, and M. Koubarakis. Sparql
-query optimization on top of dhts. In ISWC, pages 418-435, 2010.
-
-\bibitem{key-17}A. Deshpande, Z. G. Ives, and V. Raman. Adaptive
-query processing. Foundations and Trends in Databases, 1(1):1-140,
-2007.
-
-\bibitem{key-18} G. Ladwig and T. Tran. Linked data query processing
-strategies. In ISWC, pages 453-469, 2010.
-
-\bibitem{key-19}G. Ladwig and T. Tran. Sihjoin: Querying remote and
-local linked data. In ESWC (1), pages 139-153, 2011.
-
-\bibitem{key-20}Auer.S, Lehmann. J, Ngonga, A.C.: Introduction to
-Linked Data and Its Lifecycle on the Web. In: Reasoning Web. Semantic
-Technologies for the Web of Data, Pages 1-75, 2011.
-
-\bibitem{key-21}M. Acosta, M.-E. Vidal, T. Lampo, J. Castillo, and
-E. Ruckhaus. Anapsid: An adaptive query processing engine for sparql
-endpoints. In Proc. of International Semantic Web Conference (ISWC),
-2011.
-
-\bibitem{key-22}C. Buil-Aranda, M. Arenas, and O. Corcho. Semantics
-and optimization of the sparql 1.1 federation extension. In ESWC (2),
-pages 1-15, 2011.
-
-\bibitem{key-23}. M. Stoker, A. Seaborne, A. Bernstein, C. Keifer,
-and D. Reynolds. SPARQL Basic Graph Pattern Optimizatin Using Selectivity
-Estimation. In WWW, 2008.
-
-\bibitem{key-24}C. Basca and A. Bernstein. Avalanche: Putting the
-Spirit of the Web back into Semantic Web Querying. In The 6th International
-Workshop on SSWS at ISWC, 2010.
-
-\bibitem{key-25}O. Hartig. Zero-knowledge query planning for an iterator
-implementation of link traversal based query execution. In ESWC, pages
-154-169, 2011.
-
-\bibitem{key-26}Axel-Cyrille Ngonga Ngomo and Soren Auer. LIMES -
-A Time-Ecient Approach for Large-Scale Link Discovery on the Web of
-Data. In Proceedings of IJCAI, 2011.
-
-\bibitem{key-27} R. Isele, A. Jentzsch, and C. Bizer. Ecient Multidimensional
-Blocking for Link Discovery without losing Recall. In WebDB, 2011.
-
-\bibitem{key-28}Axel-Cyrille Ngonga Ngomo and Klaus Lyko. EAGLE:
-Ecient Active Learning of Link Specications using Genetic Programming.
-In: ESWC(2012).
-
-\bibitem{key-35}M. Morsey, J. Lehmann, S. Auer, and A.-C. {Ngonga Ngomo}.
-DBpedia SPARQL Benchmark - Performance Assessment with Real Queries
-on Real Data. In 10th Interna- tional Semantic Web Conference (ISWC2011),
-2011.
-
-\bibitem{key-36}Ntarmos, N. and Triantafillou, P. and Weikum, G.
-Distributed hash sketches: Scalable, efficient, and accurate cardinality estimation for distributed multisets. ACM Trans. Comput. Syst.
-January 2009,2:1--2:53.
-
-\bibitem{key-37}Polyzotis, Neoklis and Garofalakis, Minos. Statistical synopses for graph-structured XML databases. Proceedings of the 2002 ACM SIGMOD international conference on Management of data. 2002,358--369. 
-
-\bibitem{key-38}Natasha Drukh and Neoklis Polyzotis and Yossi Matias. Fractional XSKETCH synopses for XML databases. In Second International XML Database Symposium, XSym 2004, 189--203.
-
-\bibitem{key-39}Sebastian Michel, Matthias Bender, Peter Triantafillou,Gerhard Weikum. IQN Routing: Integrating Quality and Novelty in P2P Querying and Ranking. In Advances in Database Technology - EDBT 2006, 149-166.
-
-\bibitem{key-40}Moses S. Charikar.Similarity Estimation Techniques from Rounding
-Algorithms. Proceedings of the thiry-fourth annual ACM symposium on Theory of computing, 380--388.
-
-
-\end{thebibliography}
+%\end{thebibliography}
 
 \end{document}
