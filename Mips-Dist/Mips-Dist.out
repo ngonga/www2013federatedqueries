@@ -10,7 +10,7 @@
 \BOOKMARK [2][-]{subsection.4.4}{Source Selection}{section.4}% 10
 \BOOKMARK [2][-]{subsection.4.5}{Source Ranking}{section.4}% 11
 \BOOKMARK [3][-]{subsubsection.4.5.1}{Triple Pattern Source Ranking}{subsection.4.5}% 12
-\BOOKMARK [3][-]{subsubsection.4.5.2}{Join Source Ranking \(this section is not well written\)}{subsection.4.5}% 13
+\BOOKMARK [3][-]{subsubsection.4.5.2}{Join Source Ranking}{subsection.4.5}% 13
 \BOOKMARK [2][-]{subsection.4.6}{Sub-query generation}{section.4}% 14
 \BOOKMARK [1][-]{section.5}{Experiments and Results}{}% 15
 \BOOKMARK [2][-]{subsection.5.1}{Experimental Setup}{section.5}% 16

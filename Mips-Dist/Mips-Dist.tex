@@ -1,6 +1,4 @@
 
-
-
 % PLEASE USE UTF-8 ENCODING WHEN EDITING THIS FILE!
 
 % WWW 2012 page limit: 10 pages
@@ -109,7 +107,7 @@ Over the last years, the Web of Data has developed into a large compendium of in
 Due to this lack of coordination, several of these data sets contain duplicate or complementary data. 
 Several federated querying approaches have been proposed to retrieve information from these data sources.
 Still, only little attention has been paid to the effect of duplicated and fragmented data on the processing of federated queries.
-This work presents a novel duplicate-aware approach to federated SPARQL querying based on min-wise independent permutations (MIPs) applied to RDF predicates.
+This work presents a novel duplicate-aware approach to federated SPARQL querying based on Min-Wise Independent Permutations (MIPs) applied to RDF predicates.
 Our approach begins by parsing each input query for triple patterns.
 Then, for each of these triple patterns, it uses MIPs to approximate the amount of non-duplicate triples contained in each of the available data sources. 
 This approximation is used to select and rank relevant data sources. 
@@ -146,17 +144,14 @@ We call triples that can be found in several knowledge bases across the Web of D
 
 While the importance of federated queries over the Web of Data has been stressed in previous work, the impact of duplicates has not received much attention.
 Yet, as we will show in the remainder of this paper, a duplicate-aware approach to query processing can lead to more time-efficient and effective algorithms for federated queries.
-In this paper, we address this drawback by presenting a duplicate-aware approach for query processing based on min-wise independent permutations (MIPs).
-\todo{Add main contribution}
-% combination with other statistic information
-%
-%
+In this paper, we address this drawback by presenting a duplicate-aware approach for query processing based on Min-Wise Independent Permutations (MIPs). The use of statistical synopsis such as MIPs for overlap estimation is very common in the literature (as discussed in the next section), however these synopsis cannot be use all alone in semantic web domain due to the diverse nature of SPARQL queries. For example, the synopsis estimation  need to be completely changed if any of the subject or object becomes bound in the query triple. To address such issues, we combine MIPs synopsis with the data summaries statistics for more accurate overlap estimation. 
+
 By creating small summaries of the data found in the available knowledge bases, our approach is able to estimate the amount of new information contained in a knowledge base with a high accuracy, leading to a better performance with respect to source ranking, estimation of result set sizes, execution time and network traffic. 
 
 The main contributions of this paper are as follows:
 \begin{enumerate}
 \item We propose the (to the best of our knowledge) first duplicate-aware approach for federated SPARQL querying.
-\item We combine subject and object selectivity with MIPs to achieve a better approximation of duplicate-free result set sizes.
+\item We combine data summaries statistics with MIPs to address the diversity in SPARQL queries.
 \item We evaluate our approach against the state of the art on 79 queries and four datasets and show that we achieve better estimations of result set sizes and therewith a better ranking of data sources, lower execution times and consequently less network traffic.
 \end{enumerate}
 %
@@ -179,8 +174,7 @@ We finally conclude the paper with a discussion of our findings and an overview 
 The research work on federated query processing over the Data Web
 can be categorized into three main directions: 
 \begin{itemize}
-\item Service description/index-assisted approaches, which make use of dataset summaries that have been collected in a pre-processing stage.
-These approaches may lead to a more efficient query federation. However,
+\item Service description/index-assisted approaches, which make use of the dataset summaries that have been collected in a pre-processing stage. These approaches may lead to a more efficient query federation. However,
 the index needs to be constantly updated to ensure up-to-date results.
 Also, the index size should not be large to ensure that it does not
 increase the overall query processing cost. 
@@ -188,6 +182,7 @@ increase the overall query processing cost.
 without using any stored data summaries. The data source statistics can be collected on-the-fly before the query federation. This approach promises the up-to-date records retrieval however; it may increase or decrease the query execution time, depends on the extra processing required in collecting,processing on-the-fly statistics.
 \item Hybrid approaches, in which some of the data source statistics are pre-stored while some are collected on-the-fly. 
 \end{itemize}
+
 All of the above approaches can be further divided into two categories
 (a) Query federation with complete result retrieval (100\% recall), and (b) Query federation
 with partial (sufficient) record retrieval. In our work, we focus
@@ -409,6 +404,17 @@ pre-defined for final source selection. For a triple \emph{t $\in$\ BGP} and a d
 is less than the threshold, \emph{s} is ignored from set $D_j$. For 100\%\ recall the threshold value should be 1. Which means if a source is able to produce a single triple, it will be added to the set of capable sources. For sufficient (not complete) record retrieval the threshold can be fixed to any number greater than 1. For all of the 79 queries in this work, our threshold value is 1. 
 
 \subsection{Source Ranking} 
+To show the importance of the duplicate-aware data source ranking (based on the amount of duplicate-free records retrieved), suppose we have a triple pattern query\emph{q} shown in Listing 2  and \emph{$ ds_1, ds_2, ds_3 $} are the data sources capable of answering that query. If we apply DARQ source selection algorithm we will get all 4 dataset as the list of capable sources. Let $ds_1$ has a total of 50 triples satisfying \emph{q}, $ds_2$ and $ds_3$ each has 40 triples satisfying the query. Further suppose that 25 of the $ds_3$ triples are duplicated at $ds_1$ while remaining 15 are duplicated at $ds_2$. The DARQ sub-query generator will forward the query to all of the datasets and will be surprised with a complete duplicates from $ds_3$. In this case the time consumed by the $ds_3$ to process the query \emph{q} is extra added to the overall query execution time. Moreover, integration time is also increased as the $ds_3$ records need to be considered during the final result set compilation. Now if we apply duplicate-aware source ranking approach, which will select $ds_1$ as first, $ds_2$ as second in the rank and $ds_3$ will become out of the rank competition. Which means we only need two sub-queries and can skip querying $ds_3$. 
+
+Similar to DARQ, our system make use of the triple-by-triple sub-query federation, therefore it is important to have a duplicate-aware triple pattern source ranking algorithm for sub-query escaping. We present this triple pattern source ranking algorithm in the next section. 
+\begin{lstlisting}[caption = {A single triple pattern query},basicstyle={\tiny},frame = {single},stringstyle={\ttfamily}]
+ SELECT ?o
+   WHERE
+    {
+        ?s  <p1> ?o .
+    }
+\end{lstlisting}
+
 \subsubsection{Triple Pattern Source Ranking}
 Algorithm 1 shows the single triple pattern source ranking. For a triple \emph{t(s,p,o) $\in$ T } the set of capable data sources \emph{D} is obtained using the source selection algorithm explained in previous section. The source \emph{d $\in$ D} which has the highest \emph{totTrpl} value in the matched capability \emph{C(p,mipsv,sbjsel,objsel,totTrpl)} is selected as first in the rank. The union and intersection of \emph{MIPs Vectors} is explained in section 4.3. In order to get the accurate result set estimate, we multiply \emph{sbjsel, objsel $\in C$} to the \emph{orignal size} of the \emph{MIPs Vectors} if \emph{subject} or \emph{object} of the triple pattern is bound respectively. The same is true for rank 1 dataset selection. However, the multiplication is performed with \emph{totTrpl} of mached capability instead of \emph{orignal size}. 
 
@@ -454,11 +460,18 @@ It is important to note that the number of elements in the MIPs vector may be di
 \RETURN $D_{s}$  //rank wise selected sources
 \end{algorithmic}
 \end{algorithm}
-\subsubsection{Join Source Ranking (this section is not well written)}
-Similar to DARQ, we perform individual triple based sub-query federation. Consequently, triple pattern source ranking is most important for sub-query escaping. The advantage of this approach is that if a data source is not capable of answering the complete query, it may produce enough results for a specific sub-set of query triples. For the comparison purpose we propose a complete query source ranking which works as follow: For a star shaped queries, the overall result set is bound by the triple with lowest number of estimated records. Therefore, we perform the source ranking for that triple (using Algorithm 1) and use this as complete query ranking. The lowest records query triple can be estimated using the rank 1 source selection explained in previous section. However, this time we are looking for a source which has the lowest estimated value of all. For path shaped queries the total records are bound by the triple which has \emph{subject} variable equal to the \emph{object} of the previous query triple. For example the result set in the query given in Listing 2, is bound by the second triple in which the \emph{object} variable in the first triple is used as \emph{subject} in the second triple. Therefore, we perform the triple pattern ranking for second triple and use this as ranking for complete query.
-%\lstinputlisting[caption=.,label=ex:q1, language=SPARQL]
-\begin{lstlisting}[caption = {A P-1 query example},frame = single,language=SPARQL]
- SELECT ?s 
+%<<<<<<< HEAD
+%\subsubsection{Join Source Ranking (this section is not well written)}
+%Similar to DARQ, we perform individual triple based sub-query federation. Consequently, triple pattern source ranking is most important for sub-query escaping. The advantage of this approach is that if a data source is not capable of answering the complete query, it may produce enough results for a specific sub-set of query triples. For the comparison purpose we propose a complete query source ranking which works as follow: For a star shaped queries, the overall result set is bound by the triple with lowest number of estimated records. Therefore, we perform the source ranking for that triple (using Algorithm 1) and use this as complete query ranking. The lowest records query triple can be estimated using the rank 1 source selection explained in previous section. However, this time we are looking for a source which has the lowest estimated value of all. For path shaped queries the total records are bound by the triple which has \emph{subject} variable equal to the \emph{object} of the previous query triple. For example the result set in the query given in Listing 2, is bound by the second triple in which the \emph{object} variable in the first triple is used as \emph{subject} in the second triple. Therefore, we perform the triple pattern ranking for second triple and use this as ranking for complete query.
+%%\lstinputlisting[caption=.,label=ex:q1, language=SPARQL]
+%\begin{lstlisting}[caption = {A P-1 query example},frame = single,language=SPARQL]
+ %SELECT ?s 
+%=======
+\subsubsection{Join Source Ranking}
+ As mentioned earlier, we perform individual triple based sub-query federation. Consequently, triple pattern source ranking is most important for sub-query escaping. The advantage of this approach is that if a data source is not capable of answering the complete query, it may produce enough results for a specific sub-set of query triples. For the comparison purpose we propose a complete query source ranking which works as follow: For a star shaped queries(described in ~\cite{key-5}), the overall result set is bound by the triple with lowest number of estimated records. Therefore, we perform the source ranking for that triple (using Algorithm 1) and use this as complete query ranking. The lowest records query triple can be estimated using the rank 1 source selection explained in previous section. However, this time we are looking for a source which has the lowest estimated value of all. For path shaped queries the total records are bound by the triple which has \emph{subject} variable equal to the \emph{object} of the previous query triple. For example the result set in the query given in Listing 3, is bound by the second triple in which the \emph{object} variable in the first triple is used as \emph{subject} in the second triple. Therefore, we perform the triple pattern ranking for second triple and use this as ranking for complete query.
+\begin{lstlisting}[caption = {A P-1 query example},basicstyle={\tiny},frame = {single},language=SPARQL,stringstyle={\ttfamily}]
+ SELECT ?o1 
+%>>>>>>> 91effb51600ae4854ccf832a3a02eea52626b505
    WHERE
     {
         ?s  <p1> ?o .
@@ -727,14 +740,8 @@ Total 					&23		&38	&49	&8	&20	&12	&150 \\\hline
 %\subsubsection{Execution Time}
 %\subsubsection{Size of MIPS vectors (on largest dataset)}
 \section{Discussion}
-
-
-
-
 %\bibliographystyle{plain}
 %\bibliography{literature}
-%\flushpage
-%\newpage
 
 \begin{thebibliography}{10}
 \bibitem{key-1}Stuckenschmidt, H., Vdovjak, R., Houben, G.J., Broekstra,
