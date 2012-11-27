@@ -20,7 +20,7 @@
 \usepackage{algorithmic}
 \newcommand{\todo}[1]{\textbf{ToDo: \textit{#1}}}
 %\newcommand{\comm}[1]{\textbf{Comment: \textit{#1}}}\stackrel{\leftrightarrow}{}
-
+\usepackage{natbib}
 \usepackage{enumitem}
 \usepackage[usenames,dvipsnames]{color}
 \newcommand{\sparqlwo}[2]{{\texttt{#1 \char '173} \\[1.5pt] \hspace*{.5cm}\parbox{6cm}{\tt #2} \\ \texttt{\char '175} }}
@@ -64,7 +64,7 @@
 \alignauthor 
 Muhammad Saleem\\
        \affaddr{Digital Enterprise Research }\\
-       \affaddr{Institute,National University of Ireland, Galway}\\
+       \affaddr{Institute, National University of Ireland, Galway}\\
        \email{muhammad.saleem@deri.org}
 \and
 \alignauthor
@@ -76,12 +76,12 @@ Axel-Cyrille Ngonga Ngomo\\
 \alignauthor
 Josiane Xavier Parreira\\
       \affaddr{Digital Enterprise Research }\\
-      \affaddr{Institute,National University of Ireland, Galway} \\
+      \affaddr{Institute, National University of Ireland, Galway} \\
       \email{josiane.parreira@deri.org}\\
 \and
 Manfred Hauswirth\\
-       \affaddr{Digital Enterprise Research }\\
-       \affaddr{Institute, National University of Ireland, Galway}\\ 
+       \affaddr{Digital Enterprise Research Institute, }\\
+       \affaddr{National University of Ireland, Galway}\\ 
        \email{manfred.hauswirth@deri.org}			
 }
 
@@ -382,8 +382,9 @@ step is performed separately for each basic graph pattern.
 The source selection algorithm used in DARQ for
 a query simply matches all triple patterns against the capabilities
 of the data sources. The matching compares the predicate in a triple
-pattern with the predicate defined for a capability. Let \emph{S =$\{(s_1,C_1),...,(s_n,C_n)\}$ } be a set of all indexed data sources \emph{$s_1..s_n$} and their capabilities \emph{$C_1..C_n$,} where \emph{$C_i = \{(p_i,mipsv_i,sbjsel_i,objsel_i,totTrpl_i)\}$}.
+pattern with the predicate defined for a capability. 
 
+Let \emph{S =$\{(s_1,C_1),..,(s_n,C_n)\}$ } be a set of all indexed data sources \emph{$s_1..s_n$} and their capabilities \emph{$C_1..C_n$,} where \emph{$C_i = \{(p_i, mipsv_i, sbjsel_i, objsel_i, totTrpl_i)\}$}.
 Let \emph{BGP} be a set of triple
 patterns in a filtered basic graph pattern. The result of the source
 selection is a set of data sources $D_j$ for each triple
@@ -407,7 +408,7 @@ To show the importance of the duplicate-aware data source ranking (based on the 
 
 Similar to DARQ, our system make use of the triple-by-triple sub-query federation, therefore it is important to have a duplicate-aware triple pattern source ranking algorithm for sub-query escaping. We present this triple pattern source ranking algorithm in the next section. 
 
-\begin{lstlisting}[caption = {A single triple pattern query},frame = {single},stringstyle={\ttfamily}]
+\begin{lstlisting}[caption = {A single triple pattern query},basicstyle={\tiny},frame = {single},stringstyle={\ttfamily}]
  SELECT ?o
    WHERE
     {
@@ -416,7 +417,7 @@ Similar to DARQ, our system make use of the triple-by-triple sub-query federatio
 \end{lstlisting}
 
 \subsubsection{Triple Pattern Source Ranking}
-Algorithm 1 shows the single triple pattern source ranking. For a triple \emph{t(s,p,o) $\in$ T } the set of capable data sources \emph{D} is obtained using the source selection algorithm explained in previous section. The source \emph{d $\in$ D} which has the highest \emph{totTrpl} value in the matched capability \emph{C(p,mipsv,sbjsel,objsel,totTrpl)} is selected as first in the rank. The union and intersection of \emph{MIPs Vectors} is explained in section 4.3. In order to get the accurate result set estimate, we multiply \emph{sbjsel, objsel $\in C$} to the \emph{orignal size} of the \emph{MIPs Vectors} if \emph{subject} or \emph{object} of the triple pattern is bound respectively. The same is true for rank 1 dataset selection. However, the multiplication is performed with \emph{totTrpl} of mached capability instead of \emph{orignal size}. 
+Algorithm 1 shows the single triple pattern source ranking. For a triple \emph{t(s,p,o) $\in$ T } the set of capable data sources \emph{D} is obtained using the source selection algorithm explained in previous section. The source \emph{d $\in$ D} which has the highest \emph{totTrpl} value in the matched capability \emph{C(p, mipsv, sbjsel, objsel, totTrpl)} is selected as first in the rank. The union and intersection of \emph{MIPs Vectors} is explained in section 4.3. In order to get the accurate result set estimate, we multiply \emph{sbjsel, objsel $\in C$} to the \emph{orignal size} of the \emph{MIPs Vectors} if \emph{subject} or \emph{object} of the triple pattern is bound respectively. The same is true for rank 1 dataset selection. However, the multiplication is performed with \emph{totTrpl} of mached capability instead of \emph{orignal size}. 
 
 It is important to note that the number of elements in the MIPs vector may be different from its \emph{orignal size}. The \emph{orignal size} is the number of elements in the \emph{ID set} over which we applied \emph{N} random permutations to get the MIPs Vector as explained in MIPs section. In the line 24 we set the threshold value to 1 in order to get 100\% recall. For each triple pattern $t_j = (s_j, p_j, o_j)$ in the query \emph{q} $\in$ \emph{Q}, we apply the Algorithm 1 to get a set of selected capable data sources \emph{$D_{s_j}$} which is used in sub-query generating algorithm explained in Section 4.6.
 
@@ -468,8 +469,8 @@ It is important to note that the number of elements in the MIPs vector may be di
  %SELECT ?s 
 %=======
 \subsubsection{Join Source Ranking}
- As mentioned earlier, we perform individual triple based sub-query federation. Consequently, triple pattern source ranking is most important for sub-query escaping. The advantage of this approach is that if a data source is not capable of answering the complete query, it may produce enough results for a specific sub-set of query triples. For the comparison purpose we propose a complete query source ranking which works as follow: For a star shaped queries(described in ~\cite{key-5}), the overall result set is bound by the triple with lowest number of estimated records. Therefore, we perform the source ranking for that triple (using Algorithm 1) and use this as complete query ranking. The lowest records query triple can be estimated using the rank 1 source selection explained in previous section. However, this time we are looking for a source which has the lowest estimated value of all. For path shaped queries the total records are bound by the triple which has \emph{subject} variable equal to the \emph{object} of the previous query triple. For example the result set in the query given in Listing 3, is bound by the second triple in which the \emph{object} variable in the first triple is used as \emph{subject} in the second triple. Therefore, we perform the triple pattern ranking for second triple and use this as ranking for complete query.
-\begin{lstlisting}[caption = {A P-1 query example},frame = {single},language=SPARQL,stringstyle={\ttfamily}]
+ As mentioned earlier, we perform individual triple based sub-query federation. Consequently, triple pattern source ranking is most important for sub-query escaping. The advantage of this approach is that if a data source is not capable of answering the complete query, it may produce enough results for a specific sub-set of query triples. For the comparison purpose we propose a complete query source ranking which works as follow: For a star shaped queries like the query given in Listing 4, the overall result set is bound by the triple with lowest number of estimated records. Therefore, we perform the source ranking for that triple (using Algorithm 1) and use this as complete query ranking. The lowest records query triple can be estimated using the rank 1 source selection explained in previous section. However, this time we are looking for a source which has the lowest estimated value of all. For path shaped queries the total records are bound by the triple which has \emph{subject} variable equal to the \emph{object} of the previous query triple. For example the result set in the query given in Listing 3, is bound by the second triple in which the \emph{object} variable in the first triple is used as \emph{subject} in the second triple. Therefore, we perform the triple pattern ranking for second triple and use this as ranking for complete query.
+\begin{lstlisting}[caption = {A P-1 query example},basicstyle={\tiny},frame = {single},language=SPARQL,stringstyle={\ttfamily}]
  SELECT ?o1 
    WHERE
     {
@@ -557,7 +558,7 @@ We used three main types of queries in our experiments: basic graph patterns (BG
 \emph{Basic graph pattern} (BGP) queries consist of exactly one triple pattern in the query.
 Star-shaped and path-shaped queries are defined as in~\cite{key-5}: \emph{star-shaped queries} (denoted by S-k) have one variable as subject and contained k joins, i.e., (k+1) triple patterns.
 An example of a S-1 star-shaped query is given in the listing below.
-\begin{lstlisting}[caption = {A P-1 query example},frame = single,language=SPARQL]
+\begin{lstlisting}[caption = {A S-1 query example},basicstyle={\tiny},frame = single,language=SPARQL]
  SELECT ?s 
    WHERE
     {
@@ -749,7 +750,9 @@ Moreover, the execution time of our approach was shown to be superior to that of
 Our approach is also able to generate less network traffic by escaping sub-queries that would not lead to non-duplicate result sets.
 In future work, we will extend our approach by combining it with on-the-fly duplicate detection systems. 
 By these means, we will enable our engine to merge facts which are expressed in different vocabularies or by using different URIs for the same real-world entity.
- 
+\bibliographystyle{plain}
+
+\bibliography{qa}
 \begin{thebibliography}{10}
 \bibitem{key-1}Stuckenschmidt, H., Vdovjak, R., Houben, G.J., Broekstra,
 J.: Index structures and algorithms for querying distributed rdf repositories.
@@ -858,26 +861,6 @@ Blocking for Link Discovery without losing Recall. In WebDB, 2011.
 \bibitem{key-28}Axel-Cyrille Ngonga Ngomo and Klaus Lyko. EAGLE:
 Ecient Active Learning of Link Specications using Genetic Programming.
 In: ESWC(2012).
-
-\bibitem{key-29}Unger, C.; Buhmann, L.; Lehmann, J.; Ngonga Ngomo,
-A.-C.; Gerber, D.; and Cimiano, P. Templatebased question answering
-over RDF data. In WWW (2012).
-
-\bibitem{key-30}G.Koutrika, and Y.Ioannidis, Personalized Queries
-under a Generalized Preference Model, In ICDE 2005.
-
-\bibitem{key-31}G.Koutrika, and Y.Ioannidis, Personalization of Queries
-in Database Systems, In ICDE 2004.
-
-\bibitem{key-32}S.Magliacane, A. Bozzon.E.D. Valle. Efficient Execution
-of Top-k SPARQL Queries. In: ISWC(2012), USA. 
-
-\bibitem{key-33}B. J. Frey and D. Dueck. Clustering by passing messages
-between data points. Science, 315:972-976, 2007.
-
-\bibitem{key-34} V. Levenshtein. Binary codes capable of correcting
-deletions, insertions, and reversals. In Soviet Physics Doklady, volume
-10, 1966.
 
 \bibitem{key-35}M. Morsey, J. Lehmann, S. Auer, and A.-C. {Ngonga Ngomo}.
 DBpedia SPARQL Benchmark - Performance Assessment with Real Queries
