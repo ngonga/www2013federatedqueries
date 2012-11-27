@@ -107,7 +107,7 @@ Over the last years, the Web of Data has developed into a large compendium of in
 Due to this lack of coordination, several of these data sets contain duplicate or complementary data. 
 Several federated querying approaches have been proposed to retrieve information from these data sources.
 Still, only little attention has been paid to the effect of duplicated and fragmented data on the processing of federated queries.
-This work presents a novel duplicate-aware approach to federated SPARQL querying based on min-wise independent permutations (MIPs) applied to RDF predicates.
+This work presents a novel duplicate-aware approach to federated SPARQL querying based on Min-Wise Independent Permutations (MIPs) applied to RDF predicates.
 Our approach begins by parsing each input query for triple patterns.
 Then, for each of these triple patterns, it uses MIPs to approximate the amount of non-duplicate triples contained in each of the available data sources. 
 This approximation is used to select and rank relevant data sources. 
@@ -144,17 +144,14 @@ We call triples that can be found in several knowledge bases across the Web of D
 
 While the importance of federated queries over the Web of Data has been stressed in previous work, the impact of duplicates has not received much attention.
 Yet, as we will show in the remainder of this paper, a duplicate-aware approach to query processing can lead to more time-efficient and effective algorithms for federated queries.
-In this paper, we address this drawback by presenting a duplicate-aware approach for query processing based on min-wise independent permutations (MIPs).
-\todo{Add main contribution}
-% combination with other statistic information
-%
-%
+In this paper, we address this drawback by presenting a duplicate-aware approach for query processing based on Min-Wise Independent Permutations (MIPs). The use of statistical synopsis such as MIPs for overlap estimation is very common in the literature (as discussed in the next section), however these synopsis cannot be use all alone in semantic web domain due to the diverse nature of SPARQL queries. For example, the synopsis estimation  need to be completely changed if any of the subject or object becomes bound in the query triple. To address such issues, we combine MIPs synopsis with the data summaries statistics for more accurate overlap estimation. 
+
 By creating small summaries of the data found in the available knowledge bases, our approach is able to estimate the amount of new information contained in a knowledge base with a high accuracy, leading to a better performance with respect to source ranking, estimation of result set sizes, execution time and network traffic. 
 
 The main contributions of this paper are as follows:
 \begin{enumerate}
 \item We propose the (to the best of our knowledge) first duplicate-aware approach for federated SPARQL querying.
-\item We combine subject and object selectivity with MIPs to achieve a better approximation of duplicate-free result set sizes.
+\item We combine data summaries statistics with MIPs to address the diversity in SPARQL queries.
 \item We evaluate our approach against the state of the art on 79 queries and four datasets and show that we achieve better estimations of result set sizes and therewith a better ranking of data sources, lower execution times and consequently less network traffic.
 \end{enumerate}
 %
@@ -463,7 +460,7 @@ It is important to note that the number of elements in the MIPs vector may be di
 \RETURN $D_{s}$  //rank wise selected sources
 \end{algorithmic}
 \end{algorithm}
-\subsubsection{Join Source Ranking (this section is not well written)}
+\subsubsection{Join Source Ranking}
  As mentioned earlier, we perform individual triple based sub-query federation. Consequently, triple pattern source ranking is most important for sub-query escaping. The advantage of this approach is that if a data source is not capable of answering the complete query, it may produce enough results for a specific sub-set of query triples. For the comparison purpose we propose a complete query source ranking which works as follow: For a star shaped queries, the overall result set is bound by the triple with lowest number of estimated records. Therefore, we perform the source ranking for that triple (using Algorithm 1) and use this as complete query ranking. The lowest records query triple can be estimated using the rank 1 source selection explained in previous section. However, this time we are looking for a source which has the lowest estimated value of all. For path shaped queries the total records are bound by the triple which has \emph{subject} variable equal to the \emph{object} of the previous query triple. For example the result set in the query given in Listing 3, is bound by the second triple in which the \emph{object} variable in the first triple is used as \emph{subject} in the second triple. Therefore, we perform the triple pattern ranking for second triple and use this as ranking for complete query.
 \begin{lstlisting}[caption = {A P-1 query example},basicstyle={\tiny},frame = {single},stringstyle={\ttfamily}]
  SELECT ?o1 
