@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.2)  27 NOV 2012 09:19
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.2)  27 NOV 2012 09:34
 entering extended mode
 **Mips-Dist.tex
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\Mips-Dist.tex
@@ -1477,7 +1477,7 @@ Overfull \hbox (4.81517pt too wide) in paragraph at lines 703--712
  [][] 
  []
 
-<img/runtime_recall.pdf, id=392, 678.28406pt x 257.46187pt>
+<img/runtime_recall.pdf, id=393, 678.28406pt x 257.46187pt>
 File: img/runtime_recall.pdf Graphic file (type pdf)
  <use img/runtime_recall.pdf>
 Package pdftex.def Info: img/runtime_recall.pdf used on input line 753.
@@ -1487,16 +1487,16 @@ Package pdftex.def Info: img/runtime_recall.pdf used on input line 753.
 ame identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.59 
-      [8]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate igno
-red
+l.55 \bibitem{key-17}
+                      [8]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used
+, duplicate ignored
 <to be read again> 
                    \relax 
-l.59 
-      [9 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/querywise_rse.pdf> <E:/Work/Papers/Eigene/201
-3/www2013federatedqueries/Mips-Dist/img/subquerywise_rse.pdf> <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-D
-ist/img/querywise_ranking.pdf> <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/subquerywise_ranking.pd
-f>]
+l.55 \bibitem{key-17}
+                      [9 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/querywise_rse.pdf> <E:/Work/P
+apers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/subquerywise_rse.pdf> <E:/Work/Papers/Eigene/2013/www2013federat
+edqueries/Mips-Dist/img/querywise_ranking.pdf> <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/subquer
+ywise_ranking.pdf>]
 Underfull \hbox (badness 1194) in paragraph at lines 113--118
 \T1/aer/m/n/9 to op-ti-mize queries over dis-tributed het-ero-ge-neous
  []
@@ -1507,12 +1507,12 @@ Underfull \hbox (badness 1701) in paragraph at lines 126--129
  []
 
 
-Underfull \hbox (badness 2237) in paragraph at lines 138--142
+Underfull \hbox (badness 2237) in paragraph at lines 144--148
 []\T1/aer/m/n/9 Nikos Ntar-mos, Pe-ter Tri-antafil-lou, and Ger-hard
  []
 
 ! Misplaced alignment tab character &.
-l.147 \newblock {\em Information Processing &
+l.153 \newblock {\em Information Processing &
                                              amp; Management}, 43(3):643 -- ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1524,7 +1524,7 @@ might try typing `S' now just to see what is salvageable.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.166 
+l.160 
        [10 <E:/Work/Papers/Eigene/2013/www2013federatedqueries/Mips-Dist/img/runtime_recall.pdf>]
 
 ! Package inputenc Error: Keyboard character used is undefined
@@ -1534,13 +1534,13 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.171 \newblock In {\em The Semantic Web –
+l.177 \newblock In {\em The Semantic Web –
                                            ISWC 2011}, volume 7031 of {\em L...
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-Underfull \hbox (badness 2285) in paragraph at lines 203--207
+Underfull \hbox (badness 2285) in paragraph at lines 209--213
 \T1/aer/m/n/9 Axel-Cyrille Ngonga Ngomo, Daniel Ger-ber, and
  []
 
@@ -1561,10 +1561,10 @@ Package rerunfilecheck Info: File `Mips-Dist.out' has not changed.
 (rerunfilecheck)             Checksum: 3DCEDEAA9F3F9567A91D1858384FEB4F;1590.
  ) 
 Here is how much of TeX's memory you used:
- 11454 strings out of 494045
- 162379 string characters out of 3145967
- 318103 words of memory out of 3000000
- 14351 multiletter control sequences out of 15000+200000
+ 11458 strings out of 494045
+ 162432 string characters out of 3145967
+ 318119 words of memory out of 3000000
+ 14354 multiletter control sequences out of 15000+200000
  61231 words of font info for 89 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  41i,12n,43p,1396b,1169s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1584,9 +1584,9 @@ ls/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a
 fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on Mips-Dist.pdf (11 pages, 865841 bytes).
+Output written on Mips-Dist.pdf (11 pages, 866420 bytes).
 PDF statistics:
- 624 PDF objects out of 1000 (max. 8388607)
- 169 named destinations out of 1000 (max. 500000)
+ 626 PDF objects out of 1000 (max. 8388607)
+ 170 named destinations out of 1000 (max. 500000)
  225 words of extra memory for PDF output out of 10000 (max. 10000000)
 
