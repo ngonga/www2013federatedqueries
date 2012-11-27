@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.11.5)  27 NOV 2012 01:36
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.11.5)  27 NOV 2012 02:01
 entering extended mode
 **Mips-Dist.tex
 (C:\Users\muhsal\Documents\Mips-Dist\Mips-Dist.tex
@@ -907,14 +907,6 @@ ems--- \T1/aer/m/it/9 Dis-tributed databases
  []
 
 
-LaTeX Warning: Citation `key-14' on page \thepage  undefined on input line 133.
-
-
-
-LaTeX Warning: Citation `key-20' on page \thepage  undefined on input line 134.
-
-
-
 LaTeX Warning: Citation `UNG+12' on page \thepage  undefined on input line 136.
 
 
@@ -938,10 +930,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 140--140
 rql _$
  []
 
-
-LaTeX Warning: Reference `fig:datasets' on page \thepage  undefined on input li
-ne 142.
-
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
@@ -950,7 +938,7 @@ Overfull \hbox (3.74182pt too wide) in paragraph at lines 153--154
 \T1/aer/m/n/9 duplicate-aware ap-proach for fed-er-ated SPARQL query-
  []
 
-<img/possibleDuplicates.pdf, id=132, 344.28625pt x 265.99374pt>
+<img/possibleDuplicates.pdf, id=137, 344.28625pt x 265.99374pt>
 File: img/possibleDuplicates.pdf Graphic file (type pdf)
 
 <use img/possibleDuplicates.pdf>
@@ -967,25 +955,10 @@ Overfull \hbox (2.47299pt too wide) in paragraph at lines 181--183
  []
 
 
-LaTeX Warning: Citation `key-1' on page \thepage  undefined on input line 191.
-
-
-LaTeX Warning: Citation `key-2' on page \thepage  undefined on input line 194.
-
-
-LaTeX Warning: Citation `key-1' on page \thepage  undefined on input line 195.
-
-
-LaTeX Warning: Citation `key-8' on page \thepage  undefined on input line 199.
-
-
 Overfull \hbox (6.36989pt too wide) in paragraph at lines 191--204
 \T1/aer/m/n/9 struc-ture to de-ter-mine the rel-e-vant sources for a query. Qui
 litz
  []
-
-
-LaTeX Warning: Citation `key-3' on page \thepage  undefined on input line 205.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
@@ -993,28 +966,10 @@ een already used, duplicate ignored
                    \relax 
 l.211 
        [2 <C:/Users/muhsal/Documents/Mips-Dist/img/possibleDuplicates.pdf>]
-
-LaTeX Warning: Citation `key-4' on page \thepage  undefined on input line 212.
-
-
-LaTeX Warning: Citation `key-3' on page \thepage  undefined on input line 217.
-
-
-LaTeX Warning: Citation `key-5' on page \thepage  undefined on input line 221.
-
-
-LaTeX Warning: Citation `key-6' on page \thepage  undefined on input line 221.
-
-
-LaTeX Warning: Citation `key-7' on page \thepage  undefined on input line 223.
-
-
-LaTeX Warning: Citation `key-15' on page \thepage  undefined on input line 228.
-
-
-
-LaTeX Warning: Citation `key-16' on page \thepage  undefined on input line 229.
-
+Overfull \hbox (11.42773pt too wide) in paragraph at lines 228--233
+\T1/aer/m/n/9 fed-er-ated query pro-cess-ing over mul-ti-ple het-ero-ge-neous s
+ources.
+ []
 
 
 Overfull \hbox (10.96837pt too wide) in paragraph at lines 228--233
@@ -1023,48 +978,16 @@ oudi
  []
 
 
-LaTeX Warning: Citation `key-18' on page \thepage  undefined on input line 234.
+Overfull \hbox (1.24887pt too wide) in paragraph at lines 239--248
+\T1/aer/m/n/9 Avalanche [[]24[]] gath-ers end-points dataset statis-tics and ba
+nd-
+ []
 
 
-
-LaTeX Warning: Citation `key-19' on page \thepage  undefined on input line 237.
-
-
-
-LaTeX Warning: Citation `key-21' on page \thepage  undefined on input line 239.
-
-
-
-LaTeX Warning: Citation `key-17' on page \thepage  undefined on input line 244.
-
-
-
-LaTeX Warning: Citation `key-24' on page \thepage  undefined on input line 246.
-
-
-
-LaTeX Warning: Citation `key-25' on page \thepage  undefined on input line 246.
-
-
-
-LaTeX Warning: Citation `key-26' on page \thepage  undefined on input line 249.
-
-
-
-LaTeX Warning: Citation `key-27' on page \thepage  undefined on input line 249.
-
-
-
-LaTeX Warning: Citation `key-28' on page \thepage  undefined on input line 249.
-
-
-
-LaTeX Warning: Citation `key-33' on page \thepage  undefined on input line 254.
-
-
-
-LaTeX Warning: Citation `key-34' on page \thepage  undefined on input line 257.
-
+Overfull \hbox (6.62064pt too wide) in paragraph at lines 249--262
+[]\T1/aer/m/n/9 Other note-able con-tri-bu-tions such as LIMES [[]26[]], SILK [
+[]27[]],
+ []
 
 
 Overfull \hbox (6.88321pt too wide) in paragraph at lines 249--262
@@ -1076,43 +999,10 @@ S
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-
-LaTeX Warning: Citation `key-22' on page \thepage  undefined on input line 263.
-
-
-
-LaTeX Warning: Citation `key-23' on page \thepage  undefined on input line 263.
-
-
-
-LaTeX Warning: Citation `key-9' on page \thepage  undefined on input line 272.
-
-
-LaTeX Warning: Citation `key-10' on page \thepage  undefined on input line 272.
-
-
-
-LaTeX Warning: Citation `key-36' on page \thepage  undefined on input line 272.
-
-
-
-LaTeX Warning: Citation `key-37' on page \thepage  undefined on input line 272.
-
-
-
-LaTeX Warning: Citation `key-38' on page \thepage  undefined on input line 272.
-
-
-
-LaTeX Warning: Citation `key-11' on page \thepage  undefined on input line 272.
-
-
-
-LaTeX Warning: Citation `key-12' on page \thepage  undefined on input line 272.
-
-
-
-LaTeX Warning: Citation `key-9' on page \thepage  undefined on input line 272.
+Overfull \hbox (6.33795pt too wide) in paragraph at lines 272--273
+\T1/aer/m/n/9 tions [[]9[]], bloom fil-ters [[]10[]], hash sketches [[]36[]], X
+S-KETCH [[]37[]],
+ []
 
 LaTeX Font Info:    Try loading font information for U+euf on input line 277.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
@@ -1127,7 +1017,7 @@ Overfull \hbox (17.73311pt too wide) in paragraph at lines 284--284
 []\secfnt DUPLICATE-AWARE FED-ER-ATED QUERY
  []
 
-<img/Fig1.pdf, id=150, 291.0875pt x 218.8175pt>
+<img/Fig1.pdf, id=218, 291.0875pt x 218.8175pt>
 File: img/Fig1.pdf Graphic file (type pdf)
  <use img/Fig1.pdf>
 Package pdftex.def Info: img/Fig1.pdf used on input line 290.
@@ -1137,18 +1027,6 @@ Overfull \hbox (5.7672pt too wide) in paragraph at lines 300--306
 \T1/aer/m/it/9 scrip-tion di-rec-tory\T1/aer/m/n/9 . Each ser-vice de-scrip-tio
 n pro-vides a declar-
  []
-
-
-LaTeX Warning: Citation `key-13' on page \thepage  undefined on input line 313.
-
-
-
-LaTeX Warning: Citation `key-39' on page \thepage  undefined on input line 313.
-
-
-
-LaTeX Warning: Citation `key-40' on page \thepage  undefined on input line 313.
-
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 314.
@@ -1162,20 +1040,13 @@ Overfull \hbox (0.89566pt too wide) in paragraph at lines 329--330
 [][][][][][][][][][][][][][][][][][][] 
  []
 
-
-LaTeX Warning: Citation `key-13' on page \thepage  undefined on input line 341.
-
-
-
-Underfull \vbox (badness 2460) has occurred while \output is active []
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.365 \end{equation}
-                     [4 <C:/Users/muhsal/Documents/Mips-Dist/img/Fig1.pdf>]
-<img/mips.pdf, id=194, 460.72125pt x 249.93375pt>
+l.370 
+       [4 <C:/Users/muhsal/Documents/Mips-Dist/img/Fig1.pdf>]
+<img/mips.pdf, id=270, 460.72125pt x 249.93375pt>
 File: img/mips.pdf Graphic file (type pdf)
  <use img/mips.pdf>
 Package pdftex.def Info: img/mips.pdf used on input line 373.
@@ -1237,13 +1108,6 @@ Underfull \hbox (badness 3492) in paragraph at lines 493--494
 [] []\T1/aer/m/it/9 seperateSub-queries \T1/aer/m/n/9 = \T1/aer/m/it/9 seperate
 Sub-queries \T1/aer/m/n/9 +
  []
-
-
-LaTeX Warning: Reference `tab:datasets' on page \thepage  undefined on input li
-ne 509.
-
-
-LaTeX Warning: Citation `key-5' on page \thepage  undefined on input line 515.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
@@ -1639,101 +1503,48 @@ Overfull \hbox (4.81517pt too wide) in paragraph at lines 548--558
  [][] 
  []
 
-
-LaTeX Warning: Citation `key-5' on page \thepage  undefined on input line 565.
-
-
-LaTeX Warning: Citation `key-35' on page \thepage  undefined on input line 567.
-
-
-
-LaTeX Warning: Reference `tab:queries' on page \thepage  undefined on input lin
-e 568.
-
-
-LaTeX Warning: Reference `fig:rsmse' on page \thepage  undefined on input line 
-595.
-
-
-LaTeX Warning: Reference `fig:rank' on page \thepage  undefined on input line 5
-95.
-
-
-LaTeX Warning: Reference `fig:rsmseSubquery' on page \thepage  undefined on inp
-ut line 600.
-
-
-LaTeX Warning: Reference `fig:rsmseQuery' on page \thepage  undefined on input 
-line 600.
-
-
-LaTeX Warning: Reference `fig:rankSubquery' on page \thepage  undefined on inpu
-t line 602.
-
-
-LaTeX Warning: Reference `fig:rankQuery' on page \thepage  undefined on input l
-ine 602.
-
-<img/querywise_rse.pdf, id=273, 451.6875pt x 301.125pt>
+<img/querywise_rse.pdf, id=361, 451.6875pt x 301.125pt>
 File: img/querywise_rse.pdf Graphic file (type pdf)
 
 <use img/querywise_rse.pdf>
 Package pdftex.def Info: img/querywise_rse.pdf used on input line 611.
 (pdftex.def)             Requested size: 226.79846pt x 151.20079pt.
 
-<img/subquerywise_rse.pdf, id=274, 451.6875pt x 301.125pt>
+<img/subquerywise_rse.pdf, id=362, 451.6875pt x 301.125pt>
 File: img/subquerywise_rse.pdf Graphic file (type pdf)
 
 <use img/subquerywise_rse.pdf>
 Package pdftex.def Info: img/subquerywise_rse.pdf used on input line 617.
 (pdftex.def)             Requested size: 226.79846pt x 151.20079pt.
 
-<img/querywise_ranking.pdf, id=275, 451.6875pt x 301.125pt>
+<img/querywise_ranking.pdf, id=363, 451.6875pt x 301.125pt>
 File: img/querywise_ranking.pdf Graphic file (type pdf)
 
 <use img/querywise_ranking.pdf>
 Package pdftex.def Info: img/querywise_ranking.pdf used on input line 629.
 (pdftex.def)             Requested size: 226.79846pt x 151.20079pt.
 
-<img/subquerywise_ranking.pdf, id=276, 451.6875pt x 301.125pt>
+<img/subquerywise_ranking.pdf, id=364, 451.6875pt x 301.125pt>
 File: img/subquerywise_ranking.pdf Graphic file (type pdf)
 
 <use img/subquerywise_ranking.pdf>
 Package pdftex.def Info: img/subquerywise_ranking.pdf used on input line 635.
 (pdftex.def)             Requested size: 226.79846pt x 151.20079pt.
-
-
-LaTeX Warning: Reference `tab:compression' on page \thepage  undefined on input
- line 648.
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.663 \subsubsection{Recall and Runtime}
-                                         [7]pdfTeX warning (ext4): destination 
-with the same identifier (name{page.}) has been already used, duplicate ignored
-
+l.676 
+       [7]pdfTeX warning (ext4): destination with the same identifier (name{pag
+e.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.663 \subsubsection{Recall and Runtime}
-                                         [8 <C:/Users/muhsal/Documents/Mips-Dis
-t/img/querywise_rse.pdf> <C:/Users/muhsal/Documents/Mips-Dist/img/subquerywise_
-rse.pdf> <C:/Users/muhsal/Documents/Mips-Dist/img/querywise_ranking.pdf> <C:/Us
-ers/muhsal/Documents/Mips-Dist/img/subquerywise_ranking.pdf>]
-
-LaTeX Warning: Reference `tab:recall' on page \thepage  undefined on input line
- 665.
-
-
-LaTeX Warning: Reference `tab:escaped' on page \thepage  undefined on input lin
-e 671.
-
-
-LaTeX Warning: Reference `fig:runtime_recall' on page \thepage  undefined on in
-put line 674.
-
-<img/runtime_recall.pdf, id=342, 678.28406pt x 257.46187pt>
+l.676 
+       [8 <C:/Users/muhsal/Documents/Mips-Dist/img/querywise_rse.pdf> <C:/Users
+/muhsal/Documents/Mips-Dist/img/subquerywise_rse.pdf> <C:/Users/muhsal/Document
+s/Mips-Dist/img/querywise_ranking.pdf> <C:/Users/muhsal/Documents/Mips-Dist/img
+/subquerywise_ranking.pdf>]
+<img/runtime_recall.pdf, id=434, 678.28406pt x 257.46187pt>
 File: img/runtime_recall.pdf Graphic file (type pdf)
 
 <use img/runtime_recall.pdf>
@@ -1778,23 +1589,16 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 879.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 879.
 Package rerunfilecheck Info: File `Mips-Dist.out' has not changed.
 (rerunfilecheck)             Checksum: D72EDE6735743292615B5D9EEFFA117F;1621.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 879.
  ) 
 Here is how much of TeX's memory you used:
  10964 strings out of 494045
  154314 string characters out of 3148384
- 292591 words of memory out of 3000000
+ 295075 words of memory out of 3000000
  13889 multiletter control sequences out of 15000+200000
  58080 words of font info for 83 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 41i,12n,39p,1362b,1169s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,12n,39p,1395b,1169s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><C:/Program Files/MiKTeX 2.9/
@@ -1816,9 +1620,9 @@ ram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri
 8a.pfb>
-Output written on Mips-Dist.pdf (11 pages, 799515 bytes).
+Output written on Mips-Dist.pdf (11 pages, 808963 bytes).
 PDF statistics:
- 516 PDF objects out of 1000 (max. 8388607)
+ 572 PDF objects out of 1000 (max. 8388607)
  165 named destinations out of 1000 (max. 500000)
  233 words of extra memory for PDF output out of 10000 (max. 10000000)
 
