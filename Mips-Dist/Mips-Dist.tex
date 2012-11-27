@@ -530,8 +530,8 @@ d = \max\limits_{1 \leq i \leq n} |S_i| - \min\limits_{1 \leq j \leq n} |S_j|,
 \end{equation}
 where $S_i$ stands for the i$^{th}$ slice. 
 Given a value of $d$, we computed the sizes of the slices by assigning them random sizes such that $\sum\limits_{i} |S_i| = D$ and $\forall i \forall j\,i \neq j \rightarrow ||S_i| - |S_j|| \leq d$.
-The data was then distributed across the different data sources by partition the  
-We then picked $m$ out of the $n$ data sources randomly ($m < n$) and redistributed its content across all 9 remaining data sources .
+The data was then distributed across the 10 data sources by partitioning the input according to the pre-computed sizes of the slices.
+Finally, we picked $m$ out of the $n$ data sources randomly ($m < n$) and redistributed their content across all $n-m$ remaining data sources .
 We set $d$ to values between ca 1.6\% and 2.8\% of the triples.
 Note that the value of $d$ was increased with increasingly larger data sets.
 
