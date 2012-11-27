@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.2)  27 NOV 2012 09:34
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.2)  27 NOV 2012 09:37
 entering extended mode
 **Mips-Dist.tex
 (E:\Work\Papers\Eigene\2013\www2013federatedqueries\Mips-Dist\Mips-Dist.tex
@@ -1043,6 +1043,11 @@ Underfull \hbox (badness 3492) in paragraph at lines 501--502
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 513--513
+[][][][]$\T1/aett/m/n/9 https : / / sites . google . com / site /
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 518--518
 [][][][]$\T1/aett/m/n/9 http : / / www4 . wiwiss . fu-[]berlin . de / diseasome /
  []
@@ -1449,25 +1454,25 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has be
 <to be read again> 
                    \relax 
 l.649 
-       [7] <img/querywise_rse.pdf, id=388, 451.6747pt x 301.1223pt>
+       [7] <img/querywise_rse.pdf, id=389, 451.6747pt x 301.1223pt>
 File: img/querywise_rse.pdf Graphic file (type pdf)
  <use img/querywise_rse.pdf>
 Package pdftex.def Info: img/querywise_rse.pdf used on input line 654.
 (pdftex.def)             Requested size: 226.79846pt x 151.19945pt.
 
-<img/subquerywise_rse.pdf, id=389, 451.69804pt x 301.11974pt>
+<img/subquerywise_rse.pdf, id=390, 451.69804pt x 301.11974pt>
 File: img/subquerywise_rse.pdf Graphic file (type pdf)
  <use img/subquerywise_rse.pdf>
 Package pdftex.def Info: img/subquerywise_rse.pdf used on input line 660.
 (pdftex.def)             Requested size: 226.79846pt x 151.19356pt.
 
-<img/querywise_ranking.pdf, id=390, 451.69954pt x 301.11974pt>
+<img/querywise_ranking.pdf, id=391, 451.69954pt x 301.11974pt>
 File: img/querywise_ranking.pdf Graphic file (type pdf)
  <use img/querywise_ranking.pdf>
 Package pdftex.def Info: img/querywise_ranking.pdf used on input line 672.
 (pdftex.def)             Requested size: 226.79846pt x 151.19356pt.
 
-<img/subquerywise_ranking.pdf, id=391, 451.69804pt x 301.11974pt>
+<img/subquerywise_ranking.pdf, id=392, 451.69804pt x 301.11974pt>
 File: img/subquerywise_ranking.pdf Graphic file (type pdf)
  <use img/subquerywise_ranking.pdf>
 Package pdftex.def Info: img/subquerywise_ranking.pdf used on input line 678.
@@ -1477,7 +1482,7 @@ Overfull \hbox (4.81517pt too wide) in paragraph at lines 703--712
  [][] 
  []
 
-<img/runtime_recall.pdf, id=393, 678.28406pt x 257.46187pt>
+<img/runtime_recall.pdf, id=394, 678.28406pt x 257.46187pt>
 File: img/runtime_recall.pdf Graphic file (type pdf)
  <use img/runtime_recall.pdf>
 Package pdftex.def Info: img/runtime_recall.pdf used on input line 753.
@@ -1584,9 +1589,9 @@ ls/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a
 fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on Mips-Dist.pdf (11 pages, 866420 bytes).
+Output written on Mips-Dist.pdf (11 pages, 866568 bytes).
 PDF statistics:
- 626 PDF objects out of 1000 (max. 8388607)
+ 627 PDF objects out of 1000 (max. 8388607)
  170 named destinations out of 1000 (max. 500000)
  225 words of extra memory for PDF output out of 10000 (max. 10000000)
 
