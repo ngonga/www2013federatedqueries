@@ -102,20 +102,23 @@ Manfred Hauswirth\\
 %\email{buehmann|lehmann@informatik.uni-leipzig.de}
 %}
 \begin{abstract}
-Over the last years, the Web of Data has developed into a large compendium of interlinked data sets from multiple domains.
-Due to this lack of coordination, several of these data sets contain duplicate or complementary data. 
+Over the last years, the Web of Data has developed into a large compendium of interlinked data sets from multiple and independent domains.
+Due to the lack of coordination, several of these data sets might contain duplicate data. 
 Several federated querying approaches have been proposed to retrieve information from these data sources.
 Still, only little attention has been paid to the effect of duplicated and fragmented data on the processing of federated queries.
 This work presents a novel duplicate-aware approach to federated SPARQL querying based on Min-Wise Independent Permutations (MIPs) applied to RDF predicates.
-Our approach begins by parsing each input query for triple patterns.
-Then, for each of these triple patterns, it uses MIPs to approximate the amount of non-duplicate triples contained in each of the available data sources. 
-This approximation is used to select and rank relevant data sources. 
-Finally, the selected data sources are queried by means of the sub-queries contained in the user input.
-The ranking function implemented by our approach allows taking into account the overlap among the available data sources and can thus account for duplicates across the data sets.
-Moreover, our approach queries the data sources by using single triple patterns and can thus also retrieve results whose fragments are distributed across the Web of Data.
+%Our approach begins by parsing each input query for triple patterns.
+%Then, for each of these triple patterns, it uses MIPs to approximate the amount of non-duplicate triples contained in each of the available data sources. 
+%This approximation is used to select and rank relevant data sources. 
+%Finally, the selected data sources are queried by means of the sub-queries contained in the user input.
+The ranking function implemented by our approach allows taking into account the overlap among the available data sources and thus avoid submitting sub-queries that produces  overlapping results.  
+By these means, our approach applied to existing federated approaches can achieve similar performance while using fewer sub-queries, thus improving both execution time and network traffic. 
+%Moreover, our approach queries the data sources by using single triple patterns and can thus also retrieve results whose fragments are distributed across the Web of Data.
+%We develop a duplicate-aware federated query engine by extending DARQ (a well-known federated engine) and evaluate by using four datasets of different sizes and a total of 79 queries of various shapes. 
 We evaluate our approach on four datasets of different sizes by using 79 queries of various shapes. 
 Our evaluation shows that our approach achieves significantly smaller mean squared errors than the state of the art with respect to the approximation of result set sizes as well as in the ranking of data sources. 
-Moreover, it requires less sub-queries federation to achieve the same recall as existing approaches, thus improving both execution time and network traffic.
+%Our evaluation shows that our approach achieves significantly smaller mean squared errors with respect to the approximation of result set sizes as well as in the ranking of data sources. 
+Moreover, it requires less sub-queries federation to achieve the same recall with smaller execution time.
 
 \end{abstract}
 
@@ -129,7 +132,7 @@ Moreover, it requires less sub-queries federation to achieve the same recall as 
 \keywords{Federated queries, SPARQL, Min-wise independent permutations}
 
 \section{Introduction}
-Over the last years, the Data Web has developed into a large compendium of interlinked data sets from multiple domains. 
+Over the last years, the Data Web has developed into a large compendium of interlinked data sets from multiple domains~\cite{AUE+11}. 
 One of the central principles underlying the architecture of these data sets is the reuse of URIs and vocabularies as well as the linking of knowledge bases~\cite{key-20}.
 One of the results of this architectural choice is that certain queries can only be answered by retrieving information from several knowledge bases.
 This type of queries, called \emph{federated queries}, is of central importance for manifold applications such as question answering~\cite{UNG+12} and knowledge retrieval~\cite{SHE+11}.
@@ -137,18 +140,30 @@ Due to the reuse of URIs and the independence of the data sources, certain piece
 For example, the name of movie directors can be found both in DBpedia and LinkedMDB.
 Authors of papers can be found in both the ACM and DBLP libraries. 
 Similarly, we have noticed that the \emph{DrugBank}\footnote{\url{http://datahub.io/dataset/fu-berlin-drugbank}} and \emph{Neurocommons}\footnote{\url{http://neurocommons.org/page/RDF_distribution}} datasets are duplicated at \emph{DERI health Care and Life Sciences Knowledge Base}\footnote{\url{http://hcls.deri.org:8080/openrdf-sesame/repositories/hclskb}}. A list of the mirrored SPARQL endpoints is given in the url\footnote{\url{http://hcls.deri.org/RoadMapEvaluation/\#Sparql_Endpoints}}. 
-An analysis of Linked Open Data Cloud shows that duplicates are most common in life sciences domain. 
+These duplicates are common in life sciences domain as well.  
 Examples of data sets which might contain the same triples across the life science domain is shown in Figure~\ref{fig:datasets}. 
-We call triples that can be found in several knowledge bases across the Web of Data \emph{duplicates}. It is important to make a distinguish between fragmented and duplicated data. 
-We speak of \emph{fragmented data}, when different set of information about the same resource is stored in different datasets. 
-For example, while the side-effects of drugs can be found in Sider\footnote{\url{http://datahub.io/dataset/fu-berlin-sider}}, the specifics of a drug (such as its INCHI key) can be found in Drugbank while the data on the companies that produce the drugs are in Dailymed\footnote{\url{http://datahub.io/dataset/fu-berlin-dailymed}}. 
+We call triples that can be found in several knowledge bases across the Web of Data \emph{duplicates}. 
+
+
+%It is important to make a distinguish between fragmented and duplicated data. 
+%We speak of \emph{fragmented data}, when different set of information about the same resource is stored in different datasets. 
+%For example, while the side-effects of drugs can be found in Sider\footnote{\url{http://datahub.io/dataset/fu-berlin-sider}}, the specifics of a drug (such as its INCHI key) can be found in Drugbank while the data on the companies that produce the drugs are in Dailymed\footnote{\url{http://datahub.io/dataset/fu-berlin-dailymed}}. 
 %While duplicate data mean, the same set of information about a resource is stored in multiple data sets available via different SPARQL endpoints.
 
-While the importance of federated queries over the Web of Data has been stressed in previous work, the impact of duplicates has not received much attention.
-Yet, as we will show in the remainder of this paper, a duplicate-aware approach to query processing can lead to more time-efficient and effective algorithms for federated queries.
-In this paper, we address this drawback by presenting a duplicate-aware approach for query processing based on Min-Wise Independent Permutations (MIPs). The use of statistical synopsis such as MIPs for overlap estimation is very common in the literature (as discussed in the next section), however these synopsis cannot be use all alone in semantic web domain due to the diverse nature of SPARQL queries. For example, the synopsis estimation  need to be completely changed if any of the subject or object becomes bound in the query triple. To address such issues, we combine MIPs synopsis with the data summaries statistics for more accurate overlap estimation. 
+Avoiding the retrieval of duplicate records is a crucial issue in large scale distributed datasets. As the SPARQL endpoints are autonomous, there is always the possibility of high mutual overlap between different datasets residing in different endpoints. It is thus likely that an optimized query execution plan contains a sub-query that retrieves records which are already retrieved by another sub-query from a different SPARQL endpoint. In this case it is not necessary to execute the later sub-query, as it would not only result in duplicate records being retrieved but also increase the total processing time.
 
-By creating small summaries of the data found in the available knowledge bases, our approach is able to estimate the amount of new information contained in a knowledge base with a high accuracy, leading to a better performance with respect to source ranking, estimation of result set sizes, execution time and network traffic. 
+While the importance of federated queries over the Web of Data has been stressed in previous work, the impact of duplicates has not received much attention. Yet, as we will show in the remainder of this paper, a duplicate-aware approach to query processing can lead to more time-efficient and effective algorithms for federated queries.
+In this paper, we address this drawback by presenting a duplicate-aware approach for query processing based on Min-Wise Independent Permutations (MIPs). Our query federator makes
+use of MIPs to estimate the possible
+overlap between the results of different sub-queries in order to avoid the retrieval of redundant information.
+
+Our approach begins by parsing each input query for triple patterns.
+Then, for each of these triple patterns, it uses MIPs to approximate the amount of non-duplicate triples contained in each of the available data sources. 
+This approximation is used to select and rank relevant data sources. 
+Finally, the selected data sources are queried by means of the sub-queries contained in the user input.
+
+
+The use of statistical synopsis such as MIPs for overlap estimation is very common in the literature (as discussed in the next section), however these synopsis cannot be use all alone in semantic web domain due to the diverse nature of SPARQL queries. For example, the synopsis result set estimation for a triple pattern needs to be completely changed if any of the subject or object becomes bound in the query triple. To address such issues, we combine MIPs synopsis with the data summaries statistics for more accurate overlap estimation. Thus by creating small summaries of the data found in the available knowledge bases, our approach is able to estimate the amount of new information contained in a knowledge base with a high accuracy, leading to a better performance with respect to source ranking, estimation of result set sizes, execution time and network traffic. 
 
 The main contributions of this paper are as follows:
 \begin{enumerate}
@@ -269,7 +284,8 @@ use of this special statistic information to estimate the possible
 overlap between the results of different sub-queries in order to avoid the retrieval of redundant information.
 
 \subsection{Dataset Overlap Estimation}
-Avoiding the retrieval of duplicate records is a crucial issue in large scale distributed datasets. As the SPARQL endpoints are autonomous, there is always the possibility of high mutual overlap between different datasets residing in different endpoints. It is thus likely that an optimized query execution plan contains a sub-query that retrieves records which are already retrieved by another sub-query from a different SPARQL endpoint. In this case it is not necessary to execute the later sub-query, as it would not only result in duplicate records being retrieved but also increase the total processing time.
+Avoiding the retrieval of duplicate records is a crucial issue in large scale distributed datasets. As the SPARQL endpoints are autonomous, there is always the possibility of high mutual overlap between different datasets residing in different endpoints. 
+It is thus likely that an optimized query execution plan contains a sub-query that retrieves records which are already retrieved by another sub-query from a different SPARQL endpoint. In this case it is not necessary to execute the later sub-query, as it would not only result in duplicate records being retrieved but also increase the total processing time.
 
 Statistical synopsis like min-wise independent permutations~\cite{key-9}, bloom filters~\cite{key-10}, hash sketches~\cite{key-36}, XSKETCH~\cite{key-37}, fractional XSKETCH~\cite{key-38}, and compressed bloom filters~\cite{key-11} have been extensively used in the literature to provide a compacted representation of data sets. Statistical synopsis allow to estimate a number os set operations such as overlap and union without having to compare the original sets directly. For example, Bender et al.~\cite{key-12} propose a technique for predicting the query-specific mutual overlap datasets in a peer to peer network. MIPs have proved to be the more accurate overlap estimation with small bandwidth consumption\cite{key-9} therefore we have chosen them in our approach.  
 
@@ -737,16 +753,16 @@ By these means, we will enable our engine to merge facts which are expressed in 
 \hline
 Rank		 & \multicolumn{2}{c}{BGP}	& \multicolumn{2}{c}{S1}	&\multicolumn{2}{c}{S2}	&\multicolumn{2}{c}{P1}	& \multicolumn{2}{c}{P2}	& \multicolumn{2}{c}{P3} \\
 	& MIPS & DARQ & MIPS & DARQ & MIPS & DARQ & MIPS & DARQ & MIPS & DARQ & MIPS & DARQ \\\hline
-1 & 29.22 & 19.22 & 26.53 & 24.42 & 30.69 & 30.69 & 18.12 & 15.67 & 24.60 & 21.99 & 31.60 & 29.30 \\
-2 & 49.61 & 39.50 & 46.20 & 39.67 & 52.15 & 49.70 & 34.04 & 31.49 & 38.84 & 38.56 & 43.78 & 45.02 \\
-3 & 67.48 & 61.78 & 60.90 & 54.78 & 66.48 & 59.96 & 50.28 & 49.23 & 55.74 & 53.16 & 61.86 & 56.76 \\
-4 & 78.44 & 72.68 & 70.75 & 63.86 & 76.60 & 71.49 & 65.71 & 64.04 & 72.25 & 69.11 & 80.17 & 73.72\\
-5 & 85.65 & 79.26 & 79.76 & 74.32 & 83.64 & 80.54 & 77.24 & 79.87 & 83.04 & 86.11 & 90.45 & 91.74\\
-6 & 90.54 & 84.00 & 86.67 & 79.59 & 89.90 & 86.76 & 82.28 & 83.75 & 87.69 & 89.95 & 94.48 & 95.70\\
-7 & 94.68 & 87.25 & 92.94 & 85.61 & 94.88 & 90.22 & 85.56 & 87.17 & 89.99 & 92.08 & 95.59 & 96.73\\
-8 & 99.40 & 89.38 & 98.62 & 89.98 & 99.35 & 93.43 & 87.71 & 89.29 & 91.47 & 93.31 & 95.70 & 97.53\\
-9 & 100.00& 97.95 & 100.00& 96.52 & 100.00& 97.06 & 100.00& 94.97 & 100.00& 97.15 & 100.00& 99.26\\
-10& 100.00& 100.00& 100.00& 100.00& 100.00& 100.00& 100.00& 100.00& 100.00& 100.00& 100.00& 100.00\\\hline
+1 & 29,22 & 19,22 & 26,53 & 24,42 & 30,69 & 30,69 & 18,12 & 15,67 & 24,60 & 21,99 & 31,60 & 29,30 \\
+2 & 49,61 & 39,50 & 46,20 & 39,67 & 52,15 & 49,70 & 34,04 & 31,49 & 38,84 & 38,56 & 43,78 & 45,02 \\
+3 & 67,48 & 61,78 & 60,90 & 54,78 & 66,48 & 59,96 & 50,28 & 49,23 & 55,74 & 53,16 & 61,86 & 56,76 \\
+4 & 78,44 & 72,68 & 70,75 & 63,86 & 76,60 & 71,49 & 65,71 & 64,04 & 72,25 & 69,11 & 80,17 & 73,72\\
+5 & 85,65 & 79,26 & 79,76 & 74,32 & 83,64 & 80,54 & 77,24 & 79,87 & 83,04 & 86,11 & 90,45 & 91,74\\
+6 & 90,54 & 84,00 & 86,67 & 79,59 & 89,90 & 86,76 & 82,28 & 83,75 & 87,69 & 89,95 & 94,48 & 95,70\\
+7 & 94,68 & 87,25 & 92,94 & 85,61 & 94,88 & 90,22 & 85,56 & 87,17 & 89,99 & 92,08 & 95,59 & 96,73\\
+8 & 99,40 & 89,38 & 98,62 & 89,98 & 99,35 & 93,43 & 87,71 & 89,29 & 91,47 & 93,31 & 95,70 & 97,53\\
+9 & 100,00& 97,95 & 100,00& 96,52 & 100,00& 97,06 & 100,00& 94,97 & 100,00& 97,15 & 100,00& 99,26\\
+10& 100,00& 100,00& 100,00& 100,00& 100,00& 100,00& 100,00& 100,00& 100,00& 100,00& 100,00& 100,00\\\hline
 \end{tabular}
 \caption{Comparison of recall on top-k data sources (in \%).}
 \label{tab:recall}
