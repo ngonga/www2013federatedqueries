@@ -7,6 +7,11 @@ Maribel Acosta, Maria-Esther Vidal, Tomas Lampo, Julio Castillo, and Edna
 \newblock In {\em Proceedings of the 10th international conference on The
   semantic web - Volume Part I}, ISWC'11, pages 18--34, 2011.
 
+\bibitem{AUE+11}
+S{\"o}ren Auer, Jens Lehmann, and Axel-Cyrille~Ngonga Ngomo.
+\newblock Introduction to linked data and its lifecycle on the web.
+\newblock In {\em Reasoning Web}, pages 1--75, 2011.
+
 \bibitem{key-20}
 S\"{o}ren Auer, Jens Lehmann, and Axel-Cyrille~Ngonga Ngomo.
 \newblock Introduction to linked data and its lifecycle on the web.
@@ -147,7 +152,7 @@ Nikos Ntarmos, Peter Triantafillou, and Gerhard Weikum.
 Josiane~Xavier Parreira, Sebastian Michel, and Gerhard Weikum.
 \newblock p2pdating: Real life inspired semantic overlay networks for web
   search.
-\newblock {\em Information Processing &amp; Management}, 43(3):643 -- 664,
+\newblock {\em Information Processing \&; Management}, 43(3):643 -- 664,
   2007.
 
 \bibitem{key-8}
@@ -171,7 +176,7 @@ Bastian Quilitz and Ulf Leser.
 Andreas Schwarte, Peter Haase, Katja Hose, Ralf Schenkel, and Michael Schmidt.
 \newblock Fedx: Optimization techniques for federated query processing on
   linked data.
-\newblock In {\em The Semantic Web – ISWC 2011}, volume 7031 of {\em Lecture
+\newblock In {\em The Semantic Web - ISWC 2011}, volume 7031 of {\em Lecture
   Notes in Computer Science}, pages 601--616. 2011.
 
 \bibitem{SHE+11}

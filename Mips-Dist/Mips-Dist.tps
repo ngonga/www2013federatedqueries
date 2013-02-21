@@ -13,12 +13,12 @@ NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1083
 NormalPos.bottom=419
-Class=LaTeXView
-Document=Mips-Dist.tex
+Class=BibTeXView
+Document=qa.bib
 
 [Frame0_View0,0]
-TopLine=53
-Cursor=4839
+TopLine=152
+Cursor=0
 
 [Frame1]
 Flags=0
@@ -32,11 +32,11 @@ NormalPos.top=26
 NormalPos.right=1083
 NormalPos.bottom=419
 Class=LaTeXView
-Document=listings.sty
+Document=Mips-Dist.tex
 
 [Frame1_View0,0]
-TopLine=0
-Cursor=278
+TopLine=206
+Cursor=12023
 
 [Frame2]
 Flags=0
@@ -50,11 +50,11 @@ NormalPos.top=26
 NormalPos.right=1083
 NormalPos.bottom=419
 Class=LaTeXView
-Document=..\..\..\..\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty
+Document=Mips-Dist.aux
 
 [Frame2_View0,0]
-TopLine=1421
-Cursor=54367
+TopLine=0
+Cursor=0
 
 [SessionInfo]
 FrameCount=3
