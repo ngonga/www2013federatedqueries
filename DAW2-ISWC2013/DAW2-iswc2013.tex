@@ -109,15 +109,15 @@ Moreover, our extensions require less sub-queries and smaller execution times to
 
 \section{Introduction}
 Over the last years, the Data Web has developed into a large compendium of interlinked data sets from multiple domains. 
-One of the central principles underlying the architecture of these data sets is the reuse of URIs and vocabularies as well as the linking of knowledge bases~\cite{AUE+11}.
+The central principles underlying the architecture of these data sets include the decentralised provision of data, the reuse of URIs and vocabularies as well as the linking of knowledge bases~\cite{AUE+11}.
 A result of this architectural choice is that certain queries can only be answered by retrieving information from several knowledge bases.
 This type of queries, called \emph{federated queries}, is of central importance for manifold applications such as question answering~\cite{UNG+12} and knowledge retrieval~\cite{SHE+11}.
 Due to the reuse of URIs and the independence of the data sources, certain pieces of information (i.e., RDF triples) can be found in several knowledge bases. 
-For example, the name of movie directors can be found both in DBpedia and LinkedMDB.
-Authors of papers can be found in both the ACM and DBLP libraries. 
-Similarly, whole datasets can be duplicated. 
-For example, the \emph{DrugBank}\footnote{\url{http://datahub.io/dataset/fu-berlin-drugbank}} and \emph{Neurocommons}\footnote{\url{http://neurocommons.org/page/RDF\_distribution}} 
-datasets are duplicated at \emph{DERI health Care and Life Sciences Knowledge Base}\footnote{\url{http://hcls.deri.org:8080/openrdf-sesame/repositories/hclskb}}. 
+%For example, the name of movie directors can be found both in DBpedia and LinkedMDB.
+%Authors of papers can be found in both the ACM and DBLP libraries. 
+%Similarly, whole datasets can be duplicated. 
+For example, all triples from the \emph{DrugBank}\footnote{\url{http://datahub.io/dataset/fu-berlin-drugbank}} and \emph{Neurocommons}\footnote{\url{http://neurocommons.org/page/RDF\_distribution}} 
+datasets can also be found in the \emph{DERI health Care and Life Sciences Knowledge Base}\footnote{\url{http://hcls.deri.org:8080/openrdf-sesame/repositories/hclskb}}. 
 %A list of the mirrored SPARQL endpoints is given in the url
 %\footnote{\url{http://hcls.deri.org/RoadMapEvaluation/\#Sparql\_Endpoints}}. 
 %These duplicates are common in life sciences domain as well.  
@@ -128,13 +128,13 @@ We call triples that can be found in several knowledge bases across the Web of D
 %We speak of \emph{fragmented data}, when different set of information about the same resource is stored in different datasets. 
 %For example, while the side-effects of drugs can be found in Sider\footnote{\url{http://datahub.io/dataset/fu-berlin-sider}}, the specifics of a drug (such as its INCHI key) can be found in Drugbank while the data on the companies that produce the drugs are in Dailymed\footnote{\url{http://datahub.io/dataset/fu-berlin-dailymed}}. 
 %While duplicate data mean, the same set of information about a resource is stored in multiple data sets available via different SPARQL endpoints.
-While the importance of federated queries over the Web of Data has been stressed in previous work, the impact of duplicates has not received much attention. 
+While the importance of federated queries over the Web of Data has been stressed in previous work~\cite{key-1,key-2,key-8}, the impact of duplicates has not received much attention. 
 Yet, avoiding the retrieval of duplicate triples is a crucial issue when querying distributed datasets for two main reasons:
-First, a duplicate-aware approach for federated querying can lead to sub-queries that would lead to the same result set as other sub-queries being discarded.
-This leads to the composition of the final result set of the federated engine being less resource-consuming.
-Moreover, the network traffic engendered by the approach can be reduced.
-In this paper, we address this drawback by presenting DAW2, a duplicate-aware approach for query processing based on Min-Wise Independent Permutations (MIPs). 
-Our approach makes use of a combination of MIPs and data summary statistics to estimate the possible overlap between the results of different sub-queries in order to avoid the retrieval of redundant information.
+First, a duplicate-aware approach for federated querying can lead to sub-queries which would not augment the overall recall of a query engine (QE) being discarded.
+This leads to the composition of the final result set of the QE being less resource-consuming.
+Moreover, the network traffic engendered by the QE can be reduced.
+We thus present DAW2, a duplicate-aware approach for query processing. 
+Our approach makes use of a combination of Min-Wise Independent Permutations (MIPs) and data summary statistics to estimate the overlap between the results of different sub-queries and discard sub-queries that would lead to redundant information.
 
  %
 %As the SPARQL endpoints are autonomous, there is always the possibility of high mutual overlap between different datasets residing in different endpoints. 
@@ -145,21 +145,22 @@ Our approach makes use of a combination of MIPs and data summary statistics to e
 %Then, for each of these triple patterns, it uses MIPs to approximate the amount of non-duplicate triples contained in each of the available data sources. 
 %This approximation is used to select and rank relevant data sources. 
 %Finally, the selected data sources are queried by means of the sub-queries contained in the user input.
-
 The main contributions of this paper are as follows:
 \begin{enumerate}
 \item We propose the (to the best of our knowledge) first duplicate-aware approach for federated SPARQL querying.
-\item We combine data summaries statistics with MIPs to address the diversity in SPARQL queries.
-\item We evaluate our approach against the state of the art on 79 queries and four datasets and show that we achieve better estimations of result set sizes and therewith a better ranking of data sources, lower execution times and consequently less network traffic.
+\item We combine data summaries statistics with MIPs to address the diversity in SPARQL queries. %this is not clear
+\item We implement our approach by extending the federated query engines DARQ and SPLENDID. 
+A comparison of our extensions with the original frameworks shows that we achieve better execution times, require less sub-queries and consequently engender less network traffic.
 \end{enumerate}
+
 %
 %An experimental evaluation on 79 queries shows that our approach outperforms the state-of-the-art by retrieving the same data with less queries. 
 The rest of this paper is organized as follows: 
 We begin by giving a brief overview of the state of the art in federated query processing.
 In addition, we present different statistical synopsis approaches that can be used for the approximation of duplicate-free result set sizes. 
 Thereafter, we elaborate on our novel duplicate-aware federated query processing approach and present the components of our approach in detail.
-Subsequently, we present a thorough evaluation of our approach against state of the art approaches.
-We finally conclude the paper with a discussion of our findings and an overview of future work.
+Subsequently, we present a thorough evaluation of DAW2.
+We finally conclude the paper with a discussion of our findings.
 
 %\begin{figure}
 %\centering
