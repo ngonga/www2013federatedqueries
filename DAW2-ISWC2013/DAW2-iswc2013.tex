@@ -1,21 +1,20 @@
-% PLEASE USE UTF-8 ENCODING WHEN EDITING THIS FILE!
 
-% WWW 2012 page limit: 10 pages
-
-%\documentclass{llncs}
-% \documentclass{acm_proc_article-sp}
-\documentclass{sig-alternate}  % tighter style --> less pages (use the other one if we have enough space)
-%\documentclass{www2012-accepted} 
-%\usepackage{amsmath, amssymb}
-%\usepackage{graphicx}
-\usepackage{hyperref}
-%\usepackage{listings}
+% This is LLNCS.DEM the demonstration file of
+% the LaTeX macro package from Springer-Verlag
+% for Lecture Notes in Computer Science,
+% version 2.4 for LaTeX2e as of 16. April 2010
+%
+\documentclass{llncs}
+%
+\usepackage{makeidx}  % allows for indexgeneration
+\usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{moreverb}
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+\captionsetup{compatibility=false}
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \newcommand{\todo}[1]{\textbf{ToDo: \textit{#1}}}
@@ -28,11 +27,9 @@
 \newcommand{\slot}[3]{$\langle\texttt{#1},\text{#2},\text{\sf #3}\rangle$}
 \newcommand{\argmax}{\operatornamewithlimits{arg\,max}}
 \newcommand{\argmin}{\operatornamewithlimits{arg\,min}}
-
+\usepackage{amssymb}
 \usepackage{qtree}
 \usepackage[usenames,dvipsnames,table]{xcolor}
-
-
 \newcommand{\Drs}[2]{%%%%%%%%%%%%%%%%%%%%%%%%%
 \(                   % begin maths mode
  \begin{array}{|l|}  %
@@ -48,59 +45,44 @@
 \end{array}          %
 \)                   % end maths mode
                      }%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
+%
 \begin{document}
+%
+\frontmatter          % for the preliminaries
+%
+\pagestyle{headings}  % switches on printing of running heads
+\addtocmark{DAW2} % additional mark in the TOC
+%
 
-\clubpenalty=10000 
-\widowpenalty = 10000
+\vspace{1cm}
 
-%\conferenceinfo{WWW}{2012 Lyon, France}
+\mainmatter              % start of the contributions
+%
 
 \title{DAW2: Duplicate-AWare Federated Query Processing over the Web of DAta}
-
-\numberofauthors{4}  
-\author{
-\alignauthor 
-Muhammad Saleem\\
-       \affaddr{Digital Enterprise Research }\\
-       \affaddr{Institute, National University of Ireland, Galway}\\
-       \email{muhammad.saleem@deri.org}
+%
+\titlerunning{DAW2}  % abbreviated title (for running head)
+%                                     also used for the TOC unless
+%                                     \toctitle is used
+%
+\author{Muhammad Saleem\inst{1} \and Axel-Cyrille Ngonga Ngomo\inst{2}
+\and Josiane Xavier Parreira\inst{1} \and Manfred Hauswirth\inst{1}}
+%
+\authorrunning{saleem et al.} % abbreviated author list (for running head)
+%
+%%%% list of authors for the TOC (use if author list has to be modified)
+%\tocauthor{Ivar Ekeland, Roger Temam, Jeffrey Dean, David Grove,
+%Craig Chambers, Kim B. Bruce, and Elisa Bertino}
+%
+\institute{Digital Enterprise Research Institute, National University of Ireland, Galway\\
+\email{\{muhammad.saleem, josiane.parreira, manfred.hauswirth\}@deri.org}
 \and
-\alignauthor
-Axel-Cyrille Ngonga Ngomo\\
-       \affaddr{Universit\"at Leipzig, IFI/AKSW}\\
-       \affaddr{PO 100920, D-04009 Leipzig}\\
-       \email{ngonga@informatik.uni-leipzig.de}	
-\\
-\alignauthor
-Josiane Xavier Parreira\\
-      \affaddr{Digital Enterprise Research }\\
-      \affaddr{Institute, National University of Ireland, Galway} \\
-      \email{josiane.parreira@deri.org}\\
-\and
-Manfred Hauswirth\\
-       \affaddr{Digital Enterprise Research Institute, }\\
-       \affaddr{National University of Ireland, Galway}\\ 
-       \email{manfred.hauswirth@deri.org}			
+Universit\"at Leipzig, IFI/AKSW, PO 100920, D-04009 Leipzig \\
+\email{ngonga@informatik.uni-leipzig.de}
 }
 
-%\date{30 July 1999}
-\maketitle
+\maketitle              % typeset the title of the contribution
 
-%\title{SPARQL Template Based Question Answering}
-% \titlerunning{SPARQL Template Based Question Answering}  
-%\author{Christina Unger\inst{1} \and Lorenz B{\"u}hmann\inst{2} \and Jens Lehmann\inst{2} \and Philipp Cimiano\inst{1}}
-%\authorrunning{...} 
-%\institute{
-%Bielefeld University, CITEC, Semantic Computing Group\\
-%Universit\"atsstra{\ss}e 21--23, 33615 Bielefeld\\ 
-%\email{cunger|cimiano@cit-ec.uni-bielefeld.de}
-%\and 
-%University of Leipzig, Computer Science Institute, AKSW Group,
-%\\Johannisgasse 26, 04103 Leipzig\\
-%\email{buehmann|lehmann@informatik.uni-leipzig.de}
-%}
 \begin{abstract}
 Over the last years, the Web of Data has developed into a large compendium of interlinked data sets from multiple domains.
 Due to the decentralised architecture of the Linked Open Data Web, several of these data sets contain duplicated data.
@@ -121,18 +103,9 @@ four datasets of different sizes by using 79 queries of various shapes.
 Our evaluation shows that our approach achieves significantly smaller mean squared errors than the state of the art with respect to the approximation of result set sizes as well as in the ranking of data sources. 
 %Our evaluation shows that our approach achieves significantly smaller mean squared errors with respect to the approximation of result set sizes as well as in the ranking of data sources. 
 Moreover, it requires less sub-queries federation to achieve the same recall with smaller execution time.
-
-\end{abstract}
-
-% A category with the (minimum) three required fields
-\category{H.2.4}{Database Management}{Systems}[Distributed databases]
-%A category including the fourth, optional field follows...
-% \category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
-
-\terms{Algorithms, Experimentation, Theory}
-
 \keywords{Federated queries, SPARQL, Min-wise independent permutations}
-
+\end{abstract}
+%
 \section{Introduction}
 Over the last years, the Data Web has developed into a large compendium of interlinked data sets from multiple domains~\cite{AUE+11}. 
 One of the central principles underlying the architecture of these data sets is the reuse of URIs and vocabularies as well as the linking of knowledge bases~\cite{key-20}.
@@ -141,11 +114,16 @@ This type of queries, called \emph{federated queries}, is of central importance 
 Due to the reuse of URIs and the independence of the data sources, certain pieces of information (i.e., triples) can be found in several knowledge bases. 
 For example, the name of movie directors can be found both in DBpedia and LinkedMDB.
 Authors of papers can be found in both the ACM and DBLP libraries. 
-Similarly, we have noticed that the \emph{DrugBank}\footnote{\url{http://datahub.io/dataset/fu-berlin-drugbank}} and \emph{Neurocommons}\footnote{\url{http://neurocommons.org/page/RDF_distribution}} datasets are duplicated at \emph{DERI health Care and Life Sciences Knowledge Base}\footnote{\url{http://hcls.deri.org:8080/openrdf-sesame/repositories/hclskb}}. A list of the mirrored SPARQL endpoints is given in the url\footnote{\url{http://hcls.deri.org/RoadMapEvaluation/\#Sparql_Endpoints}}. 
+Similarly, we have noticed that the \emph{DrugBank}\footnote{\url{http://datahub.io/dataset/fu-berlin-drugbank}}
+and \emph{Neurocommons}
+\footnote{\url{http://neurocommons.org/page/RDF\_distribution}} 
+datasets are duplicated at \emph{DERI health Care and Life Sciences Knowledge Base}
+\footnote{\url{http://hcls.deri.org:8080/openrdf-sesame/repositories/hclskb}}. 
+A list of the mirrored SPARQL endpoints is given in the url
+\footnote{\url{http://hcls.deri.org/RoadMapEvaluation/\#Sparql\_Endpoints}}. 
 These duplicates are common in life sciences domain as well.  
 Examples of data sets which might contain the same triples across the life science domain is shown in Figure~\ref{fig:datasets}. 
 We call triples that can be found in several knowledge bases across the Web of Data \emph{duplicates}. 
-
 
 %It is important to make a distinguish between fragmented and duplicated data. 
 %We speak of \emph{fragmented data}, when different set of information about the same resource is stored in different datasets. 
@@ -381,7 +359,7 @@ in which the two MIPs vectors have the same number and dividing this by
 the number of permutations \emph{N}. Essentially, this holds as the matched
 numbers are guaranteed to belong to the intersection of the sets. The resemblance formula is given in Equation 3. 
 \begin{equation}
-Resemblance(S_A,S_B) = \dfrac{Overlap(S_A,S_B)}{ Union(S_A,S_B)}
+Resemblance(S_A,S_B) = \frac{Overlap(S_A,S_B)}{ Union(S_A,S_B)}
 \end{equation}
 
 In our service descriptions the MIPs are used as follow: for a predicate \emph{p $\in$ S}, we create a MIPs vector representing all triples \emph{T $\in$
@@ -393,6 +371,7 @@ MIPs vector is stored against each capability of the service description. Note t
 \includegraphics[scale=0.53]{img/mips} 
 \par\end{centering}
 %\centering Resemblance($S_A,S_B) = \dfrac{|S_A \cap S_B|}{|S_A \cup S_B|}$\\
+%\left(\frac{a^{2} + b^{2}}{c^{3}} \right) = 1
 
 \caption{Min-Wise Independent Permutations}
 \end{figure}
@@ -412,7 +391,7 @@ selection is a set of data sources $D_j$ for each triple
 pattern $t_j = (s_j, p_j, o_j)$ $\in$\ \emph{BGP} such that 
 
 \begin{center}
-$D_j$ = \{s|(s,C) $\in$ \ S $\wedge$ \ $\exists$
+$D_j$ = \{s$|$(s,C) $\in$ \ S $\wedge$ \ $\exists$
 \ $p_j$ $\in$ \ C \}
 \par\end{center}
 
@@ -537,7 +516,9 @@ All data used in this evaluation is either publicly available or can be found at
 
 \subsubsection{Datasets}
 Within our experiments, we used the four datasets described in Table \ref{tab:datasets}.
-The first data set, Diseasome,\footnote{\url{http://www4.wiwiss.fu-berlin.de/diseasome/diseasome_dump.nt.bz2}} contains diseases and disease genes linked by disease-gene associations.
+The first data set, Diseasome,
+%\footnote{\url{http://www4.wiwiss.fu-berlin.de/diseasome/diseasome_dump.nt.bz2}} 
+contains diseases and disease genes linked by disease-gene associations.
 The Publication data set is the Semantic Web Dog Food data set\footnote{\url{http://data.semanticweb.org/}} and contains information on publications, venues and authors of publications.
 The Geo data set resulted from retrieving the portion of triples from DBpedia that maps resources to their geo-coordinates\footnote{\url{http://wiki.dbpedia.org/Downloads38\#geographic-coordinates}.}.
 Finally, LinkedMDB~\footnote{\url{http://queens.db.toronto.edu/~oktie/linkedmdb}} is the RDF version of IMDB and contains amongst others a large number of actors, movies and directors.
@@ -912,3 +893,4 @@ Rank		 & \multicolumn{2}{c}{BGP}	& \multicolumn{2}{c}{S1}	&\multicolumn{2}{c}{S2
 %\end{thebibliography}
 
 \end{document}
+
