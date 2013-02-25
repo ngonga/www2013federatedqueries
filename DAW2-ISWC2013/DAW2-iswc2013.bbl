@@ -48,11 +48,6 @@ Moses~S. Charikar.
 \newblock In {\em Proceedings of the thiry-fourth annual ACM symposium on
   Theory of computing}, STOC '02, pages 380--388, 2002.
 
-\bibitem{key-17}
-Amol Deshpande, Zachary Ives, and Vijayshankar Raman.
-\newblock Adaptive query processing.
-\newblock {\em Found. Trends databases}, 1(1):1--140, January 2007.
-
 \bibitem{key-38}
 Natasha Drukh, Neoklis Polyzotis, and Yossi Matias.
 \newblock Fractional xsketch synopses for xml databases.
@@ -71,26 +66,6 @@ Andreas Harth, Katja Hose, Marcel Karnstedt, Axel Polleres, Kai-Uwe Sattler,
 \newblock Data summaries for on-demand queries over linked data.
 \newblock In {\em Proceedings of the 19th international conference on World
   wide web}, WWW '10, pages 411--420, 2010.
-
-\bibitem{key-25}
-Olaf Hartig.
-\newblock Zero-knowledge query planning for an iterator implementation of link
-  traversal based query execution.
-\newblock In {\em Proceedings of the 8th extended semantic web conference on
-  The semantic web: research and applications, Volume Part I}, ESWC'11, pages
-  154--169, 2011.
-
-\bibitem{key-4}
-Olaf Hartig, Christian Bizer, and Johann-Christoph Freytag.
-\newblock Executing sparql queries over the web of linked data.
-\newblock In {\em Proceedings of the 8th International Semantic Web
-  Conference}, ISWC '09, pages 293--309, 2009.
-
-\bibitem{key-16}
-Zoi Kaoudi, Kostis Kyzirakos, and Manolis Koubarakis.
-\newblock Sparql query optimization on top of dhts.
-\newblock In {\em Proceedings of the 9th international semantic web conference
-  on The semantic web, Volume Part I}, ISWC'10, pages 418--435, 2010.
 
 \bibitem{key-18}
 G\"{u}nter Ladwig and Thanh Tran.
@@ -154,16 +129,16 @@ Josiane~Xavier Parreira, Sebastian Michel, and Gerhard Weikum.
   search.
 \newblock {\em Information Processing and Management}, 43(3):643 -- 664, 2007.
 
-\bibitem{key-8}
-Jorge P{\'e}rez, Marcelo Arenas, and Claudio Gutierrez.
-\newblock Semantics and complexity of sparql.
-\newblock {\em ACM Trans. Database Syst.}, 34(3):16:1--16:45, sep 2009.
-
 \bibitem{key-37}
 Neoklis Polyzotis and Minos Garofalakis.
 \newblock Statistical synopses for graph-structured xml databases.
 \newblock In {\em Proceedings of the 2002 ACM SIGMOD international conference
   on Management of data}, SIGMOD '02, pages 358--369, 2002.
+
+\bibitem{key-8}
+Jorge Pérez, Marcelo Arenas, and Claudio Gutierrez.
+\newblock Semantics and complexity of sparql.
+\newblock pages 30--43, 2006.
 
 \bibitem{key-2}
 Bastian Quilitz and Ulf Leser.
@@ -175,8 +150,15 @@ Bastian Quilitz and Ulf Leser.
 Andreas Schwarte, Peter Haase, Katja Hose, Ralf Schenkel, and Michael Schmidt.
 \newblock Fedx: Optimization techniques for federated query processing on
   linked data.
-\newblock In {\em The Semantic Web, ISWC 2011}, volume 7031 of {\em Lecture
-  Notes in Computer Science}, pages 601--616. 2011.
+\newblock In {\em The Semantic Web, ISWC 2011}, Lecture Notes in Computer
+  Science, pages 601--616. 2011.
+
+\bibitem{key-42}
+P.~Griffiths Selinger, M.~M. Astrahan, D.~D. Chamberlin, R.~A. Lorie, and T.~G.
+  Price.
+\newblock Access path selection in a relational database management system.
+\newblock In {\em Proceedings of the 1979 ACM SIGMOD international conference
+  on Management of data}, SIGMOD '79, pages 23--34, 1979.
 
 \bibitem{SHE+11}
 Saeedeh Shekarpour, S\"oren Auer, Axel-Cyrille {Ngonga Ngomo}, Daniel Gerber,
@@ -191,20 +173,6 @@ Markus Stocker, Andy Seaborne, Abraham Bernstein, Christoph Kiefer, and Dave
 \newblock Sparql basic graph pattern optimization using selectivity estimation.
 \newblock In {\em Proceedings of the 17th international conference on World
   Wide Web}, WWW '08, pages 595--604, 2008.
-
-\bibitem{key-1}
-Heiner Stuckenschmidt, Richard Vdovjak, Geert-Jan Houben, and Jeen Broekstra.
-\newblock Index structures and algorithms for querying distributed rdf
-  repositories.
-\newblock In {\em Proceedings of the 13th international conference on World
-  Wide Web}, WWW '04, pages 631--639, 2004.
-
-\bibitem{key-6}
-J\"{u}rgen Umbrich, Katja Hose, Marcel Karnstedt, Andreas Harth, and Axel
-  Polleres.
-\newblock Comparing data summaries for processing live queries over linked
-  data.
-\newblock {\em World Wide Web}, 14(5-6):495--544, October 2011.
 
 \bibitem{UNG+12}
 Christina Unger, Lorenz B\"uhmann, Jens Lehmann, Axel-Cyrille~Ngonga Ngomo,

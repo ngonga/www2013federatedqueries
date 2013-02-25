@@ -103,7 +103,7 @@ We extend both DARQ and SPLENDID with DAW2 and compare our extensions with the o
 Our evaluation shows that our extensions achieve significantly smaller mean squared errors than the original implementations with respect to the approximation of result set sizes as well as in the ranking of data sources. 
 %Our evaluation shows that our approach achieves significantly smaller mean squared errors with respect to the approximation of result set sizes as well as in the ranking of data sources. 
 Moreover, our extensions require less sub-queries and smaller execution times to achieve the same recall.
-\keywords{Federated queries, SPARQL, Min-wise independent permutations}
+\keywords{Federated queries, SPARQL, Min-Wise Independent Permutations}
 \end{abstract}
 %
 
@@ -150,7 +150,7 @@ The main contributions of this paper are as follows:
 \item We propose the (to the best of our knowledge) first duplicate-aware approach for federated SPARQL querying.
 \item We combine data summaries statistics with MIPs to address the diversity in SPARQL queries. %this is not clear
 \item We implement our approach by extending the federated query engines DARQ and SPLENDID. 
-A comparison of our extensions with the original frameworks shows that we achieve better execution times, require less sub-queries and consequently engender less network traffic.
+A comparison of our extensions with the original frameworks shows that we achieve better execution times, require fewer sub-queries and consequently engender less network traffic.
 \end{enumerate}
 
 %
@@ -168,18 +168,17 @@ We finally conclude the paper with a discussion of our findings.
 %\caption{Possible duplicates in life sciences domain}
 %\label{fig:datasets}
 %\end{figure}
-
 \section{Related Work}
 \subsection{Federated SPARQL Queries}
 The research work on federated query processing over the Data Web
 can be categorized into three main directions: 
 \begin{itemize}
 \item Service description/index-assisted approaches, which make use of the dataset summaries that have been collected in a pre-processing stage. These approaches may lead to a more efficient query federation. However,
-the index needs to be constantly updated to ensure up-to-date results.
+the index needs to be constantly updated to ensure complete query results.
 Also, the index size should not be large to ensure that it does not
 increase the overall query processing cost. 
 \item Index-free approaches, in which the query federation is performed
-without using any stored data summaries. The data source statistics can be collected on-the-fly before the query federation. This approach promises the up-to-date records retrieval however; it may increase the query execution time, depending on the extra processing required in collecting, processing on-the-fly statistics.
+without using any stored data summaries. The data source statistics can be collected on-the-fly before the query federation. This approach promises the complete records retrieval however; it may increase the query execution time, depending on the extra processing required in collecting, processing on-the-fly statistics.
 \item Hybrid approaches, in which some of the data source statistics are pre-stored while some are collected on-the-fly. 
 \end{itemize}
 
@@ -188,63 +187,37 @@ All of the above approaches can be further divided into two categories
 with partial (sufficient) record retrieval. In our work, we focus
 on index-assisted query federation which can be used both for complete and partial record retrieval .
 
-Heiner et al.~\cite{key-1} describe how to extend the Sesame RDF
-repository to support distributed SeRQL queries over multiple Sesame
-RDF repositories. They use a special index structure to determine
-the relevant sources for a query. Quilitz and Leser~\cite{key-2}
-use the theoretical knowledge of~\cite{key-1} to develop the first federated
+%index assisted contributions
+Quilitz and Leser~\cite{key-2} develop the first index-assisted federated
 query engine (named DARQ) for remote RDF data sources. DARQ uses service
-descriptions for relevant data source selection. A service description
-describes the capabilities of a SPARQL endpoint. They use a query rewriting
+descriptions for relevant data source selection. They use a query rewriting
 mechanism based on~\cite{key-8} and a cost-based optimization algorithm
 to reduce the query processing time with the minimum bandwidth usage.
-DARQ is compatible with any SPARQL endpoint that implements the SPARQL
-standard. Their experimental results show that the optimization algorithm
-can greatly reduce the query processing time.
-
-Andreas et al.~\cite{key-3} propose a solution similar to DARQ using a
+Their experimental results show that the optimization algorithm
+can greatly reduce the query processing time. However, it only works for SPARQL queries with bound predicates.
+Langegger et al.~\cite{key-3} propose a solution similar to DARQ using a
 mediator approach. The SPARQL endpoints need to register first
 with the mediator using HTTP POST requests with an RDF document attached.
 The mediator continuously monitors the SPAQL endpoints for any dataset
 changes and updates the service descriptions automatically. Unlike
 DARQ, the service descriptions remain up-to-date all time. 
+Harth et al.~\cite{key-5}, propose a Qtree-based index structure which summarizes the
+content of data source for query execution over the Web of Data. The index leads to efficient source selection for conjunctive query answering however; because of the complete-query based source ranking, it may skip querying many sources which are capable of answering a sub-set of the query triples. Li and Heflin~\cite{key-15} build a tree structure which supports federated query processing over multiple heterogeneous sources. They make use of an OWL reasoner to answer queries over the selected sources and their corresponding ontologies. 
+ Görlitz et al.~\cite{key-41} make use of the VOID descriptions for relevant data source selection along with SPARQL \emph{ASK} queries. A dynamic Dynamic Programming~\cite{key-42} strategy is used to optimize the join order of SPARQL basic graph patterns.
 
-Olaf et al.~\cite{key-4} present a new approach for federated query processing
-over the Web of Data. Their approach discovers data that might be
-relevant for answering a query during the query execution itself.
-The discovery of relevant data is accomplished by traversing RDF links.
-They use an iterator-based pipeline and a URI prefetching approach
-for efficient query execution. Both DARQ and~\cite{key-3} are not able
-to discover relevant data sources by the query itself.
+%index free contributions
+Schwarte et al.~\cite{key-7} propose FedX, an index-free query federation for the Web
+of Data. Source selection is performed using SPARQL \emph{ASK} queries. Their approach gives a reasonably fast data retrieval as
+compared to all the previous techniques.
+Avalanche~\cite{key-24} gathers endpoints dataset statistics and bandwidth availability on-the-fly before the query federation. It provides live query execution over the Web of Data. 
 
-The previous techniques cannot answer all types of queries due to
-index or service description limitations. Umbrich et al.~\cite{key-5, key-6}, propose a Qtree-based index structure which summarizes the
-content of data source for query execution over the Web of Data. Their approach is able to handle more expressive queries however; because of the complete-query based source ranking, it may skip querying many sources which are capable of answering a sub-set of the query triples. Schwarte
-et al.~\cite{key-7} propose an index-free query federation for the Web
-of Data. Their approach gives a reasonably fast data retrieval as
-compared to all the previous techniques. However, since they do not
-keep any statistics, it works only for limited data sources.
-
-Li and Heflin~\cite{key-15} build a tree structure which supports federated query processing over multiple heterogeneous sources. They make use of an OWL reasoner to answer queries
-over the selected sources and their corresponding ontologies. Kaoudi et al.~\cite{key-16}
-propose a federated query technique on top of distributed hash tables (DHT). 
- The overall goal is to minimize the query execution time and the bandwidth
-consumption by reducing the cardinality of intermediate results. The DHT-based optimizer make use of three greedy optimization algorithms for best plan selection.  
-
+%hybrid approaches
 Ludwig and Tran~\cite{key-18} propose a mixed
-query engine that assumes some incomplete knowledge about the sources to select and discover new sources at run time. A Symmetric Hash Join
-is implemented to incrementally produce answers. This approach
-is extended to query both remote and local linked data~\cite{key-19}.
-
-Maribel et al.~\cite{key-21} present ANAPSID, an adaptive query engine
-that adapts query execution schedulers to SPARQL endpoints data
+query engine that assumes some incomplete knowledge about the sources to select and discover new sources at run time. A Symmetric Hash Join is implemented to incrementally produce answers. This approach
+is extended to query both remote and local linked data~\cite{key-19}. Acosta et al.~\cite{key-21} present ANAPSID, an adaptive query engine that adapts query execution schedulers to SPARQL endpoints data
 availability and run-time conditions. ANAPSID provides physical SPARQL
 operators that detect when a source becomes blocked or data traffic
-is bursty. The operators produce results as
-quickly as data arrives from the sources. Amol et al.~\cite{key-17} present a survey of the adaptive query processing
-techniques, common issues, and the settings in which each piece of work is most appropriate. 
-Avalanche~\cite{key-24} gathers endpoints dataset statistics and bandwidth availability on-the-fly before the query federation. The advantage of this technique is the live query execution over the Web of Data. However, on-the-fly statistics calculation can increase the overall query execution time. Olaf~\cite{key-25} propose a heuristics-based technique to minimize query intermediate
-results. 
+is bursty. The operators produce results as quickly as data arrives from the sources. 
 
 %Other noteable contributions such as LIMES~\cite{key-26}, SILK~\cite{key-27}, EAGLE~\cite{key-28} provides time-efficient approaches for link discovery using
 %various distance measure techniques. The LIMES framework utilize the mathematical
@@ -259,7 +232,6 @@ results.
 %learning approach to learning link specifications based on genetic programming.
 %EAGLE generates highly accurate link specifications while reducing the
 %annotation burden for the user. 
-
 Few other contributions address the problem of SPARQL query federation~\cite{key-22},~\cite{key-23} but none, to the best of our knowledge has taken into account the possibility of mutual overlap between different RDF datasets before query execution. Similar to DARQ engine, we use service
 descriptions for query federation. In addition, we store MIPs vector
 statistics for each of the indexed data source. Our query federator makes
@@ -267,16 +239,13 @@ use of this special statistic information to estimate the possible
 overlap between the results of different sub-queries in order to avoid the retrieval of redundant information.
 
 \subsection{Dataset Overlap Estimation}
-Avoiding the retrieval of duplicate records is a crucial issue in large scale distributed datasets. As the SPARQL endpoints are autonomous, there is always the possibility of high mutual overlap between different datasets residing in different endpoints. 
-It is thus likely that an optimized query execution plan contains a sub-query that retrieves records which are already retrieved by another sub-query from a different SPARQL endpoint. In this case it is not necessary to execute the later sub-query, as it would not only result in duplicate records being retrieved but also increase the total processing time.
-
-Statistical synopsis like min-wise independent permutations~\cite{key-9}, bloom filters~\cite{key-10}, hash sketches~\cite{key-36}, XSKETCH~\cite{key-37}, fractional XSKETCH~\cite{key-38}, and compressed bloom filters~\cite{key-11} have been extensively used in the literature to provide a compacted representation of data sets. Statistical synopsis allow to estimate a number os set operations such as overlap and union without having to compare the original sets directly. For example, Bender et al.~\cite{key-12} propose a technique for predicting the query-specific mutual overlap datasets in a peer to peer network. MIPs have proved to be the more accurate overlap estimation with small bandwidth consumption\cite{key-9} therefore we have chosen them in our approach.  
+Statistical synopsis like Min-Wise Independent Permutations~\cite{key-9}, Bloom filters~\cite{key-10}, Hash sketches~\cite{key-36}, XSKETCH~\cite{key-37}, fractional XSKETCH~\cite{key-38}, and compressed Bloom filters~\cite{key-11} have been extensively used in the literature to provide a compacted representation of data sets. Statistical synopsis allows to estimate a number of set operations such as overlap and union without having to compare the original sets directly. For example, Bender et al.~\cite{key-12} propose a technique for predicting the query-specific mutual overlap datasets in a peer to peer network. MIPs have proved to be the more accurate overlap estimation with small bandwidth consumption~\cite{key-9} therefore we have chosen them in our approach.  
 
 \section{Notation}
 In this section, we present the core of the notation that will be used throughout this paper.
 We denote data sources with $S$ and the total number of data sources with $n$. 
 The set of all data sets is dubbed $\mathfrak{S}$.
-The set of all possible result sets is denoted $R$ while the set of all possible SPARQL queries is labeled with $Q$. 
+The set of all possible result sets is denoted $R$ while the set of all possible SPARQL queries is labelled with $Q$. 
 A data source ranking function $rank: S \times Q \rightarrow \{1 \ldots n\}$ is a function that assigns a ranking to each data source given a particular query $q \in Q$.
 Note that for any source ranking function $rank$, we assume that $\forall S, S' \forall q \in Q : S  \neq S' \Longleftrightarrow rank(S, q) \neq rank (S', q)$.
 A result set estimation function $est: S \times Q \rightarrow \mathbb{N}$ aims at approximating the size of the result set that will be returned by a given query.
@@ -284,9 +253,7 @@ Note that this function plays a crucial role in the processing of federated quer
 The aim of a federated query system such as the one described in this work is thus to optimize its estimation function $est$ so as to ensure a ranking of the source close to the optimal ranking. %do we really need this sentence?
 \section{Duplicate-aware Federated Query Processing }
 \subsection{Overview}
-The use of statistical synopsis such as MIPs for overlap estimation is very common in the literature (as discussed in the next section), however these synopsis cannot be use all alone in semantic web domain due to the diverse nature of SPARQL queries. For example, the synopsis result set estimation for a triple pattern needs to be completely changed if any of the subject or object becomes bound in the query triple. To address such issues, we combine MIPs synopsis with the data summaries statistics for more accurate overlap estimation. Thus by creating small summaries of the data found in the available knowledge bases, our approach is able to estimate the amount of new information contained in a knowledge base with a high accuracy, leading to a better performance with respect to source ranking, estimation of result set sizes, execution time and network traffic. 
-
- Given a query, it is first parsed, then sent to federator which makes use of the services descriptions directory/index
+Given a query, it is first parsed, then sent to federator which makes use of the services descriptions directory/index
 to decompose the query into duplicate free multiple sub-queries. Each sub-query is optimized to generate an optimized execution plan. The optimized sub-queries are forwarded to the relevant SPARQL endpoints. The results of each sub-query execution are integrated and the final query result set is generated. This architecture for duplicate-aware federated query processing is shown in Figure 2.
 \begin{figure}
 \begin{centering}
@@ -299,6 +266,9 @@ system differ significantly from those of other approaches as it
 makes use of MIPs statistical information to generate duplicate-free
 query execution plans. The generation of MIPs statistical information
 is explained in the next section.
+
+The use of statistical synopsis such as MIPs for overlap estimation is very common in the literature, however these synopsis cannot be use all alone in semantic web domain due to the diverse nature of SPARQL queries. For example, the synopsis result set estimation for a triple pattern needs to be completely changed if any of the subject or object becomes bound in the query triple. To address such issues, we combine MIPs synopsis with the data summaries statistics for more accurate overlap estimation. Thus by creating small summaries of the data found in the available knowledge bases, our approach is able to estimate the amount of new information contained in a knowledge base with a high accuracy, leading to a better performance with respect to source ranking, estimation of result set sizes, execution time and network traffic. 
+
 \subsection{Service Description Directory}
 To find the set of relevant servers and generate 
 the appropriate sub-queries, the federator needs information about the
@@ -474,8 +444,8 @@ It is important to note that the number of elements in the MIPs vector may be di
 %\begin{lstlisting}[caption = {A P-1 query example},frame = single,language=SPARQL]
  %SELECT ?s 
 %=======
-\subsubsection{Join Source Ranking}
- As mentioned earlier, we perform individual triple based sub-query federation. Consequently, triple pattern source ranking is most important for sub-query escaping. The advantage of this approach is that if a data source is not capable of answering the complete query, it may produce enough results for a specific sub-set of query triples. For the comparison purpose we propose a complete query source ranking which works as follow: For a star shape queries like the query given in Listing 4, the overall result set is bound by the triple with lowest number of estimated records. Therefore, we perform the source ranking for that triple (using Algorithm 1) and use this as complete query ranking. The lowest records query triple can be estimated using the rank 1 source selection explained in previous section. However, this time we are looking for a source which has the lowest estimated value of all. For path shaped queries the total records are bound by the triple which has \emph{subject} variable equal to the \emph{object} of the previous query triple. For example the result set in the query given in Listing 3, is bound by the second triple in which the \emph{object} variable in the first triple is used as \emph{subject} in the second triple. Therefore, we perform the triple pattern ranking for second triple and use this as ranking for complete query.
+%\subsubsection{Join Source Ranking}
+ %As mentioned earlier, we perform individual triple based sub-query federation. Consequently, triple pattern source ranking is most important for sub-query escaping. The advantage of this approach is that if a data source is not capable of answering the complete query, it may produce enough results for a specific sub-set of query triples. For the comparison purpose we propose a complete query source ranking which works as follow: For a star shape queries like the query given in Listing 4, the overall result set is bound by the triple with lowest number of estimated records. Therefore, we perform the source ranking for that triple (using Algorithm 1) and use this as complete query ranking. The lowest records query triple can be estimated using the rank 1 source selection explained in previous section. However, this time we are looking for a source which has the lowest estimated value of all. For path shaped queries the total records are bound by the triple which has \emph{subject} variable equal to the \emph{object} of the previous query triple. For example the result set in the query given in Listing 3, is bound by the second triple in which the \emph{object} variable in the first triple is used as \emph{subject} in the second triple. Therefore, we perform the triple pattern ranking for second triple and use this as ranking for complete query.
 \begin{lstlisting}[caption = {A P-1 query example},basicstyle={\tiny},frame = {single},language=SPARQL,stringstyle={\ttfamily}]
  SELECT ?o1 
    WHERE
@@ -513,7 +483,7 @@ in separate sub-queries. After the sub-queries are generated, the federator send
 \end{algorithm}
 \section{Experiments and Results}
 The goal of our experiments was to assess how well our duplicate-aware solution performs in terms of result set recall, ranking of data sources and runtime.
-We compared our approach with DARQ, a well-known, publicly available and widely used federated query execution engine.\footnote{We refrained from comparing with the approach presented in~\cite{key-5} because it connot deal with the partly fragmented data which is generated in our experiments.}
+We compared our approach with DARQ, a well-known, publicly available and widely used federated query execution engine.
 We also compared our approach with a simulation of the optimal duplicate-unaware (DU) approach, where (1) the result set estimation of carried is carried out regardless of the overlap between data source and each source containing at one relevant triple is queried.
 In the following, we describe our experimental setup in detail and contrast the results achieved by each of the approaches.
 All data used in this evaluation is either publicly available or can be found at the project webpage.\footnote{\url{https://sites.google.com/site/dupawarefedqueries/}}
@@ -542,7 +512,6 @@ The data was then distributed across the 10 data sources by partitioning the inp
 Finally, we picked $m$ out of the $n$ data sources randomly ($m < n$) and redistributed their content across all $n-m$ remaining data sources .
 We set $d$ to values between ca 1.6\% and 2.8\% of the triples.
 Note that the value of $d$ was increased with increasingly larger data sets.
-
 \begin{table*}
 \centering
 \begin{tabular}{lrrrrrrrrr}
@@ -556,10 +525,9 @@ Geo 						& 274.1 & 4.66 	& 98 & 10 & 50,000 	& 2 & 5,8				& 1,900,006 & 1302\\
 LinkedMDB 			& 448.9 & 7.9 	& 97 & 10 & 100,000 	& 1 & 2 			& 3,579,616 & 1837\\
 \hline
 \end{tabular}
-\caption{Overview of datasets. Size gives the magnitude of the data sets in MB. Summary size is the size of the correspoding MIPS. Slices is the number of data sources used during the experiments. Discrepancy gives the absolute value of the discrepancy used for the given experiment. CR stands for Compression Ratio.}
+\caption{Overview of datasets. Size gives the magnitude of the data sets in MB. Summary size is the size of the corresponding MIPS. Slices is the number of data sources used during the experiments. Discrepancy gives the absolute value of the discrepancy used for the given experiment. CR stands for Compression Ratio.}
 \label{tab:datasets}
 \end{table*}
-
 
 \subsubsection{Queries}
 We used three main types of queries in our experiments: basic graph patterns (BGP), star-shaped and path-shaped queries.
@@ -630,8 +598,6 @@ The same overall behavior is also displayed when considering the result set esti
 %This is a result of our approach to generating the estimations for whole query, which is carried out by using the lower bound of the estimation of single query patterns in the query. 
 %Small errors in the estimation of the size of the result size can thus lead to minor absolute errors.
 
-
-
 As stated before, we used a compression ratios between 96\% and 98\% across all experiments. 
 The main advantage of such a high compression ratio is the small size of the index generated by our approach. 
 Yet, higher compression ratios also lead to cruder approximations and thus to larger error margins of the number of duplicate-free triples in each data source.
@@ -640,9 +606,7 @@ We wanted to know whether a decrease of the reduction ratio leads to our approac
 We thus studied the effect of decreasing the compression ratio on the $RSMSE$ and $RankMSE$ for such a query (which one)?.
 Our results in Table~\ref{tab:compression} suggest that MIPS vectors can successfully detect even small differences in the sizes of the result sets when given a sufficiently small compression ratio.
 
-
 \subsubsection{Recall and Runtime}
-
 Table~\ref{tab:recall} shows the recall achieved by MIPS and DARQ in relation to the number of slices taken into consideration. 
 Our results display the superiority of our ranking function, which is always able to achieve full recall of 1 by querying 9 from the 10 available data sources. 
 In contrast, DARQ always has to visit all data sources to achieve a comparable recall. 
@@ -721,7 +685,6 @@ Total 					&23		&38	&49	&8	&20	&12	&150 \\\hline
 \label{tab:escaped}
 \end{table}
 
-
 %\subsubsection{Execution Time}
 %\subsubsection{Size of MIPS vectors (on largest dataset)}
 \section{Conclusion and Future Work}
@@ -732,7 +695,7 @@ We compared our approach with DARQ and a simulation of an perfect duplicate-unaw
 Our results suggest that our approach can be easily adapted to scenarios where accurate approximations of result set sizes are required.
 Moreover, the execution time of our approach was shown to be superior to that of the state of art's.
 Our approach is also able to generate less network traffic by escaping sub-queries that would not lead to non-duplicate result sets.
-In future work, we will extend our approach by combining it with tiem-efficient duplicate detection systems such as LIMES~\cite{key-26}. 
+In future work, we will extend our approach by combining it with time-efficient duplicate detection systems such as LIMES~\cite{key-26}. 
 By these means, we will enable our engine to merge facts which are expressed in different vocabularies or by using different URIs for the same real-world entity.
 
 \begin{table*}

@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.11.5)  22 FEB 2013 16:54
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.11.5)  25 FEB 2013 04:52
 entering extended mode
 **DAW2-iswc2013.tex
-(C:\Users\muhsal\Documents\GitHub\www2013federatedqueries\DAW2-ISWC2013\DAW2-iswc2013.tex
+(C:\Users\muhsal\Documents\DAW2-ISWC2013\DAW2-iswc2013.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, arabic, armenian, assamese, basque, bengali
 , bokmal, bulgarian, catalan, coptic, croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, galic
@@ -10,7 +10,7 @@ ian, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, icelandic, 
 erman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, romanian, russian, sanskrit, serbian, slovak, s
 lovenian, spanish, swedish, swissgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usenglishm
 ax, welsh, loaded.
-(C:\Users\muhsal\Documents\GitHub\www2013federatedqueries\DAW2-ISWC2013\llncs.cls
+(C:\Users\muhsal\Documents\DAW2-ISWC2013\llncs.cls
 Document Class: llncs 2010/07/12 v2.17 
  LaTeX document class for Lecture Notes in Computer Science
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -77,10 +77,9 @@ Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 \colbreak@box=\box51
 \multicol@sort@counter=\count95
 )
-(C:\Users\muhsal\Documents\GitHub\www2013federatedqueries\DAW2-ISWC2013\aliascnt.sty
+(C:\Users\muhsal\Documents\DAW2-ISWC2013\aliascnt.sty
 Package: aliascnt 2009/09/08 v1.3 Alias counter (HO)
-
-(C:\Users\muhsal\Documents\GitHub\www2013federatedqueries\DAW2-ISWC2013\remreset.sty))
+ (C:\Users\muhsal\Documents\DAW2-ISWC2013\remreset.sty))
 \c@chapter=\count96
 LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 362.
 LaTeX Font Info:    Redeclaring math symbol \Delta on input line 363.
@@ -388,8 +387,7 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \tab@position=\count117
 \tab@size=\count118
 \listing@line=\count119
-)
-(C:\Users\muhsal\Documents\GitHub\www2013federatedqueries\DAW2-ISWC2013\listings.sty
+) (C:\Users\muhsal\Documents\DAW2-ISWC2013\listings.sty
 \lst@mode=\count120
 \lst@gtempboxa=\box54
 \lst@token=\toks23
@@ -403,13 +401,12 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \lst@lineno=\count125
 \lst@maxwidth=\dimen129
 
-(C:\Users\muhsal\Documents\GitHub\www2013federatedqueries\DAW2-ISWC2013\lstmisc.sty
+(C:\Users\muhsal\Documents\DAW2-ISWC2013\lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 \c@lstnumber=\count126
 \lst@skipnumbers=\count127
 \lst@framebox=\box55
-)
-(C:\Users\muhsal\Documents\GitHub\www2013federatedqueries\DAW2-ISWC2013\listings.cfg
+) (C:\Users\muhsal\Documents\DAW2-ISWC2013\listings.cfg
 File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
 Package: listings 2007/02/22 1.4 (Carsten Heinz)
@@ -442,7 +439,7 @@ Package: subcaption 2012/01/12 v1.1d Sub-captions (AR)
 \c@subfigure=\count129
 \c@subtable=\count130
 )
-(C:\Users\muhsal\Documents\GitHub\www2013federatedqueries\DAW2-ISWC2013\algorithm.sty
+(C:\Users\muhsal\Documents\DAW2-ISWC2013\algorithm.sty
 Package: algorithm 
 
 Document Style `algorithm' - floating environment
@@ -459,7 +456,7 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 \@float@every@algorithm=\toks26
 \c@algorithm=\count132
 )
-(C:\Users\muhsal\Documents\GitHub\www2013federatedqueries\DAW2-ISWC2013\algorithmic.sty
+(C:\Users\muhsal\Documents\DAW2-ISWC2013\algorithmic.sty
 Package: algorithmic 2005/07/05
 
 Document Style `algorithmic' - environment
@@ -637,8 +634,7 @@ File: p2e-pdftex.def 2011/04/05 v0.1t Driver-dependant file (RN,HjG,JT)
 \qroofx=\count144
 \qroofy=\count145
 \@qrscratchbox=\box81
-)
-(C:\Users\muhsal\Documents\GitHub\www2013federatedqueries\DAW2-ISWC2013\xcolor.sty
+) (C:\Users\muhsal\Documents\DAW2-ISWC2013\xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
@@ -674,7 +670,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\dvipsnam.def"
 File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
-(C:\Users\muhsal\Documents\GitHub\www2013federatedqueries\DAW2-ISWC2013\DAW2-iswc2013.aux)
+(C:\Users\muhsal\Documents\DAW2-ISWC2013\DAW2-iswc2013.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
 LaTeX Font Info:    ... okay on input line 49.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
@@ -687,8 +683,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
 LaTeX Font Info:    ... okay on input line 49.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
 LaTeX Font Info:    ... okay on input line 49.
-
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+ ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count147
 \scratchdimen=\dimen144
@@ -738,125 +733,137 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3]
-Overfull \hbox (17.0982pt too wide) in paragraph at lines 263--268
+Overfull \hbox (17.0982pt too wide) in paragraph at lines 235--240
 []\OT1/cmr/m/n/10 Few other con-tri-bu-tions ad-dress the prob-lem of SPARQL query fed-er-a-tion [[]], [[]]
  []
 
-[4]
-LaTeX Font Info:    Try loading font information for U+euf on input line 278.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
+
+Overfull \hbox (2.48824pt too wide) in paragraph at lines 242--243
+\OT1/cmr/m/n/10 Statistical syn-op-sis like Min-Wise In-de-pen-dent Per-mu-ta-tions [[]], Bloom fil-ters [[]],
+ []
+
+LaTeX Font Info:    Try loading font information for U+euf on input line 247.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
 File: ueuf.fd 2009/06/22 v3.00 Euler Fraktur
-) [5] <img/Fig1.pdf, id=32, 291.0875pt x 218.8175pt>
+) [4] <img/Fig1.pdf, id=29, 291.0875pt x 218.8175pt>
 File: img/Fig1.pdf Graphic file (type pdf)
 
 <use img/Fig1.pdf>
-Package pdftex.def Info: img/Fig1.pdf used on input line 293.
+Package pdftex.def Info: img/Fig1.pdf used on input line 260.
 (pdftex.def)             Requested size: 203.75984pt x 153.17119pt.
- [6 <C:/Users/muhsal/Documents/GitHub/www2013federatedqueries/DAW2-ISWC2013/img/Fig1.pdf>]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 319.
+ [5 <C:/Users/muhsal/Documents/DAW2-ISWC2013/img/Fig1.pdf>]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 289.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <5> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 319.
- [7] <img/mips.pdf, id=56, 460.72125pt x 249.93375pt>
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 289.
+ [6] <img/mips.pdf, id=52, 460.72125pt x 249.93375pt>
 File: img/mips.pdf Graphic file (type pdf)
 
 <use img/mips.pdf>
-Package pdftex.def Info: img/mips.pdf used on input line 376.
+Package pdftex.def Info: img/mips.pdf used on input line 346.
 (pdftex.def)             Requested size: 244.18109pt x 132.46425pt.
- [8 <C:/Users/muhsal/Documents/GitHub/www2013federatedqueries/DAW2-ISWC2013/img/mips.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 399.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+ [7]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 369.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 399.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 369.
+ [8 <C:/Users/muhsal/Documents/DAW2-ISWC2013/img/mips.pdf>]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <5> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 420.
- [9]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 390.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 439.
-
-(C:\Users\muhsal\Documents\GitHub\www2013federatedqueries\DAW2-ISWC2013\lstlang1.sty
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 409.
+ (C:\Users\muhsal\Documents\DAW2-ISWC2013\lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-(C:\Users\muhsal\Documents\GitHub\www2013federatedqueries\DAW2-ISWC2013\lstlang3.sty
+(C:\Users\muhsal\Documents\DAW2-ISWC2013\lstlang3.sty
 File: lstlang3.sty 2004/09/05 1.3 listings language file
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 489.
- [10] [11]
-Overfull \hbox (38.47653pt too wide) in paragraph at lines 548--559
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 459.
+ [9]
+Overfull \hbox (38.47653pt too wide) in paragraph at lines 517--528
  [][] 
  []
 
-
-Overfull \hbox (3.98239pt too wide) in paragraph at lines 565--569
+[10]
+Overfull \hbox (3.98239pt too wide) in paragraph at lines 533--537
 \OT1/cmr/m/n/10 pat-terns (BGP), star-shaped and path-shaped queries. \OT1/cmr/m/it/10 Ba-sic graph pat-tern \OT1/cmr/m/
 n/10 (BGP)
  []
 
-[12] [13] <img/querywise_rse.pdf, id=96, 451.6747pt x 301.1223pt>
+[11] [12] <img/querywise_rse.pdf, id=92, 451.6747pt x 301.1223pt>
 File: img/querywise_rse.pdf Graphic file (type pdf)
  <use img/querywise_rse.pdf>
-Package pdftex.def Info: img/querywise_rse.pdf used on input line 662.
+Package pdftex.def Info: img/querywise_rse.pdf used on input line 626.
 (pdftex.def)             Requested size: 156.20453pt x 104.13542pt.
 
-<img/subquerywise_rse.pdf, id=97, 451.69804pt x 301.11974pt>
+<img/subquerywise_rse.pdf, id=93, 451.69804pt x 301.11974pt>
 File: img/subquerywise_rse.pdf Graphic file (type pdf)
  <use img/subquerywise_rse.pdf>
-Package pdftex.def Info: img/subquerywise_rse.pdf used on input line 668.
+Package pdftex.def Info: img/subquerywise_rse.pdf used on input line 632.
 (pdftex.def)             Requested size: 156.20453pt x 104.12993pt.
 
-<img/querywise_ranking.pdf, id=98, 451.69954pt x 301.11974pt>
+<img/querywise_ranking.pdf, id=94, 451.69954pt x 301.11974pt>
 File: img/querywise_ranking.pdf Graphic file (type pdf)
  <use img/querywise_ranking.pdf>
-Package pdftex.def Info: img/querywise_ranking.pdf used on input line 680.
+Package pdftex.def Info: img/querywise_ranking.pdf used on input line 644.
 (pdftex.def)             Requested size: 156.20453pt x 104.12993pt.
 
-<img/subquerywise_ranking.pdf, id=99, 451.69804pt x 301.11974pt>
+<img/subquerywise_ranking.pdf, id=95, 451.69804pt x 301.11974pt>
 File: img/subquerywise_ranking.pdf Graphic file (type pdf)
  <use img/subquerywise_ranking.pdf>
-Package pdftex.def Info: img/subquerywise_ranking.pdf used on input line 686.
+Package pdftex.def Info: img/subquerywise_ranking.pdf used on input line 650.
 (pdftex.def)             Requested size: 156.20453pt x 104.12993pt.
- [14] [15 <C:/Users/muhsal/Documents/GitHub/www2013federatedqueries/DAW2-ISWC2013/img/querywise_rse.pdf> <C:/Users/muhsa
-l/Documents/GitHub/www2013federatedqueries/DAW2-ISWC2013/img/subquerywise_rse.pdf> <C:/Users/muhsal/Documents/GitHub/www
-2013federatedqueries/DAW2-ISWC2013/img/querywise_ranking.pdf> <C:/Users/muhsal/Documents/GitHub/www2013federatedqueries/
-DAW2-ISWC2013/img/subquerywise_ranking.pdf>]
-Overfull \hbox (29.83627pt too wide) in paragraph at lines 740--755
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13] [14 <C:/Users/muhsal/Documents/DAW2-ISWC2013/img/querywise_rse.pdf> <C:/Users/muhsal/Documents/DAW2-ISWC2013/img/s
+ubquerywise_rse.pdf> <C:/Users/muhsal/Documents/DAW2-ISWC2013/img/querywise_ranking.pdf> <C:/Users/muhsal/Documents/DAW2
+-ISWC2013/img/subquerywise_ranking.pdf>]
+Overfull \hbox (29.83627pt too wide) in paragraph at lines 703--718
  [][] 
  []
 
-<img/runtime_recall.pdf, id=196, 678.28406pt x 257.46187pt>
+<img/runtime_recall.pdf, id=193, 678.28406pt x 257.46187pt>
 File: img/runtime_recall.pdf Graphic file (type pdf)
  <use img/runtime_recall.pdf>
-Package pdftex.def Info: img/runtime_recall.pdf used on input line 761.
+Package pdftex.def Info: img/runtime_recall.pdf used on input line 724.
 (pdftex.def)             Requested size: 312.40906pt x 118.58318pt.
 
-(C:\Users\muhsal\Documents\GitHub\www2013federatedqueries\DAW2-ISWC2013\DAW2-iswc2013.bbl [16] [17 <C:/Users/muhsal/Docu
-ments/GitHub/www2013federatedqueries/DAW2-ISWC2013/img/runtime_recall.pdf>] [18] [19] [20
+(C:\Users\muhsal\Documents\DAW2-ISWC2013\DAW2-iswc2013.bbl [15] [16 <C:/Users/muhsal/Documents/DAW2-ISWC2013/img/runtime
+_recall.pdf>] [17] [18] [19
 
 ]
-Underfull \hbox (badness 4060) in paragraph at lines 152--156
+Underfull \hbox (badness 4060) in paragraph at lines 127--131
 []\OT1/cmr/m/n/10 Josiane Xavier Par-reira, Se-bas-tian Michel, and Ger-hard Weikum.
  []
 
-[21]) [22] (C:\Users\muhsal\Documents\GitHub\www2013federatedqueries\DAW2-ISWC2013\DAW2-iswc2013.aux)
+[20]) [21] (C:\Users\muhsal\Documents\DAW2-ISWC2013\DAW2-iswc2013.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 7161 strings out of 494045
- 99442 string characters out of 3148384
- 201924 words of memory out of 3000000
- 10325 multiletter control sequences out of 15000+200000
+ 7147 strings out of 494045
+ 98288 string characters out of 3148384
+ 204281 words of memory out of 3000000
+ 10311 multiletter control sequences out of 15000+200000
  12614 words of font info for 49 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 41i,10n,43p,1403b,1369s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,10n,43p,1387b,1369s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/P
@@ -872,9 +879,9 @@ cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.
 ype1/public/amsfonts/cm/cmti9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbo
 ls/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on DAW2-iswc2013.pdf (22 pages, 707058 bytes).
+Output written on DAW2-iswc2013.pdf (21 pages, 701439 bytes).
 PDF statistics:
- 315 PDF objects out of 1000 (max. 8388607)
+ 312 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
